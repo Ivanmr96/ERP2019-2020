@@ -114,4 +114,141 @@ Select * from ERP_Productos
 Select * from ERP_LineaPedidos
 Select * from ERP_Pedidos
 
+go
+
+/*
+	prototipo: create procedure crearPedido
+	comentarios: este procedimientos sirve para crear un nuevo pedido
+	precondiciones: no hay
+	entradas: no hay
+	salidas: no hay
+	entr/sal: no hay
+	postcondiciones: se incertará un pedido  en la base de datos cone el estado en proceso ,
+	la fecha del pedido será la de ese día, y la fecha de recepcion estará a null
+*/
+create procedure crearPedido
+as
+begin
+	insert into ERP_Pedidos(Estado,FechaPedido,FechaRecepcion)
+	values('En proceso',GETDATE(),null)
+end
+go
+begin tran
+execute crearPedido
+rollback
+go
+select * from ERP_Pedidos
+go
+
+/*
+	prototipo: create procedure actualizarEstadoPedido @CodigoPedido int,@EstadoPedido varchar(15)
+	comentarios: este procedimientos recibe el codigo del pedido y el estado y actualiza el estado de ese pedido
+	precondiciones: codigo del pedido correcto, estado del pedido correcto
+	entradas: entero codigo del pedido y cadena estado del pedido
+	salidas: no hay
+	entr/sal: no hay
+	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado que  tambien se le pasa por parámetro
+*/
+create procedure actualizarEstadoPedido @CodigoPedido int,@EstadoPedido varchar(15)
+as
+begin
+	begin tran tranActualizarEstadoPedido
+		update ERP_Pedidos
+		set Estado=@EstadoPedido
+		from ERP_Pedidos
+		where @CodigoPedido=Codigo
+	commit 
+end
+go
+begin tran
+execute actualizarEstadoPedido 7,'Recibido'
+rollback
+go
+
+/*
+	prototipo: create procedure cancelarPedido @CodigoPedido int
+	comentarios: este procedimientos sirve para cancelar un pedido 
+	precondiciones: codigo del pedido correcto
+	entradas: entero codigo del pedido
+	salidas: no hay
+	entr/sal: no hay
+	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado a Cancelado
+*/
+create procedure cancelarPedido @CodigoPedido int
+as
+begin
+	begin tran tranCancelarPedido
+		update ERP_Pedidos
+		set Estado='Cancelado'
+		from ERP_Pedidos
+		where @CodigoPedido=Codigo and Estado <> 'Cancelado'
+	commit 
+end
+go
+begin tran
+execute cancelarPedido 1
+rollback
+go
+begin tran
+execute cancelarPedido 2
+rollback
+go
+
+
+/*
+	prototipo: create procedure cancelarPedido @CodigoPedido int
+	comentarios: este procedimientos sirve para cambiar el estado de un pedido a recibido
+	precondiciones: codigo del pedido correcto
+	entradas: entero codigo del pedido
+	salidas: no hay
+	entr/sal: no hay
+	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado a recibido
+*/
+create procedure recibirPedido @CodigoPedido int
+as
+begin
+	begin tran tranCancelarPedido
+		update ERP_Pedidos
+		set Estado='Recibido'
+		from ERP_Pedidos
+		where @CodigoPedido=Codigo and Estado <> 'Recibido' and Estado <> 'Cancelado'
+	commit 
+end
+go
+begin tran
+execute cancelarPedido 1
+rollback
+go
+begin tran
+execute cancelarPedido 2
+rollback
+go
+
+/*
+	prototipo: create trigger actualizarFechaRecepcionDelPedido on ERP_Pedidos
+	comentarios: este desencadenador sirve para actualizar la fecha de recepcion de un pedido
+	precondiciones: no hay
+	entradas: no hay
+	salidas: no hay
+	entr/sal: no hay
+	postcondiciones: se actualizaria la fecha de un pedido si su estado es Recibido si no, no pasaria nada
+*/
+create trigger actualizarFechaRecepcionDelPedido on ERP_Pedidos
+after update as
+	begin
+	if update(Estado) and 'Recibido'=(select Estado from inserted)
+		begin
+			update ERP_Pedidos
+			SET FechaRecepcion=GETDATE()
+			FROM ERP_Pedidos as P
+			inner join inserted as I on P.Codigo=I.Codigo
+		end
+	end
+go
+begin tran
+update ERP_Pedidos
+set Estado='Cancelado'
+where Codigo=1
+rollback
+
 
