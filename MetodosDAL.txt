@@ -1,0 +1,15 @@
+Métodos DAL
+-Lists
+	1-listado de todos los pedidos 
+	2-listado de un pedido por su id
+	3-listado de todas las lineas de pedido de un pedido por la id del pedido
+	4-listado de la linea de pedido correspondiente a un producto (idproducto) de un pedido determinado por su id (id pedido)
+	5-listado de todos los proveedores
+	6-listado de todos los productos
+-Handler
+	7-actualizar un pedido por id
+	8-actualizar una linea de pedido de un producto de un pedido
+	9-insertar un pedido nuevo
+	10-insertar una linea de pedido en un pedido concreto
+	11-eliminar una linea de pedido de un producto en un pedido concreto
+	12-modificar el estado de un pedido a "CANCELADO" (esto es el ""borrar"" pedido)
