@@ -8,5 +8,13 @@ namespace ProyectoERP_API_DAL.Lists
 {
     class Class1
     {
+        #region"Atributos privados"
+        #endregion
+
+        #region"Constructor"
+        #endregion
+
+        #region"Propiedades públicas"
+        #endregion
     }
 }
