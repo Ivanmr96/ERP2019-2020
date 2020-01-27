@@ -17,7 +17,15 @@ namespace ProyectoERP_API_Entities
 
         #endregion
 
-        #region"Constructor"
+        #region"Constructores"
+        public clsProducto()
+        {
+            this.codigo = 0;
+            this.nombre = "";
+            this.descripcion = "";
+            this.stock = 0;
+        }
+
         public clsProducto(int codigo, string nombre, string descripcion, int stock)
         {
             this.codigo = codigo;
@@ -25,8 +33,6 @@ namespace ProyectoERP_API_Entities
             this.descripcion = descripcion;
             this.stock = stock;
         }
-
-
         #endregion
 
         #region"Propiedades públicas"

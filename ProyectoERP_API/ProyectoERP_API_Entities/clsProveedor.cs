@@ -17,7 +17,16 @@ namespace ProyectoERP_API_Entities
 
         #endregion
 
-        #region"Constructor"
+        #region"Constructores"
+        public clsProveedor()
+        {
+            this.cif = "";
+            this.nombreRazonSocial = "";
+            this.direccion = "";
+            this.telefono = "";
+            this.email = "";
+        }
+
         public clsProveedor(string cif, string nombreRazonSocial, string direccion, string telefono, string email)
         {
             this.cif = cif;

@@ -44,6 +44,9 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Handler\Class1.cs" />
     <Compile Include="Lists\Class1.cs" />
+    <Compile Include="Lists\ClsListadosLineaDePedidos_BL.cs" />
+    <Compile Include="Lists\ClsListadosProductos_BL.cs" />
+    <Compile Include="Lists\ClsListadosProveedores_BL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -26,7 +26,16 @@ namespace ProyectoERP_API_Entities
         #endregion
 
 
-        #region"Constructor"
+        #region"Constructores"
+        public clsLineaPedido()
+        {
+            this.codigoProducto = 0;
+            this.codigoPedido = 0;
+            this.cantidad = 0;
+            this.precioUnitario = 0.0;
+            this.Divisa = "";
+        }
+
         public clsLineaPedido(int codigoProducto, int codigoPedido, int cantidad, double precioUnitario, string divisa)
         {
             this.codigoProducto = codigoProducto;
@@ -35,7 +44,6 @@ namespace ProyectoERP_API_Entities
             this.precioUnitario = precioUnitario;
             this.Divisa = divisa;
         }
-
         #endregion
 
 
