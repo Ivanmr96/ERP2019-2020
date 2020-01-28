@@ -79,9 +79,8 @@ rollback
 --Este trigger sirve para aumentar el stock de un producto cuando se haya recibido un pedido
 ALTER TRIGGER aumentarStock
 ON ERP_Pedidos
- AFTER UPDATE AS 
- -- ¿Ha cambiado el estado?
- IF EXISTS(Select * from inserted WHERE Estado in ('Recibido'))
+AFTER UPDATE AS 
+ IF EXISTS(Select * from inserted WHERE Estado in ('Recibido') AND UPDATE(Estado))
  BEGIN
 	 DECLARE @codigoProducto int
 	 DECLARE @codigoPedido int
