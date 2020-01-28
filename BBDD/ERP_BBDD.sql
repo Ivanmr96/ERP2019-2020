@@ -93,8 +93,9 @@ CHECK (Divisa IN ('Euros', 'Dolares', 'Libras', 'Yennes'));
 
 Alter table ERP_LineaPedidos ADD CONSTRAINT CK_LineaPedidos_Cantidad CHECK (Cantidad > 0)
 
-Alter Table ERP_Pedidos ADD CONSTRAINT CK_Pedidos_Estados CHECK(Estado in ('En proceso','Cancelado', 'Recibido'))
+Alter Table ERP_Pedidos ADD CONSTRAINT CK_Pedidos_Estados CHECK(Estado in ('Preparando','Cancelado', 'Recibido','En reparto'))
 
+--ALTER TABLE ERP_Pedidos DROP CONSTRAINT CK_Pedidos_Estados
 ----------------------------------inserts-----------------------------
 
 insert into ERP_Pedidos(Estado,FechaPedido,FechaRecepcion)
