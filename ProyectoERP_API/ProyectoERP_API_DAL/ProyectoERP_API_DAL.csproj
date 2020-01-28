@@ -47,6 +47,7 @@
     <Compile Include="Handler\Class1.cs" />
     <Compile Include="Lists\Class1.cs" />
     <Compile Include="Lists\ClsListadosLineaDePedidos_DAL.cs" />
+    <Compile Include="Lists\ClsListadosPedidos_DAL.cs" />
     <Compile Include="Lists\ClsListadosProductos_DAL.cs" />
     <Compile Include="Lists\ClsListadosProveedores_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

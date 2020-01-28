@@ -1,0 +1,4 @@
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug\ProyectoERP_API_Entities.dll
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug\ProyectoERP_API_Entities.pdb
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.dll
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.pdb
