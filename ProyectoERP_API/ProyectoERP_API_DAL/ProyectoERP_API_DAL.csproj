@@ -45,6 +45,7 @@
     <Compile Include="Connection\Class1.cs" />
     <Compile Include="Connection\clsMyConnection.cs" />
     <Compile Include="Handler\Class1.cs" />
+    <Compile Include="Handler\ClsHandlerLineaDePedido_DAL.cs" />
     <Compile Include="Lists\Class1.cs" />
     <Compile Include="Lists\ClsListadosLineaDePedidos_DAL.cs" />
     <Compile Include="Lists\ClsListadosPedidos_DAL.cs" />

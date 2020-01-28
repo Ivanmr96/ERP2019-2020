@@ -18,7 +18,15 @@ namespace ProyectoERP_API_BL.Lists
         /// <returns>Devuelve un list del tipo clsProducto</returns>
         public List<clsProducto> getProductList()
         {
-            return new ClsListadosProductos_DAL().getProductList();
+            //return new ClsListadosProductos_DAL().getProductList();//Cuando la base de datos se encuentre operativa
+            List<clsProducto> prueba = new List<clsProducto>();
+
+            prueba.Add(new clsProducto(101, "Doritos", "Naranjitas", 3000));
+            prueba.Add(new clsProducto(102, "Chope", "Del DIA", 33));
+            prueba.Add(new clsProducto(103, "Tengo", "Salud Y", 57));
+            prueba.Add(new clsProducto(104, "Hambre", "Como siempre", 23));
+
+            return prueba;
         }
     }
 }

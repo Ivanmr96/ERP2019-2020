@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Handler\Class1.cs" />
+    <Compile Include="Handler\ClsHandlerLineaDePedido_BL.cs" />
     <Compile Include="Lists\Class1.cs" />
     <Compile Include="Lists\ClsListadosLineaDePedidos_BL.cs" />
     <Compile Include="Lists\ClsListadosPedidos_BL.cs" />

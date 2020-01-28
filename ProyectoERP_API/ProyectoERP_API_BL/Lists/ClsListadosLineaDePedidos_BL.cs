@@ -11,18 +11,6 @@ namespace ProyectoERP_API_BL.Lists
     public class ClsListadosLineaDePedidos_BL
     {
         /// <summary>
-        /// Nombre: getOrderLineList
-        /// Comentario: Este método nos permite obtener un listado de las líneas de pedido de un producto y pedido determinado.
-        /// Cabecera: public List<clsLineaPedido> getOrderLineList(int codigoProducto, int codigoPedido)
-        /// </summary>
-        /// <returns>Devuelve un list del tipo clsLineaPedido</returns>
-        public List<clsLineaPedido> getOrderLineList(int codigoProducto, int codigoPedido)
-        {
-            return new ClsListadosLineaDePedidos_DAL().getOrderLineList(codigoProducto, codigoPedido);
-        }
-
-
-        /// <summary>
         /// Devuelve todas las lineas de pedido de un pedido dada su ID
         /// </summary>
         /// <param name="codigoPedido">ID del pedido</param>
