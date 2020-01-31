@@ -123,9 +123,9 @@ go
 	salidas: el id de pedido que se crea
 	entr/sal: no hay
 	postcondiciones: se incertará un pedido  en la base de datos cone el estado en proceso ,
-	la fecha del pedido será la de ese día, la fecha de recepcion estará a null y devolverá el id del pedido creado
+	la fecha del pedido será la de ese día, la fecha de recepcion estará a null y AN devolverá el id del pedido creado
 */
-drop procedure crearPedido 
+create procedure crearPedido 
 as
 begin
 	--declare @id int
@@ -136,7 +136,9 @@ begin
 end
 go
 begin tran
-execute crearPedido
+declare @id int
+execute @id=crearPedido
+select @id
 rollback
 go
 select * from ERP_Pedidos
