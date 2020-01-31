@@ -116,20 +116,23 @@ Select * from ERP_Pedidos
 go
 
 /*
-	prototipo: create procedure crearPedido
+	prototipo: create procedure crearPedido @id int output
 	comentarios: este procedimientos sirve para crear un nuevo pedido
 	precondiciones: no hay
 	entradas: no hay
-	salidas: no hay
+	salidas: el id de pedido que se crea
 	entr/sal: no hay
 	postcondiciones: se incertará un pedido  en la base de datos cone el estado en proceso ,
-	la fecha del pedido será la de ese día, y la fecha de recepcion estará a null
+	la fecha del pedido será la de ese día, la fecha de recepcion estará a null y devolverá el id del pedido creado
 */
-create procedure crearPedido
+drop procedure crearPedido 
 as
 begin
+	--declare @id int
 	insert into ERP_Pedidos(Estado,FechaPedido,FechaRecepcion)
 	values('En proceso',GETDATE(),null)
+
+	return @@identity
 end
 go
 begin tran
