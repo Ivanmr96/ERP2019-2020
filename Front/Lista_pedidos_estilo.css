@@ -1,0 +1,190 @@
+/*.menuLatIzq
+{
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+} */
+
+.sidebar-title
+{
+    color: #172B4D;
+}
+
+.ajustes
+{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+}
+
+.btn-navbar
+{
+    margin-left: 4%;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    margin-right: 4%;
+    width: 92%;
+    text-align: center;
+}
+
+.btn-navbar:hover
+{
+    background-color: #F6F9FC;
+}
+
+
+.sidebar
+{
+    background-color: #FFFFFF;
+    color: #172B4D;
+}
+
+.btn-logout:hover
+{
+    color: #7764E4;
+}
+.btn-logout i
+{
+    color: #7764E4;
+}
+
+.btn-compras:hover
+{
+    color: #4AD991;
+}
+.btn-compras i
+{
+    color: #4AD991;
+}
+
+.btn-productos:hover
+{
+    color: #11CDEF;
+}
+.btn-productos i
+{
+    color: #11CDEF;
+}
+
+.btn-inventario:hover
+{
+    color: #FB6340;
+}
+.btn-inventario i
+{
+    color: #FB6340;
+}
+
+.btn-proveedores:hover
+{
+    color: #11CDEF;
+}
+.btn-proveedores i
+{
+    color: #11CDEF;
+}
+
+.btn-ajustes:hover
+{
+    color: #FB6340;
+}
+
+.btn-ajustes i
+{
+    color: #FB6340;
+}
+
+.btn-detalles
+{
+    color: #707070;
+}
+
+.icono-estado-cancelado
+{
+    color: crimson;
+    font-size: 12px;
+}
+
+.icono-estado-recibido
+{
+    color: #2DCE98;
+    font-size: 12px;
+}
+
+.icono-estado-enreparto
+{
+    color: rgb(219, 230, 79);
+    font-size: 12px;
+}
+
+.icono-estado-preparando
+{
+    color: rgb(79, 68, 233);
+    font-size: 12px;
+}
+
+.header
+{
+    color: #8898AA;
+    font-size: 12px;
+}
+
+.table-body
+{
+    color: #172B4D;
+}
+
+.table-body-bold
+{
+    font-weight: bold;
+}
+
+.divSuperior
+{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+}
+
+.divSuperior h4
+{
+    color: #172B4D;
+    font-weight: lighter;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.btn-hacerpedido
+{
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1.5%;
+    margin-left: 3%;
+    border-radius: 25em;
+}
+
+.buscador
+{
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    width: 25%;
+}
+
+.btn-buscador
+{
+    font-size: 20px;
+}
+
+th
+{
+    position: sticky;
+    top: 16.5%;
+    background-color: #F1F3F9;
+    z-index: 1;
+}
