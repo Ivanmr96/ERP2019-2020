@@ -21,5 +21,28 @@ namespace ProyectoERP_API_BL.Handler
             //return new ClsHandlerLineaDePedido_DAL().getOrderLine(codigoProducto, codigoPedido);//Cuando la base de datos se encuentre operativa
             return new clsLineaPedido(101, 1, 2, 1.4, "libra");
         }
+
+        /// <summary>
+        /// Establece el estado del pedido a cancelado.
+        /// </summary>
+        /// <param name="codigoPedido">Codigo del pedido que queremos cancelar.</param>
+        public void cancelarPedido(int codigoPedido) {
+
+            ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
+            handler.cancelarPedido(codigoPedido);
+
+        }
+
+        /// <summary>
+        /// Borra una linea de pedido de un pedido concreto.
+        /// </summary>
+        /// <param name="codigoProducto">Codigo del producto a eliminar</param>
+        /// <param name="codigoPedido">Codigo del pedido.</param>
+        public void borrarLineaPedido(int codigoProducto, int codigoPedido) {
+
+            ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
+            handler.borrarLineaPedido(codigoProducto, codigoPedido);
+
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProyectoERP_API_DAL.Connection;
+using System.Data;
 
 namespace ProyectoERP_API_DAL.Handler
 {
@@ -63,5 +64,60 @@ namespace ProyectoERP_API_DAL.Handler
 
             return lineaDePedido;
         }
+
+        /// <summary>
+        /// Establece el estado del pedido a cancelado.
+        /// </summary>
+        /// <param name="codigoPedido">Codigo del pedido que queremos cancelar.</param>
+        public void cancelarPedido(int codigoPedido) {
+
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            SqlConnection connection = null;
+            try {
+                connection = clsMyConnection.getConnection();
+                SqlCommand cmd = new SqlCommand(
+                "cancelarPedido", connection);
+
+                // Decimos que se trata de un procedure
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Añadimos los parametros al procedure
+                cmd.Parameters.Add(new SqlParameter("@CodigoPedido", codigoPedido));
+                //Ejecutamos el procedimiento.
+                cmd.ExecuteNonQuery();
+            } catch (Exception e) {
+                throw e;
+            }
+            
+        }
+
+        /// <summary>
+        /// Borra una linea de pedido de un pedido concreto.
+        /// </summary>
+        /// <param name="codigoProducto">Codigo del producto a eliminar</param>
+        /// <param name="codigoPedido">Codigo del pedido.</param>
+        public void borrarLineaPedido(int codigoProducto, int codigoPedido) {
+
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            SqlConnection connection = null;
+            try {
+                connection = clsMyConnection.getConnection();
+                SqlCommand cmd = new SqlCommand(
+                "borrarLineaPedido", connection);
+
+                // Decimos que se trata de un procedure
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Añadimos los parametros al procedure
+                cmd.Parameters.Add(new SqlParameter("@codigoProducto", codigoProducto));
+                cmd.Parameters.Add(new SqlParameter("@codigoPedido", codigoPedido));
+                //Ejecutamos el procedimiento.
+                cmd.ExecuteNonQuery();
+            } catch (Exception e) {
+                throw e;
+            }
+
+        }
+
     }
 }
