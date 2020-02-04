@@ -2,3 +2,9 @@ D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug\ProyectoERP_API_Entities.pdb
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.dll
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.pdb
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug\ProyectoERP_API_Entities.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug\ProyectoERP_API_Entities.pdb
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.csprojAssemblyReference.cache
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.csproj.CoreCompileInputs.cache
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.pdb
