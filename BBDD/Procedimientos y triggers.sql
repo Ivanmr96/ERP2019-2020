@@ -122,7 +122,7 @@ go
 	entradas: no hay
 	salidas: el id de pedido que se crea
 	entr/sal: no hay
-	postcondiciones: se incertará un pedido  en la base de datos cone el estado en proceso ,
+	postcondiciones: se incertará un pedido  en la base de datos con el estado Preparando ,
 	la fecha del pedido será la de ese día, la fecha de recepcion estará a null y AN devolverá el id del pedido creado
 */
 create procedure crearPedido 
@@ -130,7 +130,7 @@ as
 begin
 	--declare @id int
 	insert into ERP_Pedidos(Estado,FechaPedido,FechaRecepcion)
-	values('En proceso',GETDATE(),null)
+	values('Preparando',GETDATE(),null)
 
 	return @@identity
 end
@@ -228,6 +228,27 @@ execute cancelarPedido 2
 rollback
 go
 
+
+/*
+	prototipo: create procedure pedidoEnReparto @CodigoPedido int
+	comentarios: este procedimientos sirve para cambiar el estado de un pedido a 'En reparto'
+	precondiciones: codigo del pedido correcto
+	entradas: entero codigo del pedido
+	salidas: no hay
+	entr/sal: no hay
+	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado a 'En reparto'
+*/
+create procedure pedidoEnReparto @CodigoPedido int
+as
+begin
+	begin tran tranCancelarPedido
+		update ERP_Pedidos
+		set Estado='En reparto'
+		from ERP_Pedidos
+		where @CodigoPedido=Codigo and Estado <> 'Recibido' and Estado <> 'Cancelado' and Estado <> 'En reparto'
+	commit 
+end
+go
 /*
 	prototipo: create trigger actualizarFechaRecepcionDelPedido on ERP_Pedidos
 	comentarios: este desencadenador sirve para actualizar la fecha de recepcion de un pedido
