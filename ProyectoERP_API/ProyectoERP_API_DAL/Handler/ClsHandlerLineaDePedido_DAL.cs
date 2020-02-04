@@ -119,5 +119,35 @@ namespace ProyectoERP_API_DAL.Handler
 
         }
 
+        /// <summary>
+        /// Inserta una linea de pedido en un pedido concreto.
+        /// </summary>
+        /// <param name="lineaPedido">Linea de pedido a insertar.</param>
+        public void insertarLineaPedidoEnPedido(clsLineaPedido lineaPedido) {
+
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            SqlConnection connection = null;
+            try {
+                connection = clsMyConnection.getConnection();
+                SqlCommand cmd = new SqlCommand(
+                "crearLineaPedido", connection);
+
+                // Decimos que se trata de un procedure
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Añadimos los parametros al procedure
+                cmd.Parameters.Add(new SqlParameter("@codigoProducto", lineaPedido.CodigoProducto));
+                cmd.Parameters.Add(new SqlParameter("@codigoPedido", lineaPedido.CodigoPedido));
+                cmd.Parameters.Add(new SqlParameter("@cantidad", lineaPedido.Cantidad));
+                cmd.Parameters.Add(new SqlParameter("@precioUnitario", lineaPedido.PrecioUnitario));
+                cmd.Parameters.Add(new SqlParameter("@Divisa", lineaPedido.Divisa));
+                //Ejecutamos el procedimiento.
+                cmd.ExecuteNonQuery();
+            } catch (Exception e) {
+                throw e;
+            }
+
+        }
+
     }
 }

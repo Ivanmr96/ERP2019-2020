@@ -44,5 +44,14 @@ namespace ProyectoERP_API_BL.Handler
             handler.borrarLineaPedido(codigoProducto, codigoPedido);
 
         }
+
+        /// <summary>
+        /// Inserta una linea de pedido en un pedido concreto.
+        /// </summary>
+        /// <param name="lineaPedido">Linea de pedido a insertar.</param>
+        public void insertarLineaPedidoEnPedido(clsLineaPedido lineaPedido) {
+            ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
+            handler.insertarLineaPedidoEnPedido(lineaPedido);
+        }
     }
 }
