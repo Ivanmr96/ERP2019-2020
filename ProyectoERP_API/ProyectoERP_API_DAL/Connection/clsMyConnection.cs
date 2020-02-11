@@ -35,11 +35,11 @@ namespace ProyectoERP_API_DAL.Connection
         public clsMyConnection()
         {
             // this.server = "(local)";
-            this.server = "victormanuel2.database.windows.net";
+            this.server = "personas.database.windows.net";
             //nombre de la base de datos
-            this.dataBase = "PersonasDB";
-            this.user = "victor";
-            this.pass = "mitesoro_97";
+            this.dataBase = "Personas";
+            this.user = "angela";
+            this.pass = "Mitesoro123";
 
         }
         //Con parámetros por si quisiera cambiar las conexiones

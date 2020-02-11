@@ -65,31 +65,6 @@ namespace ProyectoERP_API_DAL.Handler
             return lineaDePedido;
         }
 
-        /// <summary>
-        /// Establece el estado del pedido a cancelado.
-        /// </summary>
-        /// <param name="codigoPedido">Codigo del pedido que queremos cancelar.</param>
-        public void cancelarPedido(int codigoPedido) {
-
-            clsMyConnection clsMyConnection = new clsMyConnection();
-            SqlConnection connection = null;
-            try {
-                connection = clsMyConnection.getConnection();
-                SqlCommand cmd = new SqlCommand(
-                "cancelarPedido", connection);
-
-                // Decimos que se trata de un procedure
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Añadimos los parametros al procedure
-                cmd.Parameters.Add(new SqlParameter("@CodigoPedido", codigoPedido));
-                //Ejecutamos el procedimiento.
-                cmd.ExecuteNonQuery();
-            } catch (Exception e) {
-                throw e;
-            }
-            
-        }
 
         /// <summary>
         /// Borra una linea de pedido de un pedido concreto.

@@ -1,4 +1,5 @@
-﻿using ProyectoERP_API_BL.Lists;
+﻿using ProyectoERP_API_BL.Handler;
+using ProyectoERP_API_BL.Lists;
 using ProyectoERP_API_Entities;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,12 @@ namespace ProyectoERP_API.Controllers
         public clsPedido Get(int id)
         {
             return new ClsListadosPedidos_BL().getPedido(id);
+        }
+
+        //Delete api/Pedidos/{id}
+        public void cancelarPedido(int codigoPedido) {
+            clsOperacionesDePedidos_BL handler = new clsOperacionesDePedidos_BL();
+            handler.cancelarPedido(codigoPedido);
         }
 
     }
