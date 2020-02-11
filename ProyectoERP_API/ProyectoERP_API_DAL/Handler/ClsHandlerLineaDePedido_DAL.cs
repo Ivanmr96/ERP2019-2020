@@ -124,5 +124,42 @@ namespace ProyectoERP_API_DAL.Handler
 
         }
 
+        /// <summary>
+        /// esta funcion inserta el pedido y sus correspondientes lineas de pedido
+        /// </summary>
+        /// <param name="lineaPedido">List<clsLineaPedido> lineaPedido</param>
+        /// <returns>0 si no se ha incertado y 1 si se ha incertado correctamente</returns>
+        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido)
+        {
+            int resultado = 0;
+            int codigoPedido = 0;
+
+            try
+            {
+                clsOperacionesDePedidos_DAL pd = new clsOperacionesDePedidos_DAL();//cuando Diana traslade su metodo a esta misma clase tengo que borrar esta linea
+                codigoPedido = pd.InsertarNuevoPedidoDevolviendoSuCodigo();
+
+                for (int i = 0; i < lineaPedido.Count; i++)
+                {
+                    lineaPedido[i].CodigoPedido = codigoPedido;
+                }
+
+                for (int i = 0; i < lineaPedido.Count; i++)
+                {
+                    if (lineaPedido[i].CodigoPedido == codigoPedido)
+                    {
+
+                        insertarLineaPedidoEnPedido(lineaPedido[i]);
+                        resultado = 1;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return resultado;
+        }
+
     }
 }

@@ -32,5 +32,10 @@ namespace ProyectoERP_API.Controllers
             handler.cancelarPedido(codigoPedido);
         }
 
+        //Post
+        public void Post(List<clsLineaPedido> lineasPedido)
+        {
+            new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido);
+        }
     }
 }

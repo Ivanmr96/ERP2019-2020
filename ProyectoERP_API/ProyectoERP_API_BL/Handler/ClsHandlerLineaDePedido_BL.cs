@@ -42,5 +42,27 @@ namespace ProyectoERP_API_BL.Handler
             ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
             handler.insertarLineaPedidoEnPedido(lineaPedido);
         }
+
+        /// <summary>
+        /// esta funcion inserta el pedido y sus correspondientes lineas de pedido
+        /// </summary>
+        /// <param name="lineaPedido">List<clsLineaPedido> lineaPedido</param>
+        /// <returns>0 si no se ha incertado y 1 si se ha incertado correctamente</returns>
+        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido)
+        {
+            int resultado = 0;
+
+            try
+            {
+                ClsHandlerLineaDePedido_DAL hdp = new ClsHandlerLineaDePedido_DAL();
+
+                resultado = hdp.insertarPedidoCompleto(lineaPedido);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return resultado;
+        }
     }
 }
