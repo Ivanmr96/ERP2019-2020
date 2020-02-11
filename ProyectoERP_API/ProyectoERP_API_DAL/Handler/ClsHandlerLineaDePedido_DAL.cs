@@ -136,8 +136,8 @@ namespace ProyectoERP_API_DAL.Handler
 
             try
             {
-                clsOperacionesDePedidos_DAL pd = new clsOperacionesDePedidos_DAL();//cuando Diana traslade su metodo a esta misma clase tengo que borrar esta linea
-                codigoPedido = pd.InsertarNuevoPedidoDevolviendoSuCodigo();
+                //clsOperacionesDePedidos_DAL pd = new clsOperacionesDePedidos_DAL();//cuando Diana traslade su metodo a esta misma clase tengo que borrar esta linea
+                //codigoPedido = pd.InsertarNuevoPedidoDevolviendoSuCodigo();
 
                 for (int i = 0; i < lineaPedido.Count; i++)
                 {
@@ -160,6 +160,58 @@ namespace ProyectoERP_API_DAL.Handler
             }
             return resultado;
         }
+
+        //Método Diana
+
+        /// <summary>
+        ///  Método que actualiza un línea de pedido según el código de producto y el código de pedido
+        /// </summary>
+        /// <param name="codigoProducto">int con código del producto a cuya línea se va a modificar</param>
+        /// <param name="codigoPedido">int con código del pedido cuya línea se va a modificar</param>
+        /// <param name="lineaPedidoAModificar">Objeto clsLineaPedido que se va a modificar</param>
+        /// <returns>int filasAfectadas</returns>
+        public int ActualizarLineaPedidoPorIdProductoIdPedido(int codigoProducto, int codigoPedido, clsLineaPedido lineaPedidoAModificar)
+        {
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            SqlConnection connection = null;
+            SqlCommand command = new SqlCommand();
+            int filasAfectadas = 0;
+
+            try
+            {
+                connection = clsMyConnection.getConnection();
+                command.Connection = connection;
+                command.Parameters.Add("@codigoProducto", System.Data.SqlDbType.Int).Value = codigoProducto;
+                command.Parameters.Add("@codigoPedido", System.Data.SqlDbType.Int).Value = codigoPedido;
+                command.Parameters.Add("@cantidad", System.Data.SqlDbType.TinyInt).Value = lineaPedidoAModificar.Cantidad;
+                command.Parameters.Add("@precioUnitario", System.Data.SqlDbType.Money).Value = lineaPedidoAModificar.PrecioUnitario;
+                command.Parameters.Add("@divisa", System.Data.SqlDbType.VarChar).Value = lineaPedidoAModificar.Divisa;
+
+                command.CommandText = "UPDATE ERP_LineaPedidos SET " +
+                                        "CodigoPedido = @codigoPedido, " +
+                                        "Cantidad = @cantidad, " +
+                                        "PrecioUnitario = @precioUnitario, " +
+                                        "Divisa = " +
+                                        "WHERE CodigoProducto = @codigoProducto AND CodigoPedido = @codigoPedido";
+
+                filasAfectadas = command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    clsMyConnection.closeConnection(ref connection);
+                }
+            }
+
+            return filasAfectadas;
+
+        }
+
 
     }
 }

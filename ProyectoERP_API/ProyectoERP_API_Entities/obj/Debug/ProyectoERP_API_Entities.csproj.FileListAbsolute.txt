@@ -8,3 +8,8 @@ C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\Proyecto
 C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.csproj.CoreCompileInputs.cache
 C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.dll
 C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.pdb
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug\ProyectoERP_API_Entities.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Debug\ProyectoERP_API_Entities.pdb
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.csproj.CoreCompileInputs.cache
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Debug\ProyectoERP_API_Entities.pdb

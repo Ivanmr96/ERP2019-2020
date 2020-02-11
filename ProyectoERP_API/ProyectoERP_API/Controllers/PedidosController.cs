@@ -28,7 +28,7 @@ namespace ProyectoERP_API.Controllers
 
         //Delete api/Pedidos/{id}
         public void cancelarPedido(int codigoPedido) {
-            clsOperacionesDePedidos_BL handler = new clsOperacionesDePedidos_BL();
+            ClsHandlerPedidos_BL handler = new ClsHandlerPedidos_BL();
             handler.cancelarPedido(codigoPedido);
         }
 
@@ -36,6 +36,26 @@ namespace ProyectoERP_API.Controllers
         public void Post(List<clsLineaPedido> lineasPedido)
         {
             new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido);
+        }
+
+        //Métodos Diana:
+
+        // POST: api/Pedidos
+        public int Post()
+        {
+            return new ClsHandlerPedidos_BL().InsertarNuevoPedido();
+        }
+
+        // PUT: api/Pedidos?codigoPedido=1&estadoPedido=recibido
+        public int Put(int codigoPedido, string estadoPedido) //Actualizar estado en general
+        {
+            return new ClsHandlerPedidos_BL().ActualizarEstadoPedido(codigoPedido, estadoPedido);
+        }
+
+        // PUT: api/Pedidos?codigoPedido=1
+        public int Put(int codigoPedido) //Recibir pedido
+        {
+            return new ClsHandlerPedidos_BL().RecibirPedido(codigoPedido);
         }
     }
 }
