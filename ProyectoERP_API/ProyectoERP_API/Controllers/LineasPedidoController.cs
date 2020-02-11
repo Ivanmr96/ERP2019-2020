@@ -24,5 +24,17 @@ namespace ProyectoERP_API.Controllers
         {
             return new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
         }
+
+        //Delete: api/LineasPedido
+        public void Delete(int codigoProducto, int codigoPedido) {
+            ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
+            handler.borrarLineaPedido(codigoProducto, codigoPedido);
+        }
+
+        //Post
+        public void Post(clsLineaPedido lineaPedido) {
+            ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
+            handler.insertarLineaPedidoEnPedido(lineaPedido);
+        }
     }
 }
