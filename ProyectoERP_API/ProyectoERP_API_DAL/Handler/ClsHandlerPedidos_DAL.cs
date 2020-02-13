@@ -22,7 +22,7 @@ namespace ProyectoERP_API_DAL.Handler
             clsMyConnection clsMyConnection = new clsMyConnection();
             SqlConnection connection = null;
             SqlCommand command;
-            var codigoNuevoPedido = 0;
+            //var codigoNuevoPedido = 0;
             Int32 result = 0;
             try
             {
