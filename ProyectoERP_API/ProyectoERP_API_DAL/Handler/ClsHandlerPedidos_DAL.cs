@@ -21,20 +21,28 @@ namespace ProyectoERP_API_DAL.Handler
         {
             clsMyConnection clsMyConnection = new clsMyConnection();
             SqlConnection connection = null;
-            SqlCommand command = new SqlCommand();
-            int codigoNuevoPedido = 0;
-
+            SqlCommand command;
+            var codigoNuevoPedido = 0;
+            Int32 result = 0;
             try
             {
                 connection = clsMyConnection.getConnection();
-                command.Connection = connection;
+                //command.Connection = connection;
                 //Se le pasa el nombre del procedimiento a ejecutar
-                command.CommandText = "crearPedido";
+                //command.CommandText = "crearPedido";
                 //Para que llame al procedimiento almacenado
+                //command.CommandType = CommandType.StoredProcedure;
+
+                command = new SqlCommand("crearPedido", connection);
                 command.CommandType = CommandType.StoredProcedure;
 
+                var returnParameter = command.Parameters.Add("@ReturnVal", SqlDbType.Int);
+
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+
                 //Devuelve la primera columna de la primera fila insertada, en nuestro caso el código del pedido
-                codigoNuevoPedido = Convert.ToInt32(command.ExecuteScalar());
+                command.ExecuteNonQuery();
+                result = (int)returnParameter.Value;
 
             }
             catch (Exception e)
@@ -49,7 +57,7 @@ namespace ProyectoERP_API_DAL.Handler
                 }
             }
 
-            return codigoNuevoPedido;
+            return result;
         }
                 
         /// <summary>

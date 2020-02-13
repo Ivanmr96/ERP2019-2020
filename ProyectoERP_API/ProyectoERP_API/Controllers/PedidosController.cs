@@ -33,7 +33,7 @@ namespace ProyectoERP_API.Controllers
         }
 
         //Post
-        public void Post(List<clsLineaPedido> lineasPedido)
+        public void Post([FromBody]List<clsLineaPedido> lineasPedido)
         {
             new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido);
         }
