@@ -41,10 +41,10 @@ namespace ProyectoERP_API.Controllers
         //Métodos Diana:
 
         // POST: api/Pedidos
-        public int Post()
-        {
-            return new ClsHandlerPedidos_BL().InsertarNuevoPedido();
-        }
+        //public int Post()
+        //{
+        //    return new ClsHandlerPedidos_BL().InsertarNuevoPedido();
+        //}
 
         // PUT: api/Pedidos?codigoPedido=1&estadoPedido=recibido
         public int Put(int codigoPedido, string estadoPedido) //Actualizar estado en general
