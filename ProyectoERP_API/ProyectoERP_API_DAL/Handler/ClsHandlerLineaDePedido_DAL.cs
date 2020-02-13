@@ -136,8 +136,8 @@ namespace ProyectoERP_API_DAL.Handler
 
             try
             {
-                //clsOperacionesDePedidos_DAL pd = new clsOperacionesDePedidos_DAL();//cuando Diana traslade su metodo a esta misma clase tengo que borrar esta linea
-                //codigoPedido = pd.InsertarNuevoPedidoDevolviendoSuCodigo();
+                ClsHandlerPedidos_DAL hp=new ClsHandlerPedidos_DAL();//cuando Diana traslade su metodo a esta misma clase tengo que borrar esta linea
+                codigoPedido = hp.InsertarNuevoPedido();
 
                 for (int i = 0; i < lineaPedido.Count; i++)
                 {
