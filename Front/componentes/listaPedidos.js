@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html>
+Vue.component('listapedidoscomponent', {
 
-    <head>
-        <title>Lista de pedidos</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-        <link rel="stylesheet" href="bootstrap.css"/>
-        <link rel="stylesheet" href="Lista_pedidos_estilo.css"/>
-    </head>
-
-    <body>
-        <div class="menuLatIzq w3-sidebar w3-bar-block sidebar" style="width:13%">
-            <h3 class="w3-bar-item sidebar-title text-center">ERP COMPADRE</h3>
-            <a href="#" class="btn-navbar btn btn-logout text-left"><i data-toggle="tooltip" title="Logout" class="material-icons align-bottom">home</i> Log out</a>
-            <a href="#" class="btn btn-navbar btn-compras text-left"><i data-toggle="tooltip" title="Compras" class="material-icons align-bottom">shopping_cart</i> Compras</a>
-            <a href="#" class="btn btn-navbar btn-productos text-left"><i data-toggle="tooltip" title="Productos" class="material-icons align-bottom">crop_din</i> Productos</a>
-            <a href="#" class="btn btn-navbar btn-inventario text-left"><i data-toggle="tooltip" title="Inventario" class="material-icons align-bottom">list_alt</i> Inventario</a>
-            <a href="#" class="btn btn-navbar btn-proveedores text-left"><i data-toggle="tooltip" title="Proveedores" class="material-icons align-bottom">person</i> Proveedores</a>
-            <a href="#" class="btn ajustes btn-navbar btn-ajustes text-left"><i data-toggle="tooltip" title="Ajustes" class="material-icons align-bottom">settings</i> Ajustes</a>
-        </div>
-
-          
-        <div style="margin-left:14%">
+    template:
+    ` 
+    <div style="margin-left:14%">
 
             <div class="row justify-content-center">
 
@@ -361,34 +341,6 @@
                             <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
                         </tr>
 
-
-                        <!-- V-IF: Si el array de personas no es undefined y tiene más de una persona -->
-                        <!-- V-FOR: Recorre el array de personas, de modo que se realiza una fila con los atributos de la persona por cada una de ellas -->
-                        <template v-if="personas != undefined && personas.length > 0" v-for="persona of personas">
-
-                            <tr>
-                                <td>{{persona.NombrePersona}}</td>
-                                <td>{{persona.ApellidosPersona}}</td>
-                                <td>{{persona.FechaNacimientoPersona}}</td>
-                                <td>{{persona.IDDepartamento}}</td>
-                                <td>{{persona.TelefonoPersona}}</td>
-                            </tr>
-                        </template> 
-
-                        <!-- Si el listado de personas no es undefined y no entro en el if superior, significa que solo hay una persona -->
-                        <!-- En este caso no se recorre ya que NO es un array -->
-                        <template v-if="personas != undefined">
-
-                            <tr>
-                                <td>{{personas.NombrePersona}}</td>
-                                <td>{{personas.ApellidosPersona}}</td>
-                                <td>{{personas.FechaNacimientoPersona}}</td>
-                                <td>{{personas.IDDepartamento}}</td>
-                                <td>{{personas.TelefonoPersona}}</td>
-                            </tr>
-
-                        </template>
-
                     </tbody>
 
                 </table>
@@ -396,5 +348,5 @@
             </div>
             
         </div>
-    </body>
-</html>
+    `
+})
