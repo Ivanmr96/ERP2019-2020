@@ -14,9 +14,16 @@ namespace ProyectoERP_API.Controllers
     {
 
         //Get: api/LineasPedido?codigoPedido=15
-        public IEnumerable<clsLineaPedido> Get(string codigoPedido)
+        public IEnumerable<clsLineaPedido> Get(int codigoPedido)
         {
-            return new ClsListadosLineaDePedidos_BL().getLineasPedidoDeUnPedido(Int32.Parse(codigoPedido));
+            List<clsLineaPedido> lineasPedidoDeUnPedido = new ClsListadosLineaDePedidos_BL().getLineasPedidoDeUnPedido(codigoPedido);
+
+            if (lineasPedidoDeUnPedido.Count == 0 || lineasPedidoDeUnPedido == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            return lineasPedidoDeUnPedido;
         }
 
         //Get: api/LineasPedido?codigoProducto=15&codigoPedido=2

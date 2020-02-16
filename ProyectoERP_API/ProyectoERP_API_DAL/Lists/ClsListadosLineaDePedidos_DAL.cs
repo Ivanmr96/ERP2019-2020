@@ -24,6 +24,7 @@ namespace ProyectoERP_API_DAL.Lists
 
             try
             {
+                connection = miConexion.getConnection();
                 command.Parameters.AddWithValue("@codigoPedido", codigoPedido);
                 command.CommandText = "SELECT * FROM ERP_LineaPedidos WHERE CodigoPedido = @codigoPedido ";
                 command.Connection = connection;
@@ -40,12 +41,12 @@ namespace ProyectoERP_API_DAL.Lists
 
                         if (!dataReader.IsDBNull(dataReader.GetOrdinal("Cantidad")))
                         {
-                            lineaPedido.Cantidad = (int)dataReader["Cantidad"];
+                            lineaPedido.Cantidad = (Byte)dataReader["Cantidad"];    //esto tiene que ser asi, con (int) no va y PETA
                         }
 
                         if (!dataReader.IsDBNull(dataReader.GetOrdinal("PrecioUnitario")))
                         {
-                            lineaPedido.PrecioUnitario = (double)dataReader["PrecioUnitario"];
+                            lineaPedido.PrecioUnitario = (double)(Decimal)dataReader["PrecioUnitario"];
                         }
 
                         listadoLineasPedido.Add(lineaPedido);

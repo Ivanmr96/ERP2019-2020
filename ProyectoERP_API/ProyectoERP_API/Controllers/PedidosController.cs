@@ -16,14 +16,29 @@ namespace ProyectoERP_API.Controllers
         //Get: api/Pedidos
         public IEnumerable<clsPedido> Get()
         {
-            return new ClsListadosPedidos_BL().getPedidosList();
+            List<clsPedido> listaPedidos = new ClsListadosPedidos_BL().getPedidosList();
+
+            if (listaPedidos.Count == 0 || listaPedidos == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+
+
+            return listaPedidos;
         }
 
 
         //Get: api/Pedidos/15
         public clsPedido Get(int id)
         {
-            return new ClsListadosPedidos_BL().getPedido(id);
+            clsPedido pedido = new ClsListadosPedidos_BL().getPedido(id);
+
+            if(pedido.Codigo == 0 )
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            
+            return pedido;
         }
 
         //Delete api/Pedidos/{id}
