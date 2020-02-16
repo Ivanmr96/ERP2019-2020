@@ -89,3 +89,279 @@ D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\Proyecto
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csproj.CopyComplete
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.dll
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.pdb
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.dll.config
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.pdb
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.exe
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.exe.config
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.rsp
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.exe
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.exe.config
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.rsp
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.AppContext.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Console.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Compression.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Pipes.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Claims.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.ValueTuple.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.exe
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.exe.config
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.rsp
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\VBCSCompiler.exe
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Newtonsoft.Json.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_BL.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_Entities.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Net.Http.Formatting.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Helpers.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.WebHost.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Mvc.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Razor.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Deployment.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Razor.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_DAL.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_BL.pdb
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_Entities.pdb
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Razor.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Deployment.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Razor.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Helpers.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Mvc.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Newtonsoft.Json.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Net.Http.Formatting.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.WebHost.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_DAL.pdb
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Razor.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Helpers.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Mvc.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Http.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csprojAssemblyReference.cache
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csproj.CoreCompileInputs.cache
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csproj.CopyComplete
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.dll
+C:\Users\ymcampanario\Desktop\ERP - Github\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.pdb
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.dll.config
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.pdb
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.exe
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.exe.config
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.rsp
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.exe
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.exe.config
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.rsp
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.AppContext.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Console.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Compression.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Pipes.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Claims.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.ValueTuple.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XPath.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.exe
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.exe.config
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.rsp
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\VBCSCompiler.exe
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Newtonsoft.Json.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_BL.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_Entities.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Net.Http.Formatting.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Helpers.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.WebHost.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Mvc.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Razor.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Deployment.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Razor.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_DAL.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_BL.pdb
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_Entities.pdb
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Razor.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Deployment.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Razor.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Helpers.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Mvc.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Newtonsoft.Json.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Net.Http.Formatting.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.WebHost.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_DAL.pdb
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Razor.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Helpers.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Mvc.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Http.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csprojAssemblyReference.cache
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csproj.CoreCompileInputs.cache
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csproj.CopyComplete
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.dll
+C:\Users\dianb\Desktop\DAM_GitHub\Trabajos en Grupo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.dll.config
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.Web.Infrastructure.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Newtonsoft.Json.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_BL.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_Entities.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Net.Http.Formatting.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Helpers.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.WebHost.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Mvc.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Razor.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Deployment.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Razor.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_DAL.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_BL.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_Entities.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Razor.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Deployment.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Webpages.Razor.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Helpers.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Mvc.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Newtonsoft.Json.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Net.Http.Formatting.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\System.Web.Http.WebHost.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\ProyectoERP_API_DAL.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Razor.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.Deployment.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Webpages.Razor.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Helpers.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Mvc.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Net.Http.Formatting.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Http.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\es\System.Web.Http.WebHost.resources.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csprojAssemblyReference.cache
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csproj.CoreCompileInputs.cache
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.csproj.CopyComplete
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Debug\ProyectoERP_API.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.exe
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.exe.config
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csc.rsp
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.exe
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.exe.config
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\csi.rsp
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.Managed.Core.targets
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.AppContext.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Collections.Immutable.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Console.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Compression.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.FileSystem.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.IO.Pipes.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Reflection.Metadata.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.AccessControl.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Claims.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Security.Principal.Windows.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.ValueTuple.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XmlDocument.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XPath.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.exe
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.exe.config
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\vbc.rsp
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\VBCSCompiler.exe
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\bin\roslyn\VBCSCompiler.exe.config

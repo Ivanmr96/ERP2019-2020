@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProyectoERP_API_DAL</RootNamespace>
     <AssemblyName>ProyectoERP_API_DAL</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +47,7 @@
     <Compile Include="Connection\clsMyConnection.cs" />
     <Compile Include="Handler\Class1.cs" />
     <Compile Include="Handler\ClsHandlerLineaDePedido_DAL.cs" />
+    <Compile Include="Handler\ClsHandlerPedidos_DAL.cs" />
     <Compile Include="Lists\Class1.cs" />
     <Compile Include="Lists\ClsListadosLineaDePedidos_DAL.cs" />
     <Compile Include="Lists\ClsListadosPedidos_DAL.cs" />
