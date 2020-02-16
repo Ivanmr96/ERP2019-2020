@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Lista de pedidos</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="bootstrap.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="vuex.js"></script>
+        <script src="componentes/menu.js"></script>
+        <script src="componentes/listaPedidos.js"></script>
+        <script src="componentes/component.js"></script>
+        <script src="componentes/proveedores.js"></script>
+        <script src="componentes/productos.js"></script>
+        <script src="componentes/inventario.js"></script>
+        <script src="componentes/ajustes.js"></script>
+        <link rel="stylesheet" href="Lista_pedidos_estilo.css"/>
+        
+    </head>
+
+    <body>
+        <div id="app">
+            <menucomponent ></menucomponent>
+            <component :is="$store.state.currentComponent"></component>
+            <!-- <p> {{ $store.state.currentComponent }}</p> -->
+        </div>
+
+        <script src="store.js"></script>
+        <script src="vue.js"></script>
+    </body>
+</html>
