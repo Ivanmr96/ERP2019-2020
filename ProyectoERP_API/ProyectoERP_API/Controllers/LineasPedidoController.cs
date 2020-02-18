@@ -41,15 +41,29 @@ namespace ProyectoERP_API.Controllers
         }
 
         //Delete: api/LineasPedido
-        public void Delete(int codigoProducto, int codigoPedido) {
+        public int Delete(int codigoProducto, int codigoPedido) {
+            int filas = 0;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
-            handler.borrarLineaPedido(codigoProducto, codigoPedido);
+            filas = handler.borrarLineaPedido(codigoProducto, codigoPedido);
+
+            if (filas == 0) { //Si no devuelve filas decimos que no ha encontrado destino.
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            return filas;
         }
 
         //Post
-        public void Post(clsLineaPedido lineaPedido) {
+        public int Post(clsLineaPedido lineaPedido) {
+            int filas;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
-            handler.insertarLineaPedidoEnPedido(lineaPedido);
+            filas = handler.insertarLineaPedidoEnPedido(lineaPedido);
+
+            if (filas == 0) {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            return filas;
         }
     }
 }

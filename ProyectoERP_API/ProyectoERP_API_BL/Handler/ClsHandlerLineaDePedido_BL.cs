@@ -25,22 +25,26 @@ namespace ProyectoERP_API_BL.Handler
         /// <summary>
         /// Borra una linea de pedido de un pedido concreto.
         /// </summary>
-        /// <param name="codigoProducto">Codigo del producto a eliminar</param>
-        /// <param name="codigoPedido">Codigo del pedido.</param>
-        public void borrarLineaPedido(int codigoProducto, int codigoPedido) {
-
+        /// <param name="codigoProducto">Codigo del producto</param>
+        /// <param name="codigoPedido">Codigo del pedido</param>
+        /// <returns>Numero de filas afectadas</returns>
+        public int borrarLineaPedido(int codigoProducto, int codigoPedido) {
+            int filas = 0;
             ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
-            handler.borrarLineaPedido(codigoProducto, codigoPedido);
-
+            filas = handler.borrarLineaPedido(codigoProducto, codigoPedido);
+            return filas;
         }
 
         /// <summary>
         /// Inserta una linea de pedido en un pedido concreto.
         /// </summary>
-        /// <param name="lineaPedido">Linea de pedido a insertar.</param>
-        public void insertarLineaPedidoEnPedido(clsLineaPedido lineaPedido) {
+        /// <param name="lineaPedido">Linea de pedido a insertar</param>
+        /// <returns>Numero de filas afectadas</returns>
+        public int insertarLineaPedidoEnPedido(clsLineaPedido lineaPedido) {
+            int filas;
             ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
-            handler.insertarLineaPedidoEnPedido(lineaPedido);
+            filas = handler.insertarLineaPedidoEnPedido(lineaPedido);
+            return filas;
         }
 
         /// <summary>

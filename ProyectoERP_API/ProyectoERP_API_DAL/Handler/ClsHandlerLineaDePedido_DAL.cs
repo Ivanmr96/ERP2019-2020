@@ -69,10 +69,11 @@ namespace ProyectoERP_API_DAL.Handler
         /// <summary>
         /// Borra una linea de pedido de un pedido concreto.
         /// </summary>
-        /// <param name="codigoProducto">Codigo del producto a eliminar</param>
-        /// <param name="codigoPedido">Codigo del pedido.</param>
-        public void borrarLineaPedido(int codigoProducto, int codigoPedido) {
-
+        /// <param name="codigoProducto">Codigo del producto</param>
+        /// <param name="codigoPedido">Codigo del pedido</param>
+        /// <returns>Numero de filas afectadas</returns>
+        public int borrarLineaPedido(int codigoProducto, int codigoPedido) {
+            int filas = 0;
             clsMyConnection clsMyConnection = new clsMyConnection();
             SqlConnection connection = null;
             try {
@@ -87,19 +88,20 @@ namespace ProyectoERP_API_DAL.Handler
                 cmd.Parameters.Add(new SqlParameter("@codigoProducto", codigoProducto));
                 cmd.Parameters.Add(new SqlParameter("@codigoPedido", codigoPedido));
                 //Ejecutamos el procedimiento.
-                cmd.ExecuteNonQuery();
+                filas = cmd.ExecuteNonQuery();
             } catch (Exception e) {
                 throw e;
             }
-
+            return filas;
         }
 
         /// <summary>
         /// Inserta una linea de pedido en un pedido concreto.
         /// </summary>
-        /// <param name="lineaPedido">Linea de pedido a insertar.</param>
-        public void insertarLineaPedidoEnPedido(clsLineaPedido lineaPedido) {
-
+        /// <param name="lineaPedido">Linea de pedido a insertar</param>
+        /// <returns>Numero de filas afectadas</returns>
+        public int insertarLineaPedidoEnPedido(clsLineaPedido lineaPedido) {
+            int filas = 0;
             clsMyConnection clsMyConnection = new clsMyConnection();
             SqlConnection connection = null;
             try {
@@ -117,11 +119,11 @@ namespace ProyectoERP_API_DAL.Handler
                 cmd.Parameters.Add(new SqlParameter("@precioUnitario", lineaPedido.PrecioUnitario));
                 cmd.Parameters.Add(new SqlParameter("@Divisa", lineaPedido.Divisa));
                 //Ejecutamos el procedimiento.
-                cmd.ExecuteNonQuery();
+                 filas = cmd.ExecuteNonQuery();
             } catch (Exception e) {
                 throw e;
             }
-
+            return filas;
         }
 
         /// <summary>

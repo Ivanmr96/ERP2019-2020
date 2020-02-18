@@ -62,11 +62,12 @@ namespace ProyectoERP_API_BL.Handler
         /// <summary>
         /// Establece el estado del pedido a cancelado.
         /// </summary>
-        /// <param name="codigoPedido">Codigo del pedido que queremos cancelar.</param>
-        public void cancelarPedido(int codigoPedido)
+        /// <param name="codigoPedido">Codigo del pedido a cancelar</param>
+        /// <returns></returns>
+        public int cancelarPedido(int codigoPedido)
         {
             ClsHandlerPedidos_DAL handler = new ClsHandlerPedidos_DAL();
-            handler.cancelarPedido(codigoPedido);
+            return handler.cancelarPedido(codigoPedido);
         }
 
     }

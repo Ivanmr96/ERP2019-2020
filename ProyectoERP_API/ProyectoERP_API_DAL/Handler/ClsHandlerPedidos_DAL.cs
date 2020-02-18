@@ -149,9 +149,9 @@ namespace ProyectoERP_API_DAL.Handler
         /// Establece el estado del pedido a cancelado.
         /// </summary>
         /// <param name="codigoPedido">Codigo del pedido que queremos cancelar.</param>
-        public void cancelarPedido(int codigoPedido)
+        public int cancelarPedido(int codigoPedido)
         {
-
+            int filas;
             clsMyConnection clsMyConnection = new clsMyConnection();
             SqlConnection connection = null;
             try
@@ -166,13 +166,13 @@ namespace ProyectoERP_API_DAL.Handler
                 // Añadimos los parametros al procedure
                 cmd.Parameters.Add(new SqlParameter("@CodigoPedido", codigoPedido));
                 //Ejecutamos el procedimiento.
-                cmd.ExecuteNonQuery();
+                filas = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
                 throw e;
             }
-
+            return filas;
         }
 
     }
