@@ -39,11 +39,15 @@ namespace ProyectoERP_API_DAL.Handler
 
                 if (miLector.HasRows)
                 {
+                    miLector.Read();
                     lineaDePedido = new clsLineaPedido();
+                    //lineaDePedido.CodigoProducto = codigoProducto;
                     lineaDePedido.CodigoProducto = (int)miLector["CodigoProducto"];
-                    lineaDePedido.CodigoPedido = (int)miLector["CodigoPedido"];
-                    lineaDePedido.Cantidad = (int)miLector["Cantidad"];
-                    lineaDePedido.PrecioUnitario = (miLector["PrecioUnitario"] is DBNull) ? 0.0 : (double)miLector["PrecioUnitario"];
+                    lineaDePedido.CodigoPedido = codigoPedido;
+                    //lineaDePedido.CodigoPedido = (int)miLector["CodigoPedido"];
+                    
+                    lineaDePedido.PrecioUnitario = (miLector["PrecioUnitario"] is DBNull) ? 0.0 : Convert.ToDouble(miLector["PrecioUnitario"]);
+                    lineaDePedido.Cantidad = Convert.ToInt32(miLector["Cantidad"]);
                 }
             }
             catch (Exception e)

@@ -18,8 +18,8 @@ namespace ProyectoERP_API_BL.Handler
         /// <returns>Devuelve un tipo clsLineaPedido</returns>
         public clsLineaPedido getOrderLine(int codigoProducto, int codigoPedido)
         {
-            //return new ClsHandlerLineaDePedido_DAL().getOrderLine(codigoProducto, codigoPedido);//Cuando la base de datos se encuentre operativa
-            return new clsLineaPedido(101, 1, 2, 1.4, "libra");
+            return new ClsHandlerLineaDePedido_DAL().getOrderLine(codigoProducto, codigoPedido);//Cuando la base de datos se encuentre operativa
+            //return new clsLineaPedido(101, 1, 2, 1.4, "libra");
         }
 
         /// <summary>

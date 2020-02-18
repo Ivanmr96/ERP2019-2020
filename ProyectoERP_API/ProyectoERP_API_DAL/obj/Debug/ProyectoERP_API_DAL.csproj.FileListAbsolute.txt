@@ -33,3 +33,12 @@ D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_AP
 D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csproj.CopyComplete
 D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.dll
 D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.pdb
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_DAL.dll
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_DAL.pdb
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_Entities.dll
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_Entities.pdb
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csprojAssemblyReference.cache
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csproj.CoreCompileInputs.cache
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csproj.CopyComplete
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.dll
+C:\Users\ymcampanario\Desktop\ERP_Act\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.pdb
