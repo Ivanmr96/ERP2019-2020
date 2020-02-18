@@ -65,5 +65,20 @@ namespace ProyectoERP_API.Controllers
 
             return filas;
         }
+
+        //Método Diana
+
+        //PUT: api/LineasPedido?codigoProducto=2&codigoPedido=4&nuevaCantidad=5
+        public int Put(int codigoProducto, int codigoPedido, int nuevaCantidad)
+        {
+            int filasAfectadas = new ClsHandlerLineaDePedido_BL().ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, nuevaCantidad);
+
+            if (filasAfectadas == 0)
+            {
+                throw new HttpResponseException(HttpStatusCode.InternalServerError); //500
+            }
+
+            return filasAfectadas;
+        }
     }
 }

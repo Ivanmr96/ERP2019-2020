@@ -61,16 +61,40 @@ namespace ProyectoERP_API.Controllers
         //    return new ClsHandlerPedidos_BL().InsertarNuevoPedido();
         //}
 
-        // PUT: api/Pedidos?codigoPedido=1&estadoPedido=recibido
+        // PUT: api/Pedidos?codigoPedido=10&estadoPedido=Recibido
         public int Put(int codigoPedido, string estadoPedido) //Actualizar estado en general
         {
-            return new ClsHandlerPedidos_BL().ActualizarEstadoPedido(codigoPedido, estadoPedido);
+            int filasAfectadas = -1;
+
+            //Si la cadena de estadoPedido coincide excatamente con la de la BD
+            if (estadoPedido.Equals("Preparando") || estadoPedido.Equals("Cancelado") || estadoPedido.Equals("Recibido") || estadoPedido.Equals("En reparto"))
+            {
+                filasAfectadas = new ClsHandlerPedidos_BL().ActualizarEstadoPedido(codigoPedido, estadoPedido);
+
+                if (filasAfectadas == 0)
+                {
+                    throw new HttpResponseException(HttpStatusCode.InternalServerError); //500
+                }
+            }
+            else
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest); //400
+            }
+
+            return filasAfectadas;
         }
 
         // PUT: api/Pedidos?codigoPedido=1
         public int Put(int codigoPedido) //Recibir pedido
         {
-            return new ClsHandlerPedidos_BL().RecibirPedido(codigoPedido);
+            int filasAfectadas = new ClsHandlerPedidos_BL().RecibirPedido(codigoPedido);
+
+            if (filasAfectadas == 0)
+            {
+                throw new HttpResponseException(HttpStatusCode.InternalServerError); //500
+            }
+
+            return filasAfectadas;
         }
     }
 }
