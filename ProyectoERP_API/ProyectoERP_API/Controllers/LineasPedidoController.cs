@@ -29,7 +29,15 @@ namespace ProyectoERP_API.Controllers
         //Get: api/LineasPedido?codigoProducto=15&codigoPedido=2
         public clsLineaPedido Get(string codigoProducto, string codigoPedido)
         {
-            return new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
+            clsLineaPedido lineasDePedido = new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
+
+            if (lineasDePedido == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            return lineasDePedido;
+            //return new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
         }
 
         //Delete: api/LineasPedido

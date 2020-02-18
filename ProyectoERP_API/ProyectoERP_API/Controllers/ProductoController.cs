@@ -14,7 +14,14 @@ namespace ProyectoERP_API.Controllers
         //Get: api/Producto
         public IEnumerable<clsProducto> Get()
         {
-            return new ClsListadosProductos_BL().getProductList();
+            List<clsProducto> listadoProductos = new ClsListadosProductos_BL().getProductList();
+           
+            if (listadoProductos == null || listadoProductos.Count == 0)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+            return listadoProductos;
+            //return new ClsListadosProductos_BL().getProductList();
         }
     }
 }

@@ -14,7 +14,14 @@ namespace ProyectoERP_API.Controllers
         //Get: api/Proveedor
         public IEnumerable<clsProveedor> Get()
         {
-            return new ClsListadosProveedores_BL().getSupplierList();
+            List<clsProveedor> listadoProveedores = new ClsListadosProveedores_BL().getSupplierList();
+
+            if (listadoProveedores == null || listadoProveedores.Count == 0)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+            return listadoProveedores;
+            //return new ClsListadosProveedores_BL().getSupplierList();
         }
     }
 }
