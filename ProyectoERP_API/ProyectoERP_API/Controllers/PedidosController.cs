@@ -42,7 +42,7 @@ namespace ProyectoERP_API.Controllers
         }
 
         //Delete api/Pedidos/{id}
-        public void cancelarPedido(int codigoPedido) {
+        public void Delete(int codigoPedido) {
             ClsHandlerPedidos_BL handler = new ClsHandlerPedidos_BL();
             handler.cancelarPedido(codigoPedido);
         }
