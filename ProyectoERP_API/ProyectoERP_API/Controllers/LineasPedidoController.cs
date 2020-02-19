@@ -40,7 +40,7 @@ namespace ProyectoERP_API.Controllers
             //return new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
         }
 
-        //Delete: api/LineasPedido
+        //Delete: api/LineasPedido?codigoProducto=15&codigoPedido=2
         public int Delete(int codigoProducto, int codigoPedido) {
             int filas = 0;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
@@ -54,7 +54,7 @@ namespace ProyectoERP_API.Controllers
         }
 
         //Post
-        public int Post(clsLineaPedido lineaPedido) {
+        public int Post([FromBody]clsLineaPedido lineaPedido) {
             int filas;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
             filas = handler.insertarLineaPedidoEnPedido(lineaPedido);

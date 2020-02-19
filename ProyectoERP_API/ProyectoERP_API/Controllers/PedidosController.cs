@@ -84,10 +84,10 @@ namespace ProyectoERP_API.Controllers
             return filasAfectadas;
         }
 
-        // PUT: api/Pedidos?codigoPedido=1
-        public int Put(int codigoPedido) //Recibir pedido
+        // PUT: api/Pedidos/{idPedido}
+        public int Put(int id) //Recibir pedido
         {
-            int filasAfectadas = new ClsHandlerPedidos_BL().RecibirPedido(codigoPedido);
+            int filasAfectadas = new ClsHandlerPedidos_BL().RecibirPedido(id);
 
             if (filasAfectadas == 0)
             {
