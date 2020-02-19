@@ -71,3 +71,22 @@ function obtenerPedidos(onResponse, onError) {
         ,
         null);
 }
+
+function buscarProductoPorId(id) {
+
+    var producto;
+
+    var ruta = BASE_URL + id;
+    app.open("GET", ruta, false);
+
+    app.onreadystatechange = function () {
+
+        if (app.readyState == 4 && app.status == 200) {
+            producto = JSON.parse(app.responseText);
+        }
+    }
+
+    app.send();
+
+    return producto;
+}
