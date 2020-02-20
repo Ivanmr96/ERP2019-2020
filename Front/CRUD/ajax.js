@@ -90,7 +90,7 @@ function obtenerLineasPedido(onResponse,onError,idPedido){
 }
 
 // https://proyectoerp.azurewebsites.net/api/Proveedor
-function obtenerLineasPedido(onResponse,onError){
+function obtenerProveedores(onResponse,onError){
 
 	var url = BASE_URL + API_PROVEEDOR 
 
