@@ -80,3 +80,20 @@ function actualizarUnaLineaPedido(onResponse, onError, lineaPedido)
 
     app.$http.put(url).then(onResponse, onError);
 }
+
+// https://proyectoerp.azurewebsites.net/api/LineasPedido?codigoPedido={codigoPedido}
+function obtenerLineasPedido(onResponse,onError,idPedido){
+
+	var url = BASE_URL + API_LINEAPEDIDO + '?codigoPedido=' + idPedido
+
+	app.$http.put(url).then(onResponse, onError);
+}
+
+// https://proyectoerp.azurewebsites.net/api/Proveedor
+function obtenerLineasPedido(onResponse,onError){
+
+	var url = BASE_URL + API_PROVEEDOR 
+
+	app.$http.put(url).then(onResponse, onError);
+}
+
