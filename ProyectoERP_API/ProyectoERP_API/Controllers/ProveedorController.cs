@@ -7,21 +7,22 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ProyectoERP_API.Controllers
-{
-    public class ProveedorController : ApiController
-    {
+namespace ProyectoERP_API.Controllers{
+    public class ProveedorController : ApiController{
         //Get: api/Proveedor
-        public IEnumerable<clsProveedor> Get()
-        {
-            List<clsProveedor> listadoProveedores = new ClsListadosProveedores_BL().getSupplierList();
+        public IEnumerable<clsProveedor> Get(){
+            List<clsProveedor> listadoProveedores = null;
 
-            if (listadoProveedores == null || listadoProveedores.Count == 0)
-            {
+            try {
+                listadoProveedores = new ClsListadosProveedores_BL().getSupplierList();
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+            
+            if (listadoProveedores == null || listadoProveedores.Count == 0){
                 throw new HttpResponseException(HttpStatusCode.NoContent);
             }
             return listadoProveedores;
-            //return new ClsListadosProveedores_BL().getSupplierList();
         }
     }
 }

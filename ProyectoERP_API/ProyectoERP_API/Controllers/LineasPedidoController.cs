@@ -8,18 +8,20 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ProyectoERP_API.Controllers
-{
-    public class LineasPedidoController : ApiController
-    {
+namespace ProyectoERP_API.Controllers{
+    public class LineasPedidoController : ApiController{
 
         //Get: api/LineasPedido?codigoPedido=15
-        public IEnumerable<clsLineaPedido> Get(int codigoPedido)
-        {
-            List<clsLineaPedido> lineasPedidoDeUnPedido = new ClsListadosLineaDePedidos_BL().getLineasPedidoDeUnPedido(codigoPedido);
+        public IEnumerable<clsLineaPedido> Get(int codigoPedido){
+            List<clsLineaPedido> lineasPedidoDeUnPedido;
 
-            if (lineasPedidoDeUnPedido.Count == 0 || lineasPedidoDeUnPedido == null)
-            {
+            try {
+                lineasPedidoDeUnPedido = new ClsListadosLineaDePedidos_BL().getLineasPedidoDeUnPedido(codigoPedido);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+            
+            if (lineasPedidoDeUnPedido.Count == 0 || lineasPedidoDeUnPedido == null){
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
@@ -29,36 +31,50 @@ namespace ProyectoERP_API.Controllers
         //Get: api/LineasPedido?codigoProducto=15&codigoPedido=2
         public clsLineaPedido Get(string codigoProducto, string codigoPedido)
         {
-            clsLineaPedido lineasDePedido = new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
+            clsLineaPedido lineasDePedido;
 
-            if (lineasDePedido == null)
-            {
+            try {
+                lineasDePedido = new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+            
+            if (lineasDePedido == null){
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
             return lineasDePedido;
-            //return new ClsHandlerLineaDePedido_BL().getOrderLine(Int32.Parse(codigoProducto), Int32.Parse(codigoPedido));
         }
 
         //Delete: api/LineasPedido
-        public int Delete(int codigoProducto, int codigoPedido) {
+        public void Delete(int codigoProducto, int codigoPedido) {
             int filas = 0;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
-            filas = handler.borrarLineaPedido(codigoProducto, codigoPedido);
 
-            if (filas == 0) { //Si no devuelve filas decimos que no ha encontrado destino.
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            try {
+                filas = handler.borrarLineaPedido(codigoProducto, codigoPedido);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
             }
 
-            return filas;
+            if (filas == 0) {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            } else {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+
         }
 
         //Post
         public int Post(clsLineaPedido lineaPedido) {
             int filas;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
-            filas = handler.insertarLineaPedidoEnPedido(lineaPedido);
-
+            try {
+                filas = handler.insertarLineaPedidoEnPedido(lineaPedido);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+            
             if (filas == 0) {
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }

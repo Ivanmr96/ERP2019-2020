@@ -16,7 +16,13 @@ namespace ProyectoERP_API.Controllers
         //Get: api/Pedidos
         public IEnumerable<clsPedido> Get()
         {
-            List<clsPedido> listaPedidos = new ClsListadosPedidos_BL().getPedidosList();
+            List<clsPedido> listaPedidos = null;
+
+            try {
+                 listaPedidos = new ClsListadosPedidos_BL().getPedidosList();
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
 
             if (listaPedidos.Count == 0 || listaPedidos == null)
             {
@@ -29,13 +35,16 @@ namespace ProyectoERP_API.Controllers
 
 
         //Get: api/Pedidos/15
-        public clsPedido Get(int id)
-        {
-            clsPedido pedido = new ClsListadosPedidos_BL().getPedido(id);
+        public clsPedido Get(int id){
+            clsPedido pedido = null;
+            try {
+                pedido = new ClsListadosPedidos_BL().getPedido(id);
 
-            if(pedido.Codigo == 0 )
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                if (pedido.Codigo == 0) {
+                    throw new HttpResponseException(HttpStatusCode.NotFound);
+                }
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
             }
             
             return pedido;
@@ -44,13 +53,38 @@ namespace ProyectoERP_API.Controllers
         //Delete api/Pedidos/{id}
         public void Delete(int codigoPedido) {
             ClsHandlerPedidos_BL handler = new ClsHandlerPedidos_BL();
-            handler.cancelarPedido(codigoPedido);
+            int filas = 0;
+
+            try {
+                filas = handler.cancelarPedido(codigoPedido);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (filas == 0) {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            } else {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+
         }
 
         //Post
         public void Post([FromBody]List<clsLineaPedido> lineasPedido)
         {
-            new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido);
+            int filas = 0;
+
+            try {
+                filas = new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+            
+            if (filas == 0) {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            } else {
+                throw new HttpResponseException(HttpStatusCode.Created);
+            }
         }
 
         //Métodos Diana:
@@ -64,13 +98,36 @@ namespace ProyectoERP_API.Controllers
         // PUT: api/Pedidos?codigoPedido=1&estadoPedido=recibido
         public int Put(int codigoPedido, string estadoPedido) //Actualizar estado en general
         {
-            return new ClsHandlerPedidos_BL().ActualizarEstadoPedido(codigoPedido, estadoPedido);
+            int filas = 0;
+            try {
+                filas = new ClsHandlerPedidos_BL().ActualizarEstadoPedido(codigoPedido, estadoPedido);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (filas == 0) {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            return filas;
         }
 
         // PUT: api/Pedidos?codigoPedido=1
         public int Put(int codigoPedido) //Recibir pedido
         {
-            return new ClsHandlerPedidos_BL().RecibirPedido(codigoPedido);
+            int filas = 0;
+
+            try {
+                filas = new ClsHandlerPedidos_BL().RecibirPedido(codigoPedido);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (filas == 0) {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            return filas;
         }
     }
 }

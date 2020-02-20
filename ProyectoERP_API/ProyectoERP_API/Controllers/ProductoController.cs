@@ -12,16 +12,19 @@ namespace ProyectoERP_API.Controllers
     public class ProductoController : ApiController
     {
         //Get: api/Producto
-        public IEnumerable<clsProducto> Get()
-        {
-            List<clsProducto> listadoProductos = new ClsListadosProductos_BL().getProductList();
-           
-            if (listadoProductos == null || listadoProductos.Count == 0)
-            {
+        public IEnumerable<clsProducto> Get(){
+            List<clsProducto> listadoProductos;
+
+            try {
+                listadoProductos = new ClsListadosProductos_BL().getProductList();
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+            
+            if (listadoProductos == null || listadoProductos.Count == 0){
                 throw new HttpResponseException(HttpStatusCode.NoContent);
             }
             return listadoProductos;
-            //return new ClsListadosProductos_BL().getProductList();
         }
     }
 }
