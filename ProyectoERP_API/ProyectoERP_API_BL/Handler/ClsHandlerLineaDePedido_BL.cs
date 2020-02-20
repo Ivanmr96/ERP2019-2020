@@ -70,7 +70,7 @@ namespace ProyectoERP_API_BL.Handler
         }
 
         //Métodos Diana:
-        
+
         /// <summary>
         ///  Método que actualiza un línea de pedido según el código de producto y el código de pedido
         /// </summary>
@@ -78,10 +78,10 @@ namespace ProyectoERP_API_BL.Handler
         /// <param name="codigoPedido">int con código del pedido cuya línea se va a modificar</param>
         /// <param name="lineaPedidoAModificar">Objeto clsLineaPedido que se va a modificar</param>
         /// <returns>int filasAfectadas</returns>
-        public int ActualizarLineaPedidoPorIdProductoIdPedido(int codigoProducto, int codigoPedido, clsLineaPedido lineaPedidoAModificar)
+        public int ActualizarLineaPedidoPorIdProductoIdPedido(int codigoProducto, int codigoPedido, int nuevaCantidad)
         {
             ClsHandlerLineaDePedido_DAL objOperaciones = new ClsHandlerLineaDePedido_DAL();
-            int filasAfectadas = objOperaciones.ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, lineaPedidoAModificar);
+            int filasAfectadas = objOperaciones.ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, nuevaCantidad);
             return filasAfectadas;
 
             ////Prueba:
