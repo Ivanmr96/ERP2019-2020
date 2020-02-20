@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Release\ProyectoERP_API_Entities.dll
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Release\ProyectoERP_API_Entities.pdb
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.csprojAssemblyReference.cache
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.dll
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.pdb
+=======
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Release\ProyectoERP_API_Entities.dll
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Release\ProyectoERP_API_Entities.pdb
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.csprojAssemblyReference.cache
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.dll
+D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.pdb
+>>>>>>> b7a03572855faab721c360585387bc976308eb84

@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
   <IisApp path="D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" />
   <setAcl path="D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
   <setAcl path="D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+>>>>>>> b7a03572855faab721c360585387bc976308eb84
 </sitemanifest>

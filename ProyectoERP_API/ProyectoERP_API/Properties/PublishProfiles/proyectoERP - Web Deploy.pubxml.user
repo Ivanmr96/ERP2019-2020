@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
@@ -8,4 +9,16 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvzviWGCkWEiRr9L8Z2rIPQAAAAACAAAAAAAQZgAAAAEAACAAAAAsP3OcXjQFtFG7dvOt+GiT3MGSk1DU0/0/8Gfgyjfm2gAAAAAOgAAAAAIAACAAAACtB8xAgWAVIZ7IOgJo2HPO70SnPv+dAdIYfee3AqqDzYAAAABU0WpGAiMAI86ee90mjJgStC9cb4ieel9G/IHTFUiHkEpwxXi9elodnYqKmm+Js606Q8/7dwgKEyLx2bCwi4LZRxRY+eW0efGDKaoxEzKI/4mPG+1p0gST8gAjZVCgIO5RDGx1b7QHz2pk9qUGt4A9IWpql6E4Jm4Rulto/Ek4NUAAAAAdBWjujrJoOz9bCs4/3ULYhth/Lht3KMCy8ZulRN0RXa++egIWUDcieS8tsU/bvzYZ1GYpMe1Ghvq5XSVT9M3c</EncryptedPassword>
   </PropertyGroup>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvzviWGCkWEiRr9L8Z2rIPQAAAAACAAAAAAAQZgAAAAEAACAAAAAsP3OcXjQFtFG7dvOt+GiT3MGSk1DU0/0/8Gfgyjfm2gAAAAAOgAAAAAIAACAAAACtB8xAgWAVIZ7IOgJo2HPO70SnPv+dAdIYfee3AqqDzYAAAABU0WpGAiMAI86ee90mjJgStC9cb4ieel9G/IHTFUiHkEpwxXi9elodnYqKmm+Js606Q8/7dwgKEyLx2bCwi4LZRxRY+eW0efGDKaoxEzKI/4mPG+1p0gST8gAjZVCgIO5RDGx1b7QHz2pk9qUGt4A9IWpql6E4Jm4Rulto/Ek4NUAAAAAdBWjujrJoOz9bCs4/3ULYhth/Lht3KMCy8ZulRN0RXa++egIWUDcieS8tsU/bvzYZ1GYpMe1Ghvq5XSVT9M3c</EncryptedPassword>
+  </PropertyGroup>
+>>>>>>> b7a03572855faab721c360585387bc976308eb84
 </Project>

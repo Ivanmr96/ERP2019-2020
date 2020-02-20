@@ -46,8 +46,13 @@ namespace ProyectoERP_API.Controllers{
             return lineasDePedido;
         }
 
+<<<<<<< HEAD
         //Delete: api/LineasPedido
         public void Delete(int codigoProducto, int codigoPedido) {
+=======
+        //Delete: api/LineasPedido?codigoProducto=15&codigoPedido=2
+        public int Delete(int codigoProducto, int codigoPedido) {
+>>>>>>> b7a03572855faab721c360585387bc976308eb84
             int filas = 0;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
 
@@ -66,7 +71,7 @@ namespace ProyectoERP_API.Controllers{
         }
 
         //Post
-        public int Post(clsLineaPedido lineaPedido) {
+        public int Post([FromBody]clsLineaPedido lineaPedido) {
             int filas;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
             try {
@@ -80,6 +85,21 @@ namespace ProyectoERP_API.Controllers{
             }
 
             return filas;
+        }
+
+        //Método Diana
+
+        //PUT: api/LineasPedido?codigoProducto=2&codigoPedido=4&nuevaCantidad=5
+        public int Put(int codigoProducto, int codigoPedido, int nuevaCantidad)
+        {
+            int filasAfectadas = new ClsHandlerLineaDePedido_BL().ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, nuevaCantidad);
+
+            if (filasAfectadas == 0)
+            {
+                throw new HttpResponseException(HttpStatusCode.InternalServerError); //500
+            }
+
+            return filasAfectadas;
         }
     }
 }
