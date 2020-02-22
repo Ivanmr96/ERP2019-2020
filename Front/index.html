@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
     <head>
+        <meta charset="UTF-8">
         <title>Lista de pedidos</title>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -13,16 +13,18 @@
         <script src="componentes/listaPedidos.js"></script>
         <script src="componentes/component.js"></script>
         <script src="componentes/proveedores.js"></script>
+        <script src="componentes/login.js"></script>
         <script src="componentes/productos.js"></script>
         <script src="componentes/inventario.js"></script>
         <script src="componentes/ajustes.js"></script>
-        <link rel="stylesheet" href="Lista_pedidos_estilo.css"/>
-        
+        <script src="componentes/Detalles.js"></script>
+        <script src="componentes/realizarpedido.js"></script>
+        <link rel="stylesheet" href="Lista_pedidos_estilo2.css"/>
     </head>
 
     <body>
         <div id="app">
-            <menucomponent ></menucomponent>
+            <menucomponent v-if="$store.state.currentComponent != 'logincomponent'"></menucomponent>
             <component :is="$store.state.currentComponent"></component>
             <!-- <p> {{ $store.state.currentComponent }}</p> -->
         </div>

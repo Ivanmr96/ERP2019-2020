@@ -7,21 +7,21 @@
     height: 100%;
     width: 0;
 } */
+.table-user {
+    padding:40px;
+}
 
-.sidebar-title
-{
+.sidebar-title {
     color: #172B4D;
 }
 
-.ajustes
-{
+.ajustes {
     position: absolute;
     bottom: 0%;
     left: 0%;
 }
 
-.btn-navbar
-{
+.btn-navbar {
     margin-left: 4%;
     margin-bottom: 4%;
     margin-top: 4%;
@@ -30,120 +30,102 @@
     text-align: center;
 }
 
-.btn-navbar:hover
-{
+.btn-navbar:hover {
     background-color: #F6F9FC;
 }
 
 
-.sidebar
-{
+.sidebar {
     background-color: #FFFFFF;
     color: #172B4D;
 }
 
-.btn-logout:hover
-{
-    color: #7764E4;
-}
-.btn-logout i
-{
+.btn-logout:hover {
     color: #7764E4;
 }
 
-.btn-compras:hover
-{
+.btn-logout i {
+    color: #7764E4;
+}
+
+.btn-compras:hover {
     color: #4AD991;
 }
-.btn-compras i
-{
+
+.btn-compras i {
     color: #4AD991;
 }
 
-.btn-productos:hover
-{
-    color: #11CDEF;
-}
-.btn-productos i
-{
+.btn-productos:hover {
     color: #11CDEF;
 }
 
-.btn-inventario:hover
-{
-    color: #FB6340;
-}
-.btn-inventario i
-{
-    color: #FB6340;
-}
-
-.btn-proveedores:hover
-{
-    color: #11CDEF;
-}
-.btn-proveedores i
-{
+.btn-productos i {
     color: #11CDEF;
 }
 
-.btn-ajustes:hover
-{
+.btn-inventario:hover {
     color: #FB6340;
 }
 
-.btn-ajustes i
-{
+.btn-inventario i {
     color: #FB6340;
 }
 
-.btn-detalles
-{
+.btn-proveedores:hover {
+    color: #11CDEF;
+}
+
+.btn-proveedores i {
+    color: #11CDEF;
+}
+
+.btn-ajustes:hover {
+    color: #FB6340;
+}
+
+.btn-ajustes i {
+    color: #FB6340;
+}
+
+.btn-detalles {
     color: #707070;
 }
 
-.icono-estado-cancelado
-{
+.icono-estado-cancelado {
     color: crimson;
     font-size: 12px;
 }
 
-.icono-estado-recibido
-{
+.icono-estado-recibido {
     color: #2DCE98;
     font-size: 12px;
 }
 
-.icono-estado-enreparto
-{
+.icono-estado-enreparto {
     color: rgb(219, 230, 79);
     font-size: 12px;
 }
 
-.icono-estado-preparando
-{
+.icono-estado-preparando {
     color: rgb(79, 68, 233);
     font-size: 12px;
 }
 
-.header
-{
+.header {
     color: #8898AA;
     font-size: 12px;
 }
 
-.table-body
-{
+.table-body {
     color: #172B4D;
 }
 
-.table-body-bold
-{
+.table-body-bold {
     font-weight: bold;
 }
 
-.divSuperior
-{
+.divSuperior {
     position: sticky;
     top: 0;
     z-index: 1;
@@ -151,16 +133,14 @@
     width: 100%;
 }
 
-.divSuperior h4
-{
+.divSuperior h4 {
     color: #172B4D;
     font-weight: lighter;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 3%;
 }
 
-.btn-hacerpedido
-{
+.btn-hacerpedido {
     font-weight: bold;
     margin-top: 1%;
     margin-bottom: 1.5%;
@@ -168,29 +148,33 @@
     border-radius: 25em;
 }
 
-.buscador
-{
+.buscador {
     position: absolute;
     bottom: 15%;
     right: 5%;
     width: 25%;
 }
 
-.btn-buscador
-{
+.btn-buscador {
     font-size: 20px;
 }
 
-th
-{
-    position: sticky;
-    top: 16.5%;
+th {
+    /*position: sticky;
+    top: 16.5%;*/
     background-color: #F1F3F9;
     z-index: 1;
 }
 
+td {
+    padding-bottom: 30px;
+    padding-left:80px;
+}
+
 .guardar {
-    margin: 20px 50px 30px 0px;
+    margin: 30px 50px 0px 0px;
+    width: 100px;
+    height: 40px;
 }
 
 .azul {
@@ -198,13 +182,45 @@ th
 }
 
 .rojo {
-    color: red;
-}
-
-.dropdownSuperior {
-    margin:0 0 0 35px;
+    color: #FB6340;
 }
 
 .icono {
     font-size:18px;
+}
+
+.btnAnadir {
+    position:fixed;
+    z-index:1;
+    bottom:30px;
+    right:50px;
+    width:100px;
+    height:40px;
+}
+
+.loginBox
+{
+    background-color: white;
+    box-shadow: 1em black;
+    position: relative;
+    vertical-align: middle;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 6px 10px 5px 0 rgba(0, 0, 0, 0.24);
+    margin: auto;
+    width: fit-content;
+    padding: 50px;
+    margin-top: 10%;
+    border-radius: 7px;
+    height: fit-content;
+}
+
+.loginBody
+{
+    background-image: url("Captura.PNG");
+    background-size: cover;
+    background-color:gray;
+}
+
+.tituloLogin
+{
+    color: #172B4D;
 }

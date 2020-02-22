@@ -3,13 +3,9 @@ Vue.component('listapedidoscomponent', {
     template:
     ` 
     <div style="margin-left:14%">
-
             <div class="row justify-content-center">
-
                 <div class="divSuperior">
-
                     <h4 id="title">PEDIDOS</h4>
-                    
                     <div>
                         
                         <!-- <div class="buscador form-group">
@@ -17,8 +13,7 @@ Vue.component('listapedidoscomponent', {
                             <button class="form-control"><i data-toggle="tooltip" title="Ajustes" class="material-icons align-bottom">search</i></button>
                         </div> -->
 
-                        <button class="btn btn-primary btn-hacerpedido">Hacer Pedido</button>
-                        
+                        <button v-on:click="$store.state.currentComponent = $store.state.components.realizarpedido" class="btn btn-primary btn-hacerpedido">Hacer Pedido</button>
 
                         <div class="input-group mb-3 buscador">
                             <input type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username">
@@ -71,7 +66,7 @@ Vue.component('listapedidoscomponent', {
                             <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
                             <td>-</td>
                             <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
+                            <td><a v-on:click="$store.state.currentComponent = $store.state.components.detalles" href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ver" class="material-icons">remove_red_eye</i></a></td>
                         </tr>
                         <tr>
                             <td class="table-body-bold">0102012577</td>

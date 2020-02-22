@@ -5,17 +5,25 @@ Vue.use(Vuex);*/
 
 const store =  new Vuex.Store({
     state: {
-        currentComponent: 'listapedidoscomponent',
-        components: {
+        
+        components: 
+        {
+            realizarpedido: 'realizarpedidocomponent',
             logout: 'logoutcomponent',
+            login: 'logincomponent',
             pedidos: 'listapedidoscomponent',
             ajustes: 'ajustescomponent',
             inventario: 'inventariocomponent',
             productos: 'productoscomponent',
+            detalles: 'detallescomponent',
             proveedores: 'proveedorescomponent',
-        }
+        },
+
+        currentComponent: 'logincomponent'
+
+
     },
     getters: {},
     mutations: {},
     actions: {}
-   });
+});
