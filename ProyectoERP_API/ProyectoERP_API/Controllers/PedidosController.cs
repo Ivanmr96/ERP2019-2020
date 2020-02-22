@@ -14,9 +14,8 @@ namespace ProyectoERP_API.Controllers
     {
 
         //Get: api/Pedidos
-        public IEnumerable<clsPedido> Get()
-        {
-            List<clsPedido> listaPedidos = null;
+        public IEnumerable<clsPedido> Get(){
+            List<clsPedido> listaPedidos;
 
             try {
                  listaPedidos = new ClsListadosPedidos_BL().getPedidosList();
@@ -24,11 +23,9 @@ namespace ProyectoERP_API.Controllers
                 throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
             }
 
-            if (listaPedidos.Count == 0 || listaPedidos == null)
-            {
+            if (listaPedidos.Count == 0 || listaPedidos == null){
                 throw new HttpResponseException(HttpStatusCode.NoContent);
             }
-
 
             return listaPedidos;
         }
@@ -36,7 +33,7 @@ namespace ProyectoERP_API.Controllers
 
         //Get: api/Pedidos/15
         public clsPedido Get(int id){
-            clsPedido pedido = null;
+            clsPedido pedido;
             try {
                 pedido = new ClsListadosPedidos_BL().getPedido(id);
 
@@ -53,7 +50,7 @@ namespace ProyectoERP_API.Controllers
         //Delete api/Pedidos/{id}
         public void Delete(int codigoPedido) {
             ClsHandlerPedidos_BL handler = new ClsHandlerPedidos_BL();
-            int filas = 0;
+            int filas;
 
             try {
                 filas = handler.cancelarPedido(codigoPedido);
@@ -72,7 +69,7 @@ namespace ProyectoERP_API.Controllers
         //Post
         public void Post([FromBody]List<clsLineaPedido> lineasPedido)
         {
-            int filas = 0;
+            int filas;
 
             try {
                 filas = new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido);
@@ -98,7 +95,7 @@ namespace ProyectoERP_API.Controllers
         // PUT: api/Pedidos?codigoPedido=10&estadoPedido=Recibido
         public int Put(int codigoPedido, string estadoPedido) //Actualizar estado en general
         {
-            int filas = 0;
+            int filas;
             try {
                 filas = new ClsHandlerPedidos_BL().ActualizarEstadoPedido(codigoPedido, estadoPedido);
             } catch (Exception e) {
@@ -115,7 +112,7 @@ namespace ProyectoERP_API.Controllers
         // PUT: api/Pedidos/{idPedido}
         public int Put(int codigoPedido) //Recibir pedido
         {
-            int filas = 0;
+            int filas;
 
             try {
                 filas = new ClsHandlerPedidos_BL().RecibirPedido(codigoPedido);

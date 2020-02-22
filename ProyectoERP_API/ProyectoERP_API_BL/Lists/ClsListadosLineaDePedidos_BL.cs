@@ -15,16 +15,16 @@ namespace ProyectoERP_API_BL.Lists
         /// </summary>
         /// <param name="codigoPedido">ID del pedido</param>
         /// <returns>Listado de lineas de pedido de ese pedido</returns>
-        public List<clsLineaPedido> getLineasPedidoDeUnPedido(int codigoPedido)
-        {
-            return new ClsListadosLineaDePedidos_DAL().getLineasPedidoDeUnPedido(codigoPedido); //-> cuando funcione la BBDD
+        public List<clsLineaPedido> getLineasPedidoDeUnPedido(int codigoPedido){
+            List<clsLineaPedido> lista;
 
-            //List<clsLineaPedido> lineaPedidos = new List<clsLineaPedido>();
-            //lineaPedidos.Add(new clsLineaPedido(1, 1, 5, 1.5, "euro"));
-            //lineaPedidos.Add(new clsLineaPedido(2, 1, 5, 1.5, "euro"));
-            //lineaPedidos.Add(new clsLineaPedido(5, 1, 5, 1.5, "euro"));
+            try {
+                lista = new ClsListadosLineaDePedidos_DAL().getLineasPedidoDeUnPedido(codigoPedido);
+            } catch (Exception e) {
+                throw e;
+            }
 
-            //return lineaPedidos;
+            return lista;
         }
     }
 }

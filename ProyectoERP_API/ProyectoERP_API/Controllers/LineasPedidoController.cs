@@ -48,7 +48,7 @@ namespace ProyectoERP_API.Controllers{
 
         //Delete: api/LineasPedido
         public void Delete(int codigoProducto, int codigoPedido) {
-            int filas = 0;
+            int filas;
             ClsHandlerLineaDePedido_BL handler = new ClsHandlerLineaDePedido_BL();
 
             try {
@@ -86,7 +86,13 @@ namespace ProyectoERP_API.Controllers{
 
         //PUT: api/LineasPedido?codigoProducto=2&codigoPedido=4&nuevaCantidad=5
         public int Put(int codigoProducto, int codigoPedido, int nuevaCantidad){
-            int filasAfectadas = new ClsHandlerLineaDePedido_BL().ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, nuevaCantidad);
+            int filasAfectadas;
+
+            try {
+                filasAfectadas = new ClsHandlerLineaDePedido_BL().ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, nuevaCantidad);
+            } catch (Exception e) {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
 
             if (filasAfectadas == 0){
                 throw new HttpResponseException(HttpStatusCode.InternalServerError); //500

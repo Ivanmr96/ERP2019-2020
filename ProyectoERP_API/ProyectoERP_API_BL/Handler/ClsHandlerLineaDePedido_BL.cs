@@ -6,20 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoERP_API_BL.Handler
-{
-    public class ClsHandlerLineaDePedido_BL
-    {
+namespace ProyectoERP_API_BL.Handler{
+    public class ClsHandlerLineaDePedido_BL{
         /// <summary>
         /// Nombre: getOrderLine
         /// Comentario: Este método nos permite obtener una línea de pedido de un producto y pedido determinado.
         /// Cabecera: public clsLineaPedido getOrderLine(int codigoProducto, int codigoPedido)
         /// </summary>
         /// <returns>Devuelve un tipo clsLineaPedido</returns>
-        public clsLineaPedido getOrderLine(int codigoProducto, int codigoPedido)
-        {
-            return new ClsHandlerLineaDePedido_DAL().getOrderLine(codigoProducto, codigoPedido);//Cuando la base de datos se encuentre operativa
-            //return new clsLineaPedido(101, 1, 2, 1.4, "libra");
+        public clsLineaPedido getOrderLine(int codigoProducto, int codigoPedido){
+            clsLineaPedido lineapedido;
+
+            try {
+                lineapedido = new ClsHandlerLineaDePedido_DAL().getOrderLine(codigoProducto, codigoPedido);
+            } catch (Exception e) {
+                throw e;
+            }
+            return lineapedido;
         }
 
         /// <summary>
@@ -29,9 +32,15 @@ namespace ProyectoERP_API_BL.Handler
         /// <param name="codigoPedido">Codigo del pedido</param>
         /// <returns>Numero de filas afectadas</returns>
         public int borrarLineaPedido(int codigoProducto, int codigoPedido) {
-            int filas = 0;
+            int filas;
             ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
-            filas = handler.borrarLineaPedido(codigoProducto, codigoPedido);
+
+            try {
+                filas = handler.borrarLineaPedido(codigoProducto, codigoPedido);
+            } catch (Exception e) {
+                throw e;
+            }
+            
             return filas;
         }
 
@@ -43,7 +52,13 @@ namespace ProyectoERP_API_BL.Handler
         public int insertarLineaPedidoEnPedido(clsLineaPedido lineaPedido) {
             int filas;
             ClsHandlerLineaDePedido_DAL handler = new ClsHandlerLineaDePedido_DAL();
-            filas = handler.insertarLineaPedidoEnPedido(lineaPedido);
+
+            try {
+                filas = handler.insertarLineaPedidoEnPedido(lineaPedido);
+            } catch (Exception e) {
+                throw e;
+            }
+            
             return filas;
         }
 
@@ -52,18 +67,13 @@ namespace ProyectoERP_API_BL.Handler
         /// </summary>
         /// <param name="lineaPedido">List<clsLineaPedido> lineaPedido</param>
         /// <returns>0 si no se ha incertado y 1 si se ha incertado correctamente</returns>
-        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido)
-        {
-            int resultado = 0;
+        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido){
+            int resultado;
 
-            try
-            {
+            try{
                 ClsHandlerLineaDePedido_DAL hdp = new ClsHandlerLineaDePedido_DAL();
-
                 resultado = hdp.insertarPedidoCompleto(lineaPedido);
-            }
-            catch (Exception e)
-            {
+            }catch (Exception e){
                 throw e;
             }
             return resultado;
@@ -78,14 +88,17 @@ namespace ProyectoERP_API_BL.Handler
         /// <param name="codigoPedido">int con código del pedido cuya línea se va a modificar</param>
         /// <param name="lineaPedidoAModificar">Objeto clsLineaPedido que se va a modificar</param>
         /// <returns>int filasAfectadas</returns>
-        public int ActualizarLineaPedidoPorIdProductoIdPedido(int codigoProducto, int codigoPedido, int nuevaCantidad)
-        {
+        public int ActualizarLineaPedidoPorIdProductoIdPedido(int codigoProducto, int codigoPedido, int nuevaCantidad){
             ClsHandlerLineaDePedido_DAL objOperaciones = new ClsHandlerLineaDePedido_DAL();
-            int filasAfectadas = objOperaciones.ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, nuevaCantidad);
-            return filasAfectadas;
+            int filasAfectadas;
 
-            ////Prueba:
-            //return 1;
+            try {
+                filasAfectadas = objOperaciones.ActualizarLineaPedidoPorIdProductoIdPedido(codigoProducto, codigoPedido, nuevaCantidad);
+            } catch (Exception e) {
+                throw e;
+            }
+
+            return filasAfectadas;
         }
     }
 }

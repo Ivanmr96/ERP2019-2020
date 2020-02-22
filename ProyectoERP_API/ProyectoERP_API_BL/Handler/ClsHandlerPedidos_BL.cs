@@ -18,12 +18,14 @@ namespace ProyectoERP_API_BL.Handler
         public int InsertarNuevoPedido()
         {
             ClsHandlerPedidos_DAL objOperaciones = new ClsHandlerPedidos_DAL();
-            int codigoNuevoPedido = objOperaciones.InsertarNuevoPedido();
-
+            int codigoNuevoPedido;
+            try {
+                 codigoNuevoPedido = objOperaciones.InsertarNuevoPedido();
+            } catch (Exception e) {
+                throw e;
+            }
+            
             return codigoNuevoPedido;
-
-            ////Prueba:
-            //return 3;
         }
 
         /// <summary>
@@ -35,12 +37,14 @@ namespace ProyectoERP_API_BL.Handler
         public int ActualizarEstadoPedido(int codigoPedido, string estadoPedido)
         {
             ClsHandlerPedidos_DAL objOperaciones = new ClsHandlerPedidos_DAL();
-            int filasAfectadas = objOperaciones.ActualizarEstadoPedido(codigoPedido, estadoPedido);
+            int filasAfectadas;
+            try {
+                filasAfectadas = objOperaciones.ActualizarEstadoPedido(codigoPedido, estadoPedido);
+            } catch (Exception e) {
+                throw e;
+            }
 
             return filasAfectadas;
-
-            ////Prueba;
-            //return 1;
         }
 
         /// <summary>
@@ -51,12 +55,14 @@ namespace ProyectoERP_API_BL.Handler
         public int RecibirPedido(int codigoPedido)
         {
             ClsHandlerPedidos_DAL objOperaciones = new ClsHandlerPedidos_DAL();
-            int filasAfectadas = objOperaciones.RecibirPedido(codigoPedido);
+            int filasAfectadas;
+            try {
+                filasAfectadas = objOperaciones.RecibirPedido(codigoPedido);
+            } catch (Exception e) {
+                throw e;
+            }
 
             return filasAfectadas;
-
-            ////Prueba;
-            //return 1;
         }
 
         /// <summary>
@@ -67,7 +73,13 @@ namespace ProyectoERP_API_BL.Handler
         public int cancelarPedido(int codigoPedido)
         {
             ClsHandlerPedidos_DAL handler = new ClsHandlerPedidos_DAL();
-            return handler.cancelarPedido(codigoPedido);
+            int filas;
+            try {
+                filas = handler.cancelarPedido(codigoPedido);
+            } catch (Exception e) {
+                throw e;
+            }
+            return filas;
         }
 
     }
