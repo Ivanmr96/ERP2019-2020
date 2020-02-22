@@ -1,9 +1,77 @@
-Vue.component('realizarpedidocomponent',{
-
-    data: function () {
+Vue.component('realizarpedidocomponent',
+{
+    data: function () 
+    {
         return {
-          pedido: new clsPedido()
+            proveedores: undefined,
+            pedido: new clsPedido(1, undefined, new Date(), undefined),
+            proveedorSeleccionado: undefined,
+            productos: undefined
         }
+    },
+
+    methods: 
+    {
+        eliminarLineaPedido: function(lineaPedido) 
+        {
+            for( var i = 0 ; i < this.pedido.lineasDePedido.length; i++) 
+            {
+                if(this.pedido.lineasDePedido[i] === lineaPedido)
+                    this.pedido.lineasDePedido.splice(i, 1);
+            }
+        },
+
+        obtenerProductosDelProveedorSeleccionado: function()
+        {
+            //this.$store.actions.obtenerProductos((response) => alert(JSON.stringify(response.body) , () => alert("error") ))
+            obtenerProductos((response) => 
+            { 
+                this.productos = response.body; 
+            }, 
+            () => alert("error"))
+
+            /*
+            fetch("https://proyectoerp.azurewebsites.net/api/Producto/", 
+            {
+                method: "GET"
+            })
+            .then((response) => {
+                return response.text()
+            })
+            .then((data) => {
+                alert(data)
+            }) */
+        },
+
+        obtenerNombreProductoPorId: function(codigo)
+        {
+            var found = false
+            var nombre = ""
+
+            if(this.productos != undefined)
+            {
+                for(var i = 0 ; i < this.productos.length && !found; i++)
+                {
+                    if(this.productos[i].Codigo == codigo)
+                    {
+                        found = true
+                        nombre = this.productos[i].Nombre
+                    }
+                }    
+            }
+            return nombre
+        }
+    },
+
+    computed: {
+        productosDelProveedorSeleccionado: function()
+        {
+            return this.productos
+        }
+    },
+
+    mounted(){
+        this.obtenerProductosDelProveedorSeleccionado()
     },
 
     template:
@@ -40,31 +108,31 @@ Vue.component('realizarpedidocomponent',{
                     </thead>
 
                     <tbody class="table-body">
-
                         <template v-for="lineaPedido in pedido.lineasDePedido">
                             <tr>
                                 <td class="table-body-bold">
                                     <div class="dropdown">
+                                        <p></p>
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Listado de productos
+                                            {{ obtenerNombreProductoPorId(lineaPedido.codigoProducto) }}
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Producto1</a>
-                                            <a class="dropdown-item" href="#">Producto2</a>
-                                            <a class="dropdown-item" href="#">Producto3</a>
+                                            <template v-for="producto in productosDelProveedorSeleccionado">
+                                                <a v-on:click="lineaPedido.codigoProducto = producto.Codigo" class="dropdown-item" href="#">{{producto.Nombre}} - 1€</a>
+                                            </template>
                                         </div>
                                     </div>
                                 </td>
-                                <td>{{pedido.codigo}}</td>
+                                <td>{{lineaPedido.precioUnitario}} €</td>
                                 <td>
-                                    <i class="material-icons icono" onclick="sumar()">add</i>
-                                    <span id="numero">1</span>
-                                    <i class="material-icons icono" onclick="restar()">remove</i>
+                                    <i class="material-icons icono" v-on:click="lineaPedido.cantidad++">add</i>
+                                    <span id="numero">{{lineaPedido.cantidad}}</span>
+                                    <i class="material-icons icono" v-on:click="lineaPedido.cantidad--">remove</i>
                                 </td>
                                 <td>21</td>
-                                <td>75€</td>
+                                <td>{{lineaPedido.cantidad * lineaPedido.precioUnitario}} €</td>
                                 <td><a href="#"><i data-toggle="tooltip" title="Editar" class="material-icons azul">edit</i></a></td>
-                                <td><a href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons rojo">delete</i></a></td>
+                                <td><a v-on:click="eliminarLineaPedido(lineaPedido)" href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons rojo">delete</i></a></td>
                             </tr>
                         </template>
                         

@@ -7,5 +7,8 @@ class clsPedido
         this.fechaPedido = fechaPedido;
         this.fechaRecepcion = fechaRecepcion;
         this.lineasDePedido = lineasDePedido;
+        this.lineasDePedido = [
+            new clsLineaPedido(1, this.codigo, 5, 2.30, 'euro')
+        ]
     }
 }
