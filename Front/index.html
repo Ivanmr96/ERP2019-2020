@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="bootstrap.css"/>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="vuex.js"></script>
+        <script src="entidades/clsPedido.js"></script>
         <script src="componentes/menu.js"></script>
         <script src="componentes/listaPedidos.js"></script>
         <script src="componentes/component.js"></script>
@@ -23,9 +24,9 @@
     </head>
 
     <body>
-        <div id="app">
-            <menucomponent v-if="$store.state.currentComponent != 'logincomponent'"></menucomponent>
-            <component :is="$store.state.currentComponent"></component>
+        <div id="app" v-bind:class="{background: $store.state.currentComponent == 'logincomponent'}">
+            <menucomponent  v-if="$store.state.currentComponent != 'logincomponent'"></menucomponent>
+            <component :is="$store.state.currentComponent" ></component>
             <!-- <p> {{ $store.state.currentComponent }}</p> -->
         </div>
 

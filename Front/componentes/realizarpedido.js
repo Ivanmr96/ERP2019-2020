@@ -1,4 +1,11 @@
 Vue.component('realizarpedidocomponent',{
+
+    data: function () {
+        return {
+          pedido: new clsPedido(1)
+        }
+    },
+
     template:
     `
     <div style="margin-left:14%">
@@ -48,7 +55,7 @@ Vue.component('realizarpedidocomponent',{
                                     </div>
                                 </div>
                             </td>
-                            <td>15€</td>
+                            <td>{{pedido.codigo}}</td>
                             <td>
                                 <i class="material-icons icono" onclick="sumar()">add</i>
                                 <span id="numero">1</span>
