@@ -2,7 +2,7 @@ Vue.component('realizarpedidocomponent',{
 
     data: function () {
         return {
-          pedido: new clsPedido(1)
+          pedido: new clsPedido()
         }
     },
 
@@ -39,33 +39,35 @@ Vue.component('realizarpedidocomponent',{
                         </tr>
                     </thead>
 
-                    <tbody class="table-body ">
+                    <tbody class="table-body">
 
-
-                        <tr>
-                            <td class="table-body-bold">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Listado de productos
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Producto1</a>
-                                        <a class="dropdown-item" href="#">Producto2</a>
-                                        <a class="dropdown-item" href="#">Producto3</a>
+                        <template v-for="lineaPedido in pedido.lineasDePedido">
+                            <tr>
+                                <td class="table-body-bold">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Listado de productos
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Producto1</a>
+                                            <a class="dropdown-item" href="#">Producto2</a>
+                                            <a class="dropdown-item" href="#">Producto3</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>{{pedido.codigo}}</td>
-                            <td>
-                                <i class="material-icons icono" onclick="sumar()">add</i>
-                                <span id="numero">1</span>
-                                <i class="material-icons icono" onclick="restar()">remove</i>
-                            </td>
-                            <td>21</td>
-                            <td>75€</td>
-                            <td><a href="#"><i data-toggle="tooltip" title="Editar" class="material-icons azul">edit</i></a></td>
-                            <td><a href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons rojo">delete</i></a></td>
-                        </tr>
+                                </td>
+                                <td>{{pedido.codigo}}</td>
+                                <td>
+                                    <i class="material-icons icono" onclick="sumar()">add</i>
+                                    <span id="numero">1</span>
+                                    <i class="material-icons icono" onclick="restar()">remove</i>
+                                </td>
+                                <td>21</td>
+                                <td>75€</td>
+                                <td><a href="#"><i data-toggle="tooltip" title="Editar" class="material-icons azul">edit</i></a></td>
+                                <td><a href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons rojo">delete</i></a></td>
+                            </tr>
+                        </template>
+                        
                         <tr>
                             <td>
                                 <i data-toggle="tooltip" class="material-icons">add</i>
