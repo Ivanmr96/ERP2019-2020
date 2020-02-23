@@ -1,8 +1,64 @@
 Vue.component('detallescomponent', {
 
+            data:
+            {
+                //idLineaPedido: id,
+                stageProceso: "btn  btn-primary",
+                stageReparto: "btn  btn-secondary",
+                stageCancelado: "btn  btn-secondary",
+                stageRecibido: "btn  btn-secondary"
+            },
+
+            methods:
+            {
+                cambiarEstado(estado) {
+                    //alert(estado);
+                    //var url = 'https://apierp.azurewebsites.net/api/Pedidos?codigoPedido=' + idLineaPedido + '&estadoPedido=' + estado//Necesitamos obtener el estado
+
+                    //this.$http.put(url).then(function (response)             //Realiza una petición get a la URL, con la función dentro del "then" indico que hay que hacer en caso de respuesta satisfactoria
+                    //{
+                    switch (estado) {
+                        case "proceso":
+                            stageProceso: "btn  btn-primary";
+                            stageReparto: "btn  btn-secondary";
+                            stageCancelado: "btn  btn-secondary";
+                            stageRecibido: "btn  btn-secondary";
+                            break;
+                        case "reparto":
+                            stageProceso: "btn  btn-secondary";
+                            stageReparto: "btn  btn-primary";
+                            stageCancelado: "btn  btn-secondary";
+                            stageRecibido: "btn  btn-secondary";
+                            break;
+                        case "cancelado":
+                            stageProceso: "btn  btn-secondary";
+                            stageReparto: "btn  btn-secondary";
+                            stageCancelado: "btn  btn-primary";
+                            stageRecibido: "btn  btn-secondary";
+                            break;
+                        case "recibido":
+                            stageProceso: "btn  btn-secondary";
+                            stageReparto: "btn  btn-secondary";
+                            stageCancelado: "btn  btn-secondary";
+                            stageRecibido: "btn  btn-primary";
+                            break;
+                    }
+                    //}, function () {                                          //Aqui indica que hará en caso de error
+                    // alert("error");
+                    //});
+                }
+            },
+
+    mounted() {
+        stageProceso: "btn  btn-primary";
+        stageReparto: "btn  btn-secondary";
+        stageCancelado: "btn  btn-secondary";
+        stageRecibido: "btn  btn-secondary";
+    },
+
     template:
     ` 
-    <div style="margin-left:14%">
+    <div style="margin-left:14%" id="app">
 
         <div class="row justify-content-center">
 
@@ -24,10 +80,10 @@ Vue.component('detallescomponent', {
                         <td>pedro@gmail.com</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn  btn-primary">En proceso</button>
-                                <button type="button" class="btn  btn-secondary">En Reparto</button>
-                                <button type="button" class="btn  btn-secondary">Cancelado</button>
-                                <button type="button" class="btn  btn-secondary">Recibido</button>
+                                <button id="proceso" type="button" class={{stageProceso}} v-on:click="cambiarEstado('proceso')">En proceso</button>
+                                <button id="reparto" type="button" class="{{ stageReparto }}" v-on:click="cambiarEstado('reparto')">En Reparto</button>
+                                <button id="cancelado" type="button" class="{{ stageCancelado }}" v-on:click="cambiarEstado('cancelado')">Cancelado</button>
+                                <button id="recibido" type="button" class="{{ stageRecibido }}" v-on:click="cambiarEstado('recibido')">Recibido</button>
                             </div>
 
                         </td>
