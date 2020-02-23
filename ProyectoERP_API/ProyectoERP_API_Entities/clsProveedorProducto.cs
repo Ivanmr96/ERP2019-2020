@@ -26,6 +26,14 @@ namespace ProyectoERP_API_Entities
             this.divisa = divisa;
         }
 
+        public clsProveedorProducto()
+        {
+            this.cifProveedor = "";
+            this.codigoProducto = 0;
+            this.precio = 0.0;
+            this.divisa = "";
+
+        }
 
         #endregion
 

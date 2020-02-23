@@ -25,5 +25,40 @@ namespace ProyectoERP_API_BL.Lists{
 
             return producto;
         }
+
+
+        public List<clsProveedorProducto> getProductosDeUnProveedor(string cifProveedor)
+        {
+            List<clsProveedorProducto> listadoProductoProv;
+
+            try
+            {
+                listadoProductoProv = new ClsListadosProductos_DAL().getProductosDeUnProveedor(cifProveedor);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return listadoProductoProv;
+        }
+
+
+        public clsProducto getProduct(int codigoProducto)
+        {
+            clsProducto producto;
+
+            try
+            {
+                producto = new ClsListadosProductos_DAL().getProduct(codigoProducto);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return producto;
+        }
+
     }
 }
