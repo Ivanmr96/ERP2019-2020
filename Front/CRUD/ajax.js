@@ -2,6 +2,7 @@
 const BASE_URL = 'https://proyectoerp.azurewebsites.net/api/'
 
 const API_PEDIDO = 'Pedidos/';
+const API_INSERTARPEDIDO = 'Pedido/';
 const API_PRODUCTO = 'Producto/';
 const API_LINEAPEDIDO = 'LineasPedido/';
 const API_PROVEEDOR = 'Proveedor/';
@@ -21,11 +22,11 @@ const app = new Vue({
 })
 
     // https://proyectoerp.azurewebsites.net/api/Pedidos/
-    function insertarPedido(pedidoConLineasDePedido, onResponse, onError) 
+    function insertarPedido(lineasDeUnPedido, onResponse, onError) 
     {
-        var url = BASE_URL + API_PEDIDO
+        var url = BASE_URL + API_INSERTARPEDIDO 
 
-        app.$http.post(url, JSON.stringify(pedidoConLineasDePedido)).then(onResponse, onError);
+        app.$http.post(url, JSON.stringify(lineasDeUnPedido)).then(onResponse, onError);
     }
 
     // https://proyectoerp.azurewebsites.net/api/LineasPedido/

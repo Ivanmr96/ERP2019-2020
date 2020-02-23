@@ -60,6 +60,15 @@ Vue.component('realizarpedidocomponent',
                 }    
             }
             return nombre
+        },
+
+        confirmar: function () {
+            var opcion = confirm("¿Deseas confirmar este pedido?");
+            if (opcion == true) {
+                insertarPedido(this.pedido.lineasDePedido, (response) => {
+                    $store.state.pedidos = 'listapedidoscomponent';
+                }, onError)
+            }
         }
     },
 
@@ -93,7 +102,7 @@ Vue.component('realizarpedidocomponent',
                     </div>
                 </div>
                 <div class="d-flex">
-                    <button type="button" class="btn btn-primary ml-auto guardar">Guardar</button>
+                    <button v-on:click="confirmar" type="button" class="btn btn-primary ml-auto guardar">Guardar</button>
                 </div>
                 <table class="rounded table table-striped align-self-center text-center">
 
