@@ -1,5 +1,5 @@
-Vue.component('listapedidoscomponent', {
-
+Vue.component('listapedidoscomponent', 
+{
     template:
     ` 
     <div style="margin-left:14%">

@@ -83,7 +83,7 @@ const app = new Vue({
 
         var url = BASE_URL + API_LINEAPEDIDO + '?codigoPedido=' + idPedido
 
-        app.$http.put(url).then(onResponse, onError);
+        app.$http.get(url).then(onResponse, onError);
     }
 
     // https://proyectoerp.azurewebsites.net/api/Proveedor
@@ -91,5 +91,5 @@ const app = new Vue({
 
         var url = BASE_URL + API_PROVEEDOR 
 
-        app.$http.put(url).then(onResponse, onError);
+        app.$http.get(url).then(onResponse, onError);
     }
