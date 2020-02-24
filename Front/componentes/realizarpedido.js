@@ -67,7 +67,7 @@ Vue.component('realizarpedidocomponent',
             if (opcion == true) {
                 insertarPedido(this.pedido.lineasDePedido, (response) => {
                     $store.state.pedidos = 'listapedidoscomponent';
-                }, onError)
+                }, (error) => { alert("Se produjo un error al guardar") })
             }
         }
     },
