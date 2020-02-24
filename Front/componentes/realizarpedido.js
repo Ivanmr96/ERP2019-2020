@@ -66,8 +66,10 @@ Vue.component('realizarpedidocomponent',
             var opcion = confirm("¿Deseas confirmar este pedido?");
             if (opcion == true) {
                 insertarPedido(this.pedido.lineasDePedido, (response) => {
-                    $store.state.pedidos = 'listapedidoscomponent';
-                }, (error) => { alert("Se produjo un error al guardar") })
+                    store.state.currentComponent = 'listapedidoscomponent';
+                }, (error) => { 
+                    store.state.currentComponent = 'listapedidoscomponent';
+                    alert("Se produjo un error al guardar") })
             }
         }
     },

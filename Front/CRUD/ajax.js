@@ -17,7 +17,7 @@ const app = new Vue({
 
     mounted: function() {
         console.log(this.$http);
-        fetch(BASE_URL + API_PEDIDO);
+        //fetch(BASE_URL + API_PEDIDO);
       }
 })
 
