@@ -3,7 +3,9 @@ Vue.component('realizarpedidocomponent',
     data: function () 
     {
         return {
-            proveedores: undefined,
+            proveedores: [
+                new clsProveedor("22321231", "Coca-Cola Company", "Direccion","959123991", "cocacola@iesnervion.es")
+            ],
             pedido: new clsPedido(1, undefined, new Date(), undefined),
             proveedorSeleccionado: undefined,
             productos: undefined
@@ -20,10 +22,15 @@ Vue.component('realizarpedidocomponent',
                     this.pedido.lineasDePedido.splice(i, 1);
             }
         },
+        anadirLineaPedidos(){
+            this.pedido.lineasDePedido.push(new clsLineaPedido(0,this.pedido.codigo, 0, 0, null))
+        },
 
         obtenerProductosDelProveedorSeleccionado: function()
         {
             //this.$store.actions.obtenerProductos((response) => alert(JSON.stringify(response.body) , () => alert("error") ))
+
+            //TODO No es obtenerProductos, es obtener productos de un proveedor :)
             obtenerProductos((response) => 
             { 
                 this.productos = response.body; 
@@ -71,7 +78,12 @@ Vue.component('realizarpedidocomponent',
                     store.state.currentComponent = 'listapedidoscomponent';
                     alert("Se produjo un error al guardar") })
             }
-        }
+        },
+
+        cambiarProductoLineaPedido: function (producto, lineaPedido) {
+            lineaPedido.codigoProducto = producto.Codigo;
+            lineaPedido.precioUnitario = producto.PrecioUnitario;
+        },
     },
 
     computed: {
@@ -94,15 +106,16 @@ Vue.component('realizarpedidocomponent',
             <div class="divSuperior">
                 <h4 id="title">REALIZAR PEDIDO</h4>
                 <div class="dropdownSuperior">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                        Listado de Proveedores
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownMenuButton">
+                        Proveedor <!-- TODO Nombre del proveedor, cuando no haya ninguno seleccionado que ponga "selecciona proveedor" -->
                     </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Proveedor1</a>
-                        <a class="dropdown-item" href="#">Proveedor2</a>
-                        <a class="dropdown-item" href="#">Proveedor3</a>
+                    <div class="dropdown-menu" v-for="proveedor in proveedores">
+                        <template>
+                        <a class="dropdown-item" href="#">{{proveedor.nombreRazonSocial}}</a>
+                        </template
                     </div>
                 </div>
+            </div>
                 <div class="d-flex">
                     <button v-on:click="confirmar" type="button" class="btn btn-primary ml-auto guardar">Guardar</button>
                 </div>
@@ -115,6 +128,7 @@ Vue.component('realizarpedidocomponent',
                             <th scope="col">CANTIDAD</th>
                             <th scope="col">IMPUESTO %</th>
                             <th scope="col">PRECIO FINAL</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 
@@ -129,7 +143,7 @@ Vue.component('realizarpedidocomponent',
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <template v-for="producto in productosDelProveedorSeleccionado">
-                                                <a v-on:click="lineaPedido.codigoProducto = producto.Codigo" class="dropdown-item" href="#">{{producto.Nombre}} - 1€</a>
+                                                <a v-on:click="cambiarProductoLineaPedido(producto, lineaPedido)" class="dropdown-item" href="#">{{producto.Nombre}} - 1€</a>
                                             </template>
                                         </div>
                                     </div>
@@ -142,18 +156,13 @@ Vue.component('realizarpedidocomponent',
                                 </td>
                                 <td>21</td>
                                 <td>{{lineaPedido.cantidad * lineaPedido.precioUnitario}} €</td>
-                                <td><a href="#"><i data-toggle="tooltip" title="Editar" class="material-icons azul">edit</i></a></td>
-                                <td><a v-on:click="eliminarLineaPedido(lineaPedido)" href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons rojo">delete</i></a></td>
+                                <td><a v-on:click="eliminarLineaPedido(lineaPedido)" href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons text-center rojo">delete</i></a></td>
                             </tr>
                         </template>
-                        
-                        <tr>
-                            <td>
-                                <i data-toggle="tooltip" class="material-icons">add</i>
-                                AÑADIR NUEVO PRODUCTO
-                            </td>
 
-                        </tr>
+                        <button class="btn btn-primary btnAnadir" v-on:click="anadirLineaPedidos()">
+                            <i data-toggle="tooltip" onclick="sumar()" title="Añadir línea de pedido" class="material-icons align-middle">add</i>
+                        </button>
 
                     </tbody>
 

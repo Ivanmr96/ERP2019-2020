@@ -52,7 +52,7 @@ const store =  new Vuex.Store({
             crearpedido: 'crearpedidocomponent'
         },
 
-        currentComponent: 'logincomponent'
+        currentComponent: 'listapedidoscomponent'
        
 
 

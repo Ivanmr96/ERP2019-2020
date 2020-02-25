@@ -1,5 +1,62 @@
 Vue.component('listapedidoscomponent', 
 {
+    data: function() {
+        return {
+            pedidos: undefined,
+            descendente: true
+        }
+    },
+
+    methods: {
+
+        obtenerYMostrarPedidos: function()
+        {
+            obtenerPedidos((response) => 
+            { 
+                this.pedidos = response.body;
+            }, 
+            () => alert("error"))
+        },
+
+        "sortTable": function sortTable(col) {
+            var res = 0;
+            var hola = this.descendente = !this.descendente;
+            //alert(hola);
+            
+            this.rows.sort(function(a, b) {
+                //alert(hola);
+                if(hola) {
+                    if (a[col] > b[col]) {
+                        //alert(a[col] + ">" + b[col]);
+                        res =  1;
+                    } 
+                    else if (a[col] < b[col]) {
+                        //alert(a[col] + "<" + b[col]);
+                        res = -1;
+                    }
+                }
+                else {
+                    if (b[col] > a[col]) {
+                        //alert(b[col] + ">" + a[col]);
+                        res =  1;
+                    } 
+                    else if (b[col] < a[col]) {
+                        //alert(b[col] + "<" + a[col]);
+                        res = -1;
+                    }
+                }
+                
+                //alert(res);
+            return res;
+            })
+            //alert(JSON.stringify(this.rows));
+        }
+    },
+
+    mounted() {
+        this.obtenerYMostrarPedidos()
+    },
+
     template:
     ` 
     <div style="margin-left:14%">
@@ -29,9 +86,9 @@ Vue.component('listapedidoscomponent',
 
                     <thead class="rounded">
                     <tr class="header align-bottom">
-                        <th scope="col">PEDIDO</th>
+                        <th scope="col" v-on:click="sortTable(codigo)" >PEDIDO</th>
                         <th scope="col">PROVEEDOR</th>
-                        <th scope="col">FECHA REGISTRADA</th>
+                        <th scope="col" v-on:click="sortTable('fechaPedido')">FECHA REGISTRADA</th>
                         <th scope="col">ESTADO</th>
                         <th scope="col">FECHA RECIBIMIENTO</th>
                         <th scope="col">PRECIO</th>
@@ -40,302 +97,17 @@ Vue.component('listapedidoscomponent',
                     </thead>
 
                     <tbody class="table-body ">
-
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a v-on:click="$store.state.currentComponent = $store.state.components.detalles" href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ver" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-cancelado">lens</i> Cancelado</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-recibido">lens</i> Recibido</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> En reparto</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="table-body-bold">0102012577</td>
-                            <td class="table-body-bold">Project X</td>
-                            <td>20/03/2020</td>
-                            <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-preparando">lens</i> Preparando</td>
-                            <td>-</td>
-                            <td>15€</td>
-                            <td><a href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ajustes" class="material-icons">remove_red_eye</i></a></td>
-                        </tr>
-
+                        <template v-for="pedido in pedidos">
+                            <tr>
+                                <td class="table-body-bold">{{pedido.Codigo}}</td>
+                                <td class="table-body-bold">Proveedor aqui</td>
+                                <td>{{pedido.FechaPedido}}</td>
+                                <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> {{pedido.Estado}}</td>
+                                <td>{{pedido.FechaRecepcion}}</td>
+                                <td>total aqui</td>
+                                <td><a v-on:click="$store.state.currentComponent = $store.state.components.detalles" href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ver" class="material-icons">remove_red_eye</i></a></td>
+                            </tr>
+                        </template>
                     </tbody>
 
                 </table>

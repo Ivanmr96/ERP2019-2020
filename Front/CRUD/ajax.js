@@ -41,7 +41,7 @@ const app = new Vue({
     function obtenerPedidos(onResponse, onError) {
         var url = BASE_URL + API_PEDIDO
 
-        app.$http.get(url).then(onResponse, onError);
+        Vue.http.get(url).then(onResponse, onError);
     }
 
 

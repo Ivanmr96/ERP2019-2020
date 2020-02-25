@@ -1,12 +1,13 @@
 Vue.component('detallescomponent', {
             data: function()
             {
-                return{
+                return {
                     //idLineaPedido: id,
                     stageProceso: "btn btn-primary",
                     stageReparto: "btn btn-secondary",
                     stageCancelado: "btn btn-secondary",
-                    stageRecibido: "btn btn-secondary"
+                    stageRecibido: "btn btn-secondary",
+                    productos: [{ Codigo: 1, Nombre: "Callate", PrecioUnitario: 2.2 }, { Codigo: 2, Nombre: "A>ASA", PrecioUnitario:4.0 }]
                 }
             },
 
@@ -23,6 +24,39 @@ Vue.component('detallescomponent', {
                     //}, function () {                                          //Aqui indica que hará en caso de error
                     // alert("error");
                     //});
+                },
+
+                obtenerNombreProductoPorId: function (codigo) {
+                    var found = false
+                    var nombre = ""
+
+                    if (this.productos != undefined) {
+                        for (var i = 0; i < this.productos.length && !found; i++) {
+                            if (this.productos[i].Codigo == codigo) {
+                                found = true
+                                nombre = this.productos[i].Nombre
+                            }
+                        }
+                    }
+                    return nombre
+                },
+
+                cambiarProductoLineaPedido: function (producto, lineaPedido) {
+                    lineaPedido.codigoProducto = producto.Codigo;
+                    lineaPedido.precioUnitario = producto.PrecioUnitario;
+                },
+
+                anadirLineaPedidos(){
+                    //TODO La cantidad inicial es 1 (tiene sentido, no?)
+                    this.$store.state.pedidoSeleccionado.lineasDePedido.push(new clsLineaPedido(0,this.$store.state.pedidoSeleccionado.codigo, 0, 0, null))
+                },
+                eliminarLineaPedido: function(lineaPedido)
+                {
+                    for( var i = 0 ; i < this.$store.state.pedidoSeleccionado.lineasDePedido.length; i++)
+                    {
+                        if( this.$store.state.pedidoSeleccionado.lineasDePedido[i] === lineaPedido)
+                            this.$store.state.pedidoSeleccionado.lineasDePedido.splice(i, 1);
+                    }
                 }
             },
 
@@ -131,26 +165,26 @@ Vue.component('detallescomponent', {
                         <td class="table-body-bold">
                             <div class="dropdown">
                                 <button class="btn btn-secondary w-75 text-left" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Listado de productos
+                                    {{ obtenerNombreProductoPorId(item.codigoProducto) }}
                                     <i data-toggle="tooltip" title="Añadir persona" class="material-icons float-right">expand_more</i>
                                 </button>
                                 <div class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Producto1</a>
-                                    <a class="dropdown-item" href="#">Producto2</a>
-                                    <a class="dropdown-item" href="#">Producto3</a>
+                                <template v-for="producto in productos">
+                                    <a v-on:click="cambiarProductoLineaPedido(producto, item)" class="dropdown-item" href="#">{{producto.Nombre}} - 1€</a>
+                                </template>
                                 </div>
                             </div>
                         </td>
                         <td> {{item.precioUnitario}} €</td>
                         <td>
-                            <i class="material-icons align-middle" onclick="restar()">remove_circle_outline</i>
+                            <i class="material-icons align-middle" v-on:click="item.cantidad--">remove_circle_outline</i>
                             <span class="align-middle">{{item.cantidad}}</span>
-                            <i data-toggle="tooltip" onclick="sumar()" title="Añadir persona" class="material-icons align-middle">add_circle_outline</i>
+                            <i data-toggle="tooltip" v-on:click="item.cantidad++" title="Añadir persona" class="material-icons align-middle">add_circle_outline</i>
     
                         </td>
                         <td>21</td>
                         <td>{{ item.precioUnitario * item.cantidad }}€</td>
-                        <td><a href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons rojo">delete</i></a></td>
+                        <td><a href="#"><i data-toggle="tooltip" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo">delete</i></a></td>
                     </tr>
                       </template>
                         </tbody>
@@ -158,8 +192,8 @@ Vue.component('detallescomponent', {
                     </table>
 
             </div>
-            <button class="btn btn-primary btnAnadir">
-                <i data-toggle="tooltip" onclick="sumar()" title="Añadir persona" class="material-icons align-middle">add</i>
+            <button class="btn btn-primary btnAnadir" v-on:click="anadirLineaPedidos()">
+                <i data-toggle="tooltip" onclick="sumar()" title="Añadir línea de pedido" class="material-icons align-middle">add</i>
             </button>
 
         </div>
