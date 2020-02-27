@@ -8,7 +8,8 @@ Vue.component('realizarpedidocomponent',
             ],
             pedido: new clsPedido(1, undefined, new Date(), undefined),
             proveedorSeleccionado: undefined,
-            productos: undefined
+            productos: undefined,
+            proveedorMostrado: "Proveedor"
         }
     },
 
@@ -25,7 +26,9 @@ Vue.component('realizarpedidocomponent',
         anadirLineaPedidos(){
             this.pedido.lineasDePedido.push(new clsLineaPedido(0,this.pedido.codigo, 0, 0, null))
         },
-
+        cambiarProveedor: function (proveedor) {
+            this.proveedorMostrado = proveedor.nombreRazonSocial;
+        },
         obtenerProductosDelProveedorSeleccionado: function()
         {
             //this.$store.actions.obtenerProductos((response) => alert(JSON.stringify(response.body) , () => alert("error") ))
@@ -104,21 +107,27 @@ Vue.component('realizarpedidocomponent',
         <div class="row justify-content-center">
 
             <div class="divSuperior">
-                <h4 id="title">REALIZAR PEDIDO</h4>
-                <div class="dropdownSuperior">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownMenuButton">
-                        Proveedor <!-- TODO Nombre del proveedor, cuando no haya ninguno seleccionado que ponga "selecciona proveedor" -->
-                    </button>
-                    <div class="dropdown-menu" v-for="proveedor in proveedores">
-                        <template>
-                        <a class="dropdown-item" href="#">{{proveedor.nombreRazonSocial}}</a>
-                        </template
-                    </div>
-                </div>
-            </div>
                 <div class="d-flex">
+                    <h4 id="title">REALIZAR PEDIDO</h4>
+                    
                     <button v-on:click="confirmar" type="button" class="btn btn-primary ml-auto guardar">Guardar</button>
                 </div>
+                <hr />
+                    <h4>
+                        <div class="dropdown">
+                        
+                            <button class="btn btn-secondary text-left" type="button" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+                                {{proveedorMostrado}}
+                                <i data-toggle="tooltip" class="material-icons float-right">expand_more</i>
+                            </button>
+                            <div class="dropdown-menu" v-for="proveedor in proveedores">
+                                <template>
+                                    <a class="dropdown-item" href="#" v-on:click="cambiarProveedor(proveedor)">{{proveedor.nombreRazonSocial}}</a>
+                                </template>
+                            </div>
+
+                        </div>
+                    </h4>
                 <table class="rounded table table-striped align-self-center text-center">
 
                     <thead class="rounded">
@@ -137,11 +146,11 @@ Vue.component('realizarpedidocomponent',
                             <tr>
                                 <td class="table-body-bold">
                                     <div class="dropdown">
-                                        <p></p>
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="btn btn-secondary w-75 text-left" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             {{ obtenerNombreProductoPorId(lineaPedido.codigoProducto) }}
+                                            <i data-toggle="tooltip" class="material-icons float-right">expand_more</i>
                                         </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton">
                                             <template v-for="producto in productosDelProveedorSeleccionado">
                                                 <a v-on:click="cambiarProductoLineaPedido(producto, lineaPedido)" class="dropdown-item" href="#">{{producto.Nombre}} - 1€</a>
                                             </template>
@@ -150,13 +159,13 @@ Vue.component('realizarpedidocomponent',
                                 </td>
                                 <td>{{lineaPedido.precioUnitario}} €</td>
                                 <td>
-                                    <i class="material-icons icono" v-on:click="lineaPedido.cantidad++">add</i>
-                                    <span id="numero">{{lineaPedido.cantidad}}</span>
-                                    <i class="material-icons icono" v-on:click="lineaPedido.cantidad--">remove</i>
+                                    <i class="material-icons align-middle" v-on:click="lineaPedido.cantidad--">remove_circle_outline</i>                                    
+                                    <span class="align-middle" id="numero">{{lineaPedido.cantidad}}</span>
+                                    <i data-toggle="tooltip" class="material-icons align-middle" v-on:click="lineaPedido.cantidad++">add_circle_outline</i>
                                 </td>
                                 <td>21</td>
                                 <td>{{lineaPedido.cantidad * lineaPedido.precioUnitario}} €</td>
-                                <td><a v-on:click="eliminarLineaPedido(lineaPedido)" href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons text-center rojo">delete</i></a></td>
+                                <td><a v-on:click="eliminarLineaPedido(lineaPedido)" href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons float-left rojo">delete</i></a></td>
                             </tr>
                         </template>
 
@@ -169,7 +178,7 @@ Vue.component('realizarpedidocomponent',
                 </table>
 
             </div>
-            </div>
+        </div>
 
             
 

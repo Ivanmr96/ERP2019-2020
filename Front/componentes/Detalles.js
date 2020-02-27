@@ -184,7 +184,7 @@ Vue.component('detallescomponent', {
                         </td>
                         <td>21</td>
                         <td>{{ item.precioUnitario * item.cantidad }}€</td>
-                        <td><a href="#"><i data-toggle="tooltip" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo">delete</i></a></td>
+                        <td><a href="#"><i data-toggle="tooltip" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo float-left">delete</i></a></td>
                     </tr>
                       </template>
                         </tbody>
