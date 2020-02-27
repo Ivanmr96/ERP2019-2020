@@ -67,5 +67,65 @@ namespace ProyectoERP_API_DAL.Lists
 
             return listadoProveedor;
         }
+
+
+
+        /// <summary>
+        /// Nombre: getProveedor
+        /// Comentario: Este método nos permite obtener un proveedor por id.
+        /// Cabecera: public List<clsProveedor> getProveedor(string cifProveedor)
+        /// </summary>
+        /// <returns>Devuelve un list del tipo clsProveedor</returns>
+        public clsProveedor getProveedor(string cifProveedor)
+        {
+            
+            SqlDataReader miLector = null;
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            SqlConnection connection = null;
+            clsProveedor proveedor = null;
+            try
+            {
+                connection = clsMyConnection.getConnection();
+                SqlCommand sqlCommand = new SqlCommand();
+
+                sqlCommand.Parameters.AddWithValue("@cifProveedor", cifProveedor);
+                sqlCommand.CommandText = "SELECT * FROM ERP_Proveedores WHERE CIF = @cifProveedor";
+                sqlCommand.Connection = connection;
+
+                miLector = sqlCommand.ExecuteReader();
+
+                if (miLector.HasRows)
+                {
+                    while (miLector.Read())
+                    {
+                        proveedor = new clsProveedor();//Yo crearía un constructor por defecto para clsProveedor
+                        proveedor.Cif = (string)miLector["CIF"];
+                        proveedor.NombreRazonSocial = (miLector["Nombre_RazonSocial"] is DBNull) ? "DEFAULT" : (string)miLector["Nombre_RazonSocial"];
+                        proveedor.Direccion = (miLector["Direccion"] is DBNull) ? "DEFAULT" : (string)miLector["Direccion"];
+                        proveedor.Telefono = (miLector["Telefono"] is DBNull) ? "000000000" : (string)miLector["Telefono"];
+                        proveedor.Email = (miLector["Email"] is DBNull) ? "DEFAULT" : (string)miLector["Email"];
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;//Aquí podríamos pasar la excepción para que en caso de error el front muestre una alerta de error
+            }
+            finally
+            {
+                if (miLector != null)
+                {
+                    miLector.Close();
+                }
+                if (clsMyConnection != null)
+                {
+                    clsMyConnection.closeConnection(ref connection);
+                }
+            }
+
+            return proveedor;
+        }
+
     }
 }

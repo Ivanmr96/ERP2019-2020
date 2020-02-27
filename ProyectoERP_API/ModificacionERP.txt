@@ -1,0 +1,16 @@
+-------ERP --------- 23:32 27/02/2020
+PROBLEMA: Es imposible deducir qué proveedor te ha proveído de un
+	pedido por el diseño de la BBDD.
+
+SOLUCIÓN: Cambiar el modelo de BBDD, y la API.
+
+-Añadir relación entre Pedido y Proveedor, 1:N 
+Proveedor -> Pedido.
+
+-Añadir restricción en BBDD para que las líneas
+de un pedido no puedan tener productos de otros proveedores
+que no sean el proveedor del pedido.
+
+
+
+

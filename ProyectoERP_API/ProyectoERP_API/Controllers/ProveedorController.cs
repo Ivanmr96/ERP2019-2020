@@ -24,5 +24,27 @@ namespace ProyectoERP_API.Controllers{
             }
             return listadoProveedores;
         }
+
+
+        //Get: api/Proveedor/{cifProveedor}
+        public clsProveedor Get(string id)
+        {
+            clsProveedor proveedor = null;
+
+            try
+            {
+                proveedor = new ClsListadosProveedores_BL().getProveedor(id);
+            }
+            catch (Exception e)
+            {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (proveedor == null || string.IsNullOrEmpty(proveedor.Cif))
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+            return proveedor;
+        }
     }
 }

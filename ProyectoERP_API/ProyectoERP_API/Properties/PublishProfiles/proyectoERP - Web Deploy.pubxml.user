@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
@@ -7,18 +6,6 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvzviWGCkWEiRr9L8Z2rIPQAAAAACAAAAAAAQZgAAAAEAACAAAAAsP3OcXjQFtFG7dvOt+GiT3MGSk1DU0/0/8Gfgyjfm2gAAAAAOgAAAAAIAACAAAACtB8xAgWAVIZ7IOgJo2HPO70SnPv+dAdIYfee3AqqDzYAAAABU0WpGAiMAI86ee90mjJgStC9cb4ieel9G/IHTFUiHkEpwxXi9elodnYqKmm+Js606Q8/7dwgKEyLx2bCwi4LZRxRY+eW0efGDKaoxEzKI/4mPG+1p0gST8gAjZVCgIO5RDGx1b7QHz2pk9qUGt4A9IWpql6E4Jm4Rulto/Ek4NUAAAAAdBWjujrJoOz9bCs4/3ULYhth/Lht3KMCy8ZulRN0RXa++egIWUDcieS8tsU/bvzYZ1GYpMe1Ghvq5XSVT9M3c</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvzviWGCkWEiRr9L8Z2rIPQAAAAACAAAAAAAQZgAAAAEAACAAAAAdhr+3NGEOEREf2HvoRn89XnjbCDBRi3y31K5TDGtyRgAAAAAOgAAAAAIAACAAAAC4YnIi25gYGWPxHVZ6fnlrH7+VP3ScdURm5vT4q2CwHoAAAACVMxnNedw5RTV4rTMi51oG/EqLNcX+y9rm2nkK3dB7iYxeBMrq2Vc/Le1qyVBUbLRLvj2ILK0PFHzVmHYbRSorEcw7DGQRnJcHdCvi6DxHqq6rabSPkIcl4PIUz2EjT0BlW8pVc6nMrd6WAXw9l8KalGmHKpZF1UuavB97Nto2d0AAAADK9bw1Sv6WZ4EpFfswupvFScOF20PppGaKKfJdJ4vPkH5gDxskbABbG/vUayFzT6Ji9w0oeFTM8rbKPpkR5cXx</EncryptedPassword>
   </PropertyGroup>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
-edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
--->
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvzviWGCkWEiRr9L8Z2rIPQAAAAACAAAAAAAQZgAAAAEAACAAAAAsP3OcXjQFtFG7dvOt+GiT3MGSk1DU0/0/8Gfgyjfm2gAAAAAOgAAAAAIAACAAAACtB8xAgWAVIZ7IOgJo2HPO70SnPv+dAdIYfee3AqqDzYAAAABU0WpGAiMAI86ee90mjJgStC9cb4ieel9G/IHTFUiHkEpwxXi9elodnYqKmm+Js606Q8/7dwgKEyLx2bCwi4LZRxRY+eW0efGDKaoxEzKI/4mPG+1p0gST8gAjZVCgIO5RDGx1b7QHz2pk9qUGt4A9IWpql6E4Jm4Rulto/Ek4NUAAAAAdBWjujrJoOz9bCs4/3ULYhth/Lht3KMCy8ZulRN0RXa++egIWUDcieS8tsU/bvzYZ1GYpMe1Ghvq5XSVT9M3c</EncryptedPassword>
-  </PropertyGroup>
->>>>>>> b7a03572855faab721c360585387bc976308eb84
 </Project>

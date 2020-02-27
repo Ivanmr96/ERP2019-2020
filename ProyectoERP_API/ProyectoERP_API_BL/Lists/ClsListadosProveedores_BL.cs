@@ -23,5 +23,25 @@ namespace ProyectoERP_API_BL.Lists{
             }
             return lista;
         }
+
+        /// <summary>
+        /// Nombre: getProveedor
+        /// Comentario: Este método nos permite obtener un proveedor por id.
+        /// Cabecera: public List<clsProveedor> getProveedor(string cifProveedor)
+        /// </summary>
+        /// <returns>Devuelve un list del tipo clsProveedor</returns>
+        public clsProveedor getProveedor(string cifProveedor)
+        {
+            clsProveedor proveedor;
+            try
+            {
+                proveedor = new ClsListadosProveedores_DAL().getProveedor(cifProveedor);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return proveedor;
+        }
     }
 }

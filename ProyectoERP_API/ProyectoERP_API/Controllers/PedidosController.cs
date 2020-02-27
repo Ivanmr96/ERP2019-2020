@@ -1,4 +1,5 @@
-﻿using ProyectoERP_API_BL.Handler;
+﻿using ProyectoERP_API.Models;
+using ProyectoERP_API_BL.Handler;
 using ProyectoERP_API_BL.Lists;
 using ProyectoERP_API_Entities;
 using System;
@@ -28,6 +29,53 @@ namespace ProyectoERP_API.Controllers
             }
 
             return listaPedidos;
+        }
+
+
+        //Get: api/Pedidos?pedidosConPrecioTotalYProveedor=true;
+        public IEnumerable<clsPedidoConPrecioTotalYProveedor> Get(bool pedidosConPrecioTotalYProveedor)
+        {
+            List<clsPedido> listaPedidos;
+            List<clsLineaPedido> listaLineasDePedido;
+            List<clsPedidoConPrecioTotalYProveedor> listaPedidosConPrecioYProveedor;
+            double totalPrecioPedido = 0.0;
+            string cifProveedor;
+            string nombreRazonSocialProveedor;
+
+            try
+            {
+                listaPedidos = new ClsListadosPedidos_BL().getPedidosList();
+                for(int i = 0; i < listaPedidos.Count; i++)
+                {
+                    //Por cada pedido existente
+                    //Obtengo sus líneas de pedido
+                    listaLineasDePedido = new ClsListadosLineaDePedidos_BL()
+                        .getLineasPedidoDeUnPedido(listaPedidos[i].Codigo);
+                    totalPrecioPedido = 0.0;
+
+                    for(int j = 0; j< listaLineasDePedido.Count; j ++)
+                    {
+                        //Por cada linea de pedido existente en un pedido
+                        //Vamos sumando
+                        totalPrecioPedido += (listaLineasDePedido[i].Cantidad * listaLineasDePedido[i].PrecioUnitario);
+                    }
+
+                    //TODO Y aquí te diste cuenta de que no se podía saber el proveedor de un pedido jaja
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (listaPedidos.Count == 0 || listaPedidos == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+
+            return null;
         }
 
 
