@@ -8,3 +8,14 @@ D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\Proye
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.csproj.CopyComplete
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.dll
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.pdb
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\bin\Debug\ProyectoERP_API_BL.dll
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\bin\Debug\ProyectoERP_API_BL.pdb
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\bin\Debug\ProyectoERP_API_DAL.dll
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\bin\Debug\ProyectoERP_API_Entities.dll
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\bin\Debug\ProyectoERP_API_DAL.pdb
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\bin\Debug\ProyectoERP_API_Entities.pdb
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.csprojAssemblyReference.cache
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.csproj.CoreCompileInputs.cache
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.csproj.CopyComplete
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.dll
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_BL\obj\Debug\ProyectoERP_API_BL.pdb

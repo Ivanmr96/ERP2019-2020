@@ -6,3 +6,12 @@ D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\Proy
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csproj.CopyComplete
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.dll
 D:\Documents\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.pdb
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_DAL.dll
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_DAL.pdb
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_Entities.dll
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Debug\ProyectoERP_API_Entities.pdb
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csprojAssemblyReference.cache
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csproj.CoreCompileInputs.cache
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.csproj.CopyComplete
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.dll
+D:\Segundo\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Debug\ProyectoERP_API_DAL.pdb
