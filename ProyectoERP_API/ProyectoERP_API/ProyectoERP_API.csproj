@@ -114,7 +114,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\clsPedidoConPrecioTotalYProveedor.cs" />
+    <Compile Include="Models\clsPedidoConPrecioTotal.cs" />
     <Compile Include="Models\clsProductoConPrecioYProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

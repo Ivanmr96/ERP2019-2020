@@ -13,6 +13,7 @@ namespace ProyectoERP_API_Entities
         private string estado;
         private DateTime fechaPedido;
         private DateTime fechaRecepcion;
+        private string cifProveedor;
         #endregion
 
         #region"Propiedades publicas"
@@ -20,17 +21,19 @@ namespace ProyectoERP_API_Entities
         public string Estado { get => estado; set => estado = value; }
         public DateTime FechaPedido { get => fechaPedido; set => fechaPedido = value; }
         public DateTime FechaRecepcion { get => fechaRecepcion; set => fechaRecepcion = value; }
+        public string CifProveedor { get => cifProveedor; set => cifProveedor = value; }
 
         #endregion
 
 
         #region"Constructor"
-        public clsPedido(int codigo, string estado, DateTime fechaPedido, DateTime fechaRecepcion)
+        public clsPedido(int codigo, string estado, DateTime fechaPedido, DateTime fechaRecepcion, string cifProveedor)
         {
             this.codigo = codigo;
             this.estado = estado;
             this.fechaPedido = fechaPedido;
             this.fechaRecepcion = fechaRecepcion;
+            this.cifProveedor = cifProveedor;
         }
 
         public clsPedido()
@@ -39,6 +42,7 @@ namespace ProyectoERP_API_Entities
             this.estado = "";
             this.fechaPedido = DateTime.Now;
             this.fechaRecepcion = DateTime.Now;
+            this.cifProveedor = "";
         }
 
         #endregion

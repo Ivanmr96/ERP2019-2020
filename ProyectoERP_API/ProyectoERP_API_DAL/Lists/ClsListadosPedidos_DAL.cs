@@ -70,7 +70,12 @@ namespace ProyectoERP_API_DAL.Lists
                             pedido.FechaRecepcion = (DateTime)reader["FechaRecepcion"];
                         }
 
-                       
+                        if (!reader.IsDBNull(reader.GetOrdinal("CIFProveedor")))
+                        {
+
+                            pedido.CifProveedor = (string)reader["CIFProveedor"];
+                        }
+
 
                         listadoPedidos.Add(pedido);
                     }
@@ -154,6 +159,11 @@ namespace ProyectoERP_API_DAL.Lists
                             pedido.FechaRecepcion = (DateTime)reader["FechaRecepcion"];
                         }
 
+                        if (!reader.IsDBNull(reader.GetOrdinal("CIFProveedor")))
+                        {
+
+                            pedido.CifProveedor = (string)reader["CIFProveedor"];
+                        }
                     }
                 }
             }

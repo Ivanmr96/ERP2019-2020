@@ -11,7 +11,7 @@
 		-@cantidad tinyint
 		-@precioUnitario money
 		-@Divisa varchar(15)
-	Postcondicones: se insertará una nueva linea de pedido con los datos propocionados
+	Postcondicones: se insertarï¿½ una nueva linea de pedido con los datos propocionados
 */
 
 Go
@@ -33,7 +33,7 @@ rollback
 	Entradas:
 		-@codigoProducto int
 		-@codigoPedido int
-	Postcondiciones: se borrará la linea de pedido segun el codigo del producto y del pedido
+	Postcondiciones: se borrarï¿½ la linea de pedido segun el codigo del producto y del pedido
 */
 
 Go
@@ -122,16 +122,15 @@ go
 	entradas: no hay
 	salidas: el id de pedido que se crea
 	entr/sal: no hay
-	postcondiciones: se incertará un pedido  en la base de datos con el estado Preparando ,
-	la fecha del pedido será la de ese día, la fecha de recepcion estará a null y AN devolverá el id del pedido creado
+	postcondiciones: se incertarï¿½ un pedido  en la base de datos con el estado Preparando ,
+	la fecha del pedido serï¿½ la de ese dï¿½a, la fecha de recepcion estarï¿½ a null y AN devolverï¿½ el id del pedido creado
 */
-create procedure crearPedido 
+create procedure crearPedido (@CIFProveedor char(9))
 as
 begin
 	--declare @id int
-	insert into ERP_Pedidos(Estado,FechaPedido,FechaRecepcion)
-	values('Preparando',GETDATE(),null)
-
+	insert into ERP_Pedidos(Estado,FechaPedido,FechaRecepcion, CIFProveedor)
+	values('Preparando',GETDATE(),null,@CIFProveedor)
 	return @@identity
 end
 go
@@ -151,7 +150,7 @@ go
 	entradas: entero codigo del pedido y cadena estado del pedido
 	salidas: no hay
 	entr/sal: no hay
-	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado que  tambien se le pasa por parámetro
+	postcondiciones: el pedido cuyo codigo se pasa por parï¿½metro se le actualiza el estado que  tambien se le pasa por parï¿½metro
 */
 create procedure actualizarEstadoPedido @CodigoPedido int,@EstadoPedido varchar(15)
 as
@@ -176,7 +175,7 @@ go
 	entradas: entero codigo del pedido
 	salidas: no hay
 	entr/sal: no hay
-	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado a Cancelado
+	postcondiciones: el pedido cuyo codigo se pasa por parï¿½metro se le actualiza el estado a Cancelado
 */
 create procedure cancelarPedido @CodigoPedido int
 as
@@ -206,7 +205,7 @@ go
 	entradas: entero codigo del pedido
 	salidas: no hay
 	entr/sal: no hay
-	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado a recibido
+	postcondiciones: el pedido cuyo codigo se pasa por parï¿½metro se le actualiza el estado a recibido
 */
 create procedure recibirPedido @CodigoPedido int
 as
@@ -236,7 +235,7 @@ go
 	entradas: entero codigo del pedido
 	salidas: no hay
 	entr/sal: no hay
-	postcondiciones: el pedido cuyo codigo se pasa por parámetro se le actualiza el estado a 'En reparto'
+	postcondiciones: el pedido cuyo codigo se pasa por parï¿½metro se le actualiza el estado a 'En reparto'
 */
 create procedure pedidoEnReparto @CodigoPedido int
 as

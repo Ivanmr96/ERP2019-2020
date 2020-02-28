@@ -135,7 +135,7 @@ namespace ProyectoERP_API_DAL.Handler
         /// </summary>
         /// <param name="lineaPedido">List<clsLineaPedido> lineaPedido</param>
         /// <returns>0 si no se ha incertado y 1 si se ha incertado correctamente</returns>
-        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido)
+        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido, string CifProveedor)
         {
             int resultado = 0;
             int codigoPedido = 0;
@@ -143,7 +143,7 @@ namespace ProyectoERP_API_DAL.Handler
             try
             {
                 ClsHandlerPedidos_DAL hp=new ClsHandlerPedidos_DAL();
-                codigoPedido = hp.InsertarNuevoPedido();
+                codigoPedido = hp.InsertarNuevoPedido(CifProveedor);
 
                 for (int i = 0; i < lineaPedido.Count; i++)
                 {

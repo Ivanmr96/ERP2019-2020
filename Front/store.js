@@ -31,7 +31,7 @@ const store =  new Vuex.Store({
         {"codigoProducto":3, "codigoPedido":1, "cantidad":56, "precioUnitario":13.5, "divisa":"Euros"}
             ], 
         
-            "cifProveedor": "B12553426", 
+            "cifProveedor": "B90223548", 
         "nombreRazonSocial": "The Coca Cola Company", 
         "direccion": "Mi casa",
         "telefono": "954-000-000", 

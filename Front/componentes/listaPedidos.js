@@ -9,13 +9,53 @@ Vue.component('listapedidoscomponent',
 
     methods: {
 
+        seleccionarPedidoYNavegarAEditar: function(pedido)
+        {
+            store.state.pedidoSeleccionado = pedido
+
+            obtenerLineasPedido((response) => 
+            {
+                store.state.pedidoSeleccionado.lineasDePedido = response.body
+
+                store.state.currentComponent = store.state.components.detalles
+                
+            },
+            () => alert("Error al intentar obtener las lineas de pedido del pedido")
+            ,
+            store.state.pedidoSeleccionado.Codigo)
+
+            
+        },
+
+        obtenerColorEstadoPedido: function(estado)
+        {
+            cssClass = "icono-estado-";
+            switch(estado)
+            {
+                case "Recibido":
+                    cssClass += "recibido";
+                    break;
+                case "Preparando":
+                    cssClass += "preparando";
+                    break;
+                case "Cancelado":
+                    cssClass += "cancelado";
+                    break;
+                case "En reparto":
+                    cssClass += "enreparto";
+                    break;
+            }
+
+            return cssClass;
+        },
+
         obtenerYMostrarPedidos: function()
         {
             obtenerPedidos((response) => 
             { 
                 this.pedidos = response.body;
             }, 
-            () => alert("error"))
+            () => alert("Hubo un error inesperado al cargar los pedidos"))
         },
 
         "sortTable": function sortTable(col) {
@@ -100,12 +140,12 @@ Vue.component('listapedidoscomponent',
                         <template v-for="pedido in pedidos">
                             <tr>
                                 <td class="table-body-bold">{{pedido.Codigo}}</td>
-                                <td class="table-body-bold">Proveedor aqui</td>
+                                <td class="table-body-bold">{{pedido.NombreRazonSocialProveedor}}</td>
                                 <td>{{pedido.FechaPedido}}</td>
-                                <td><i data-toggle="tooltip" title="Ajustes" class="material-icons icono-estado-enreparto">lens</i> {{pedido.Estado}}</td>
+                                <td><i data-toggle="tooltip" title="Ajustes" :class="obtenerColorEstadoPedido(pedido.Estado)" class="material-icons">lens</i> {{pedido.Estado}}</td>
                                 <td>{{pedido.FechaRecepcion}}</td>
-                                <td>total aqui</td>
-                                <td><a v-on:click="$store.state.currentComponent = $store.state.components.detalles" href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ver" class="material-icons">remove_red_eye</i></a></td>
+                                <td>{{pedido.PrecioTotalPedido}} €</td>
+                                <td><a v-on:click="seleccionarPedidoYNavegarAEditar(pedido)" href="#" class="btn-detalles"><i data-toggle="tooltip" title="Ver" class="material-icons">remove_red_eye</i></a></td>
                             </tr>
                         </template>
                     </tbody>

@@ -15,12 +15,12 @@ namespace ProyectoERP_API_BL.Handler
         /// Método que crea un nuevo pedido llamando a procedimiento en BBDD y devuelve el código del pedido insertado
         /// </summary>
         /// <returns>int codigoNuevoPedido</returns>
-        public int InsertarNuevoPedido()
+        public int InsertarNuevoPedido(string CifProveedor)
         {
             ClsHandlerPedidos_DAL objOperaciones = new ClsHandlerPedidos_DAL();
             int codigoNuevoPedido;
             try {
-                 codigoNuevoPedido = objOperaciones.InsertarNuevoPedido();
+                 codigoNuevoPedido = objOperaciones.InsertarNuevoPedido(CifProveedor);
             } catch (Exception e) {
                 throw e;
             }

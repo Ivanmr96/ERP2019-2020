@@ -17,10 +17,13 @@ Vue.component('realizarpedidocomponent',
     {
         eliminarLineaPedido: function(lineaPedido) 
         {
-            for( var i = 0 ; i < this.pedido.lineasDePedido.length; i++) 
+            if(confirm("¿Seguro que quiere borrar?"))
             {
-                if(this.pedido.lineasDePedido[i] === lineaPedido)
-                    this.pedido.lineasDePedido.splice(i, 1);
+                for( var i = 0 ; i < this.pedido.lineasDePedido.length; i++) 
+                {
+                    if(this.pedido.lineasDePedido[i] === lineaPedido)
+                        this.pedido.lineasDePedido.splice(i, 1);
+                }
             }
         },
         anadirLineaPedidos(){

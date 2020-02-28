@@ -67,12 +67,12 @@ namespace ProyectoERP_API_BL.Handler{
         /// </summary>
         /// <param name="lineaPedido">List<clsLineaPedido> lineaPedido</param>
         /// <returns>0 si no se ha incertado y 1 si se ha incertado correctamente</returns>
-        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido){
+        public int insertarPedidoCompleto(List<clsLineaPedido> lineaPedido, string CifProveedor){
             int resultado;
 
             try{
                 ClsHandlerLineaDePedido_DAL hdp = new ClsHandlerLineaDePedido_DAL();
-                resultado = hdp.insertarPedidoCompleto(lineaPedido);
+                resultado = hdp.insertarPedidoCompleto(lineaPedido, CifProveedor);
             }catch (Exception e){
                 throw e;
             }

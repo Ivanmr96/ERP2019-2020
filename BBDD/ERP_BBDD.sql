@@ -59,8 +59,12 @@ create table ERP_Pedidos
 	FechaPedido datetime not null,
 	FechaRecepcion datetime null,
 
+	CIFProveedor char(9) not null
+
 	--------------------------pk-------------------------------
-	constraint PK_Pedidos primary key (Codigo)
+	constraint PK_Pedidos primary key (Codigo),
+
+	constraint FK_Pedidos_Proveedores foreign key (CIFProveedor) references ERP_Proveedores(CIF) on delete cascade on update cascade
 )
 go
 

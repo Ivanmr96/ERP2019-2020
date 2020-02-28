@@ -32,37 +32,43 @@ namespace ProyectoERP_API.Controllers
         }
 
 
-        //Get: api/Pedidos?pedidosConPrecioTotalYProveedor=true;
-        public IEnumerable<clsPedidoConPrecioTotalYProveedor> Get(bool pedidosConPrecioTotalYProveedor)
+        //Get: api/Pedidos?pedidosConPrecioTotal=true
+        public IEnumerable<clsPedidoConPrecioTotal> Get(bool pedidosConPrecioTotal)
         {
             List<clsPedido> listaPedidos;
             List<clsLineaPedido> listaLineasDePedido;
-            List<clsPedidoConPrecioTotalYProveedor> listaPedidosConPrecioYProveedor;
+            List<clsPedidoConPrecioTotal> listaPedidosConPrecio = new List<clsPedidoConPrecioTotal>();
+            clsPedidoConPrecioTotal pedidoConPrecioTotal;
             double totalPrecioPedido = 0.0;
-            string cifProveedor;
             string nombreRazonSocialProveedor;
 
             try
             {
                 listaPedidos = new ClsListadosPedidos_BL().getPedidosList();
-                for(int i = 0; i < listaPedidos.Count; i++)
+                for (int i = 0; i < listaPedidos.Count; i++)
                 {
+                    
                     //Por cada pedido existente
                     //Obtengo sus líneas de pedido
                     listaLineasDePedido = new ClsListadosLineaDePedidos_BL()
                         .getLineasPedidoDeUnPedido(listaPedidos[i].Codigo);
                     totalPrecioPedido = 0.0;
 
-                    for(int j = 0; j< listaLineasDePedido.Count; j ++)
+                    for (int j = 0; j < listaLineasDePedido.Count; j++)
                     {
                         //Por cada linea de pedido existente en un pedido
                         //Vamos sumando
-                        totalPrecioPedido += (listaLineasDePedido[i].Cantidad * listaLineasDePedido[i].PrecioUnitario);
+                        totalPrecioPedido += (listaLineasDePedido[j]
+                            .Cantidad * listaLineasDePedido[j].PrecioUnitario);
                     }
 
-                    //TODO Y aquí te diste cuenta de que no se podía saber el proveedor de un pedido jaja
+                    nombreRazonSocialProveedor = new ClsListadosProveedores_BL()
+                        .getProveedor(listaPedidos[i].CifProveedor).NombreRazonSocial;
 
+                    pedidoConPrecioTotal = new clsPedidoConPrecioTotal(listaPedidos[i], 
+                        totalPrecioPedido,nombreRazonSocialProveedor);
 
+                    listaPedidosConPrecio.Add(pedidoConPrecioTotal);
                 }
             }
             catch (Exception e)
@@ -75,7 +81,7 @@ namespace ProyectoERP_API.Controllers
                 throw new HttpResponseException(HttpStatusCode.NoContent);
             }
 
-            return null;
+            return listaPedidosConPrecio;
         }
 
 
@@ -115,12 +121,12 @@ namespace ProyectoERP_API.Controllers
         }
 
         //Post
-        public void Post([FromBody]List<clsLineaPedido> lineasPedido)
+        public void Post([FromBody]List<clsLineaPedido> lineasPedido, string CifProveedor)
         {
             int filas;
 
             try {
-                filas = new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido);
+                filas = new ClsHandlerLineaDePedido_BL().insertarPedidoCompleto(lineasPedido, CifProveedor);
             } catch (Exception e) {
                 throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
             }

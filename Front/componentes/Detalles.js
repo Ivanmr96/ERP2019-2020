@@ -7,12 +7,23 @@ Vue.component('detallescomponent', {
                     stageReparto: "btn btn-secondary",
                     stageCancelado: "btn btn-secondary",
                     stageRecibido: "btn btn-secondary",
-                    productos: [{ Codigo: 1, Nombre: "Callate", PrecioUnitario: 2.2 }, { Codigo: 2, Nombre: "A>ASA", PrecioUnitario:4.0 }]
+                    //productos: [{ Codigo: 1, Nombre: "Callate", PrecioUnitario: 2.2 }, { Codigo: 2, Nombre: "A>ASA", PrecioUnitario:4.0 }]
+                    productos: undefined
                 }
             },
 
             methods:
             {
+                obtenerProductosDelProveedorSeleccionado: function (cifProveedor) {
+                    // alert(" 3 Entra en el methods obtener productos proveedor seleccionado con cif : " + cifProveedor);
+ 
+                   obtenerProductosDeUnProveedor(cifProveedor, (response) => {
+                      // alert(" response - Entra en el methods obtener productos proveedor seleccionado con cif : " + cifProveedor);
+                         this.productos = response.body;
+                     },
+                         () => alert("error"))
+                 },
+
                 cambiarEstado(estado) {
                 
                     //alert(estado);
@@ -20,7 +31,7 @@ Vue.component('detallescomponent', {
 
                     //this.$http.put(url).then(function (response)             //Realiza una petición get a la URL, con la función dentro del "then" indico que hay que hacer en caso de respuesta satisfactoria
                     //{
-                        this.$store.state.pedidoSeleccionado.estado = estado;
+                        this.$store.state.pedidoSeleccionado.Estado = estado;
                     //}, function () {                                          //Aqui indica que hará en caso de error
                     // alert("error");
                     //});
@@ -52,17 +63,21 @@ Vue.component('detallescomponent', {
                 },
                 eliminarLineaPedido: function(lineaPedido)
                 {
-                    for( var i = 0 ; i < this.$store.state.pedidoSeleccionado.lineasDePedido.length; i++)
-                    {
-                        if( this.$store.state.pedidoSeleccionado.lineasDePedido[i] === lineaPedido)
-                            this.$store.state.pedidoSeleccionado.lineasDePedido.splice(i, 1);
+                    if(confirm("¿Seguro que quiere borrar?")){
+                        for( var i = 0 ; i < this.$store.state.pedidoSeleccionado.lineasDePedido.length; i++)
+                        {
+                            if( this.$store.state.pedidoSeleccionado.lineasDePedido[i] === lineaPedido)
+                                this.$store.state.pedidoSeleccionado.lineasDePedido.splice(i, 1);
+                        }
                     }
                 }
             },
 
     mounted() {
         //alert(this.$store.state.pedidoSeleccionado.estado);
-        this.cambiarEstado(this.$store.state.pedidoSeleccionado.estado);
+        this.obtenerProductosDelProveedorSeleccionado(this.$store.state.pedidoSeleccionado.CifProveedor);
+        
+        this.cambiarEstado(this.$store.state.pedidoSeleccionado.Estado);
         // this.cambiarEstado('recibido');
         this.stageProceso = "btn  btn-primary";
         this.stageReparto = "btn  btn-secondary";
@@ -72,7 +87,7 @@ Vue.component('detallescomponent', {
     computed:
     {
         isEnabledProceso:function(){
-           if(this.$store.state.pedidoSeleccionado.estado == 'proceso')
+           if(this.$store.state.pedidoSeleccionado.Estado == 'Preparando')
            {
                clase = "btn  btn-primary";
            } else{
@@ -81,7 +96,7 @@ Vue.component('detallescomponent', {
            return clase;
         },
         isEnabledReparto:function(){
-            if(this.$store.state.pedidoSeleccionado.estado == 'reparto')
+            if(this.$store.state.pedidoSeleccionado.Estado == 'Reparto')
             {
                 clase = "btn  btn-primary";
             } else{
@@ -90,7 +105,7 @@ Vue.component('detallescomponent', {
             return clase;
          },
          isEnabledCancelado:function(){
-            if(this.$store.state.pedidoSeleccionado.estado == 'cancelado')
+            if(this.$store.state.pedidoSeleccionado.Estado == 'Cancelado')
             {
                 clase = "btn  btn-primary";
             } else{
@@ -99,7 +114,7 @@ Vue.component('detallescomponent', {
             return clase;
          },
          isEnabledRecibido:function(){
-            if(this.$store.state.pedidoSeleccionado.estado == 'recibido')
+            if(this.$store.state.pedidoSeleccionado.Estado == 'Recibido')
             {
                 clase = "btn  btn-primary";
             } else{
@@ -117,7 +132,7 @@ Vue.component('detallescomponent', {
 
             <div class="divSuperior">                
                 <div class="d-flex">
-                <h4 id="title">Pedido {{$store.state.pedidoSeleccionado.codigo}}</h4>
+                <h4 id="title">Pedido {{$store.state.pedidoSeleccionado.Codigo}}</h4>
                     <button type="button" class="btn btn-primary ml-auto guardar">Guardar</button>
                 </div>
                 <hr />
@@ -125,18 +140,17 @@ Vue.component('detallescomponent', {
                     <tr>
                         <td>Proveedor</td>
                         <td>CIF</td>
-                        <td>Correo electronico</td>
+                        <td></td>
                     </tr>
                     <tr>
-                    <td>{{$store.state.pedidoSeleccionado.nombreRazonSocial}}</td>
-                    <td>{{$store.state.pedidoSeleccionado.cifProveedor}}</td>
-                    <td>{{$store.state.pedidoSeleccionado.email}}</td>
+                    <td>{{$store.state.pedidoSeleccionado.NombreRazonSocialProveedor}}</td>
+                    <td>{{$store.state.pedidoSeleccionado.CifProveedor}}</td>
                         <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                            <button id="proceso" type="button" :class="isEnabledProceso" v-on:click="cambiarEstado('proceso')">En proceso</button>
-                            <button id="reparto" type="button" :class="isEnabledReparto" v-on:click="cambiarEstado('reparto')">En Reparto</button>
-                            <button id="cancelado" type="button" :class="isEnabledCancelado" v-on:click="cambiarEstado('cancelado')">Cancelado</button>
-                            <button id="recibido" type="button" :class="isEnabledRecibido" v-on:click="cambiarEstado('recibido')">Recibido</button>
+                            <div class="btn-group float-right mr-5" role="group" aria-label="Basic example">
+                            <button id="proceso" type="button" :class="isEnabledProceso" v-on:click="cambiarEstado('Preparando')">Preparando</button>
+                            <button id="reparto" type="button" :class="isEnabledReparto" v-on:click="cambiarEstado('Reparto')">En Reparto</button>
+                            <button id="cancelado" type="button" :class="isEnabledCancelado" v-on:click="cambiarEstado('Cancelado')">Cancelado</button>
+                            <button id="recibido" type="button" :class="isEnabledRecibido" v-on:click="cambiarEstado('Recibido')">Recibido</button>
                          </div>
 
                         </td>
@@ -165,8 +179,8 @@ Vue.component('detallescomponent', {
                         <td class="table-body-bold">
                             <div class="dropdown">
                                 <button class="btn btn-secondary w-75 text-left" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ obtenerNombreProductoPorId(item.codigoProducto) }}
-                                    <i data-toggle="tooltip" title="Añadir persona" class="material-icons float-right">expand_more</i>
+                                    {{ obtenerNombreProductoPorId(item.CodigoProducto) }}
+                                    <i data-toggle="tooltip" class="material-icons float-right">expand_more</i>
                                 </button>
                                 <div class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton">
                                 <template v-for="producto in productos">
@@ -175,15 +189,15 @@ Vue.component('detallescomponent', {
                                 </div>
                             </div>
                         </td>
-                        <td> {{item.precioUnitario}} €</td>
+                        <td> {{item.PrecioUnitario}} €</td>
                         <td>
                             <i class="material-icons align-middle" v-on:click="item.cantidad--">remove_circle_outline</i>
-                            <span class="align-middle">{{item.cantidad}}</span>
-                            <i data-toggle="tooltip" v-on:click="item.cantidad++" title="Añadir persona" class="material-icons align-middle">add_circle_outline</i>
+                            <span class="align-middle">{{item.Cantidad}}</span>
+                            <i data-toggle="tooltip" v-on:click="item.cantidad++" class="material-icons align-middle">add_circle_outline</i>
     
                         </td>
                         <td>21</td>
-                        <td>{{ item.precioUnitario * item.cantidad }}€</td>
+                        <td>{{ item.PrecioUnitario * item.Cantidad }}€</td>
                         <td><a href="#"><i data-toggle="tooltip" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo float-left">delete</i></a></td>
                     </tr>
                       </template>

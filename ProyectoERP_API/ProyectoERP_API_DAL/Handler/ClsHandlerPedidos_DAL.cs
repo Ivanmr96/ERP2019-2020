@@ -17,7 +17,7 @@ namespace ProyectoERP_API_DAL.Handler
         /// Método que crea un nuevo pedido llamando a procedimiento en BBDD y devuelve el código del pedido insertado
         /// </summary>
         /// <returns>int codigoNuevoPedido</returns>
-        public int InsertarNuevoPedido() //No recibe parámetros, porque en BBDD crea uno con los mismos datos de base 
+        public int InsertarNuevoPedido(string CifProveedor) //No recibe parámetros, porque en BBDD crea uno con los mismos datos de base 
         {
             clsMyConnection clsMyConnection = new clsMyConnection();
             SqlConnection connection = null;
@@ -37,6 +37,8 @@ namespace ProyectoERP_API_DAL.Handler
                 command.CommandType = CommandType.StoredProcedure;
 
                 var returnParameter = command.Parameters.Add("@ReturnVal", SqlDbType.Int);
+
+                command.Parameters.Add("CifProveedor", SqlDbType.Char).Value = CifProveedor;
 
                 returnParameter.Direction = ParameterDirection.ReturnValue;
 
