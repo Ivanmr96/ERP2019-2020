@@ -3,9 +3,7 @@ Vue.component('realizarpedidocomponent',
     data: function () 
     {
         return {
-            proveedores: [
-                new clsProveedor("22321231", "Coca-Cola Company", "Direccion","959123991", "cocacola@iesnervion.es")
-            ],
+            proveedores: undefined,
             pedido: new clsPedido(1, undefined, new Date(), undefined),
             proveedorSeleccionado: undefined,
             productos: undefined,
@@ -26,22 +24,47 @@ Vue.component('realizarpedidocomponent',
                 }
             }
         },
-        anadirLineaPedidos(){
+        anadirLineaPedidos()
+        {
             this.pedido.lineasDePedido.push(new clsLineaPedido(0,this.pedido.codigo, 0, 0, null))
         },
-        cambiarProveedor: function (proveedor) {
+        cambiarProveedor: function (proveedor) 
+        {
             this.proveedorMostrado = proveedor.nombreRazonSocial;
+            this.proveedorSeleccionado = proveedor
+            this.obtenerProductosDelProveedorSeleccionado()
         },
+
+        obtenerListadoProveedores: function()
+        {
+            obtenerProveedores((response) => 
+            {
+                this.proveedores = response.body
+            },
+            () => alert("Error al cargar el listado de proveedores"))
+        },
+
         obtenerProductosDelProveedorSeleccionado: function()
         {
             //this.$store.actions.obtenerProductos((response) => alert(JSON.stringify(response.body) , () => alert("error") ))
 
             //TODO No es obtenerProductos, es obtener productos de un proveedor :)
-            obtenerProductos((response) => 
+
+
+            /*obtenerProductos((response) => 
             { 
                 this.productos = response.body; 
             }, 
-            () => alert("error"))
+            () => alert("error")) */
+
+            if(this.proveedorSeleccionado != undefined)
+            {
+                obtenerProductosDeUnProveedor(this.proveedorSeleccionado.Cif, (response) =>
+                { 
+                    this.productos = response.body;
+                }, 
+                () => alert("error")) 
+            }
 
             /*
             fetch("https://proyectoerp.azurewebsites.net/api/Producto/", 
@@ -86,9 +109,10 @@ Vue.component('realizarpedidocomponent',
             }
         },
 
-        cambiarProductoLineaPedido: function (producto, lineaPedido) {
+        cambiarProductoLineaPedido: function (producto, lineaPedido) 
+        {
             lineaPedido.codigoProducto = producto.Codigo;
-            lineaPedido.precioUnitario = producto.PrecioUnitario;
+            lineaPedido.precioUnitario = producto.Precio;
         },
     },
 
@@ -96,10 +120,26 @@ Vue.component('realizarpedidocomponent',
         productosDelProveedorSeleccionado: function()
         {
             return this.productos
+        },
+
+        nombreProveedorDropdown: function()
+        {
+            if(this.proveedorSeleccionado != null)
+            {
+                nombre = this.proveedorSeleccionado.NombreRazonSocial
+            }
+            else
+            {
+                nombre = "Selecciona proveedor"
+            }
+            
+            return nombre
         }
     },
 
-    mounted(){
+    mounted()
+    {
+        this.obtenerListadoProveedores()
         this.obtenerProductosDelProveedorSeleccionado()
     },
 
@@ -120,12 +160,12 @@ Vue.component('realizarpedidocomponent',
                         <div class="dropdown">
                         
                             <button class="btn btn-secondary text-left" type="button" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
-                                {{proveedorMostrado}}
+                                {{nombreProveedorDropdown}}
                                 <i data-toggle="tooltip" class="material-icons float-right">expand_more</i>
                             </button>
-                            <div class="dropdown-menu" v-for="proveedor in proveedores">
-                                <template>
-                                    <a class="dropdown-item" href="#" v-on:click="cambiarProveedor(proveedor)">{{proveedor.nombreRazonSocial}}</a>
+                            <div class="dropdown-menu">
+                                <template v-for="proveedor in proveedores">
+                                    <a class="dropdown-item" href="#" v-on:click="cambiarProveedor(proveedor)">{{proveedor.NombreRazonSocial}}</a>
                                 </template>
                             </div>
 
@@ -155,7 +195,7 @@ Vue.component('realizarpedidocomponent',
                                         </button>
                                         <div class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton">
                                             <template v-for="producto in productosDelProveedorSeleccionado">
-                                                <a v-on:click="cambiarProductoLineaPedido(producto, lineaPedido)" class="dropdown-item" href="#">{{producto.Nombre}} - 1€</a>
+                                                <a v-on:click="cambiarProductoLineaPedido(producto, lineaPedido)" class="dropdown-item" href="#">{{producto.Nombre}} - {{producto.Precio}} €</a>
                                             </template>
                                         </div>
                                     </div>
@@ -173,7 +213,7 @@ Vue.component('realizarpedidocomponent',
                         </template>
 
                         <button class="btn btn-primary btnAnadir" v-on:click="anadirLineaPedidos()">
-                            <i data-toggle="tooltip" onclick="sumar()" title="Añadir línea de pedido" class="material-icons align-middle">add</i>
+                            <i data-toggle="tooltip" title="Añadir línea de pedido" class="material-icons align-middle">add</i>
                         </button>
 
                     </tbody>
