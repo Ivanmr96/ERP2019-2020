@@ -76,6 +76,7 @@ Vue.component('detallescomponent', {
             //Insertar
             for(var i = 0; i < this.lineasInsertar.length; i++)
             {
+                alert(JSON.stringify(this.lineasInsertar[i]))
                 insertarLineaDePedido(this.lineasInsertar[i]);
             }
 
@@ -103,14 +104,38 @@ Vue.component('detallescomponent', {
 
         cambiarProductoLineaPedido: function (producto, lineaPedido) 
         {
-            //alert("producto: " + JSON.stringify(producto))
-            //alert(JSON.stringify(lineaPedido))
-            lineaPedido.CodigoProducto = producto.Codigo;
-            lineaPedido.PrecioUnitario = producto.Precio;
-            //lineaPedido.Cantidad = lineaPedido.cantidad;
-            this.lineasActualizar.push(lineaPedido);
+            if(!this.productoYaExisteEnElPedido(producto.Codigo))
+            {
+                //alert("producto: " + JSON.stringify(producto))
 
-            this.actualizarPedido();
+                //Si el que hay que cambiar no es el producto por defecto (con codigo 0)
+                if(lineaPedido.CodigoProducto != 0)
+                    this.lineasEliminar.push(JSON.parse(JSON.stringify(lineaPedido)))
+
+                lineaPedido.CodigoProducto = producto.Codigo;
+                lineaPedido.PrecioUnitario = producto.Precio;
+                //lineaPedido.Cantidad = lineaPedido.cantidad;
+
+                //this.lineasInsertar.push(lineaPedido);
+
+                this.actualizarPedido();
+            }
+            else
+                alert("Este producto ya existe en el pedido, maquina")
+        },
+
+        productoYaExisteEnElPedido: function(codigoProducto)
+        {
+            existe = false
+
+
+            for(i = 0 ; i < this.pedido.LineasDePedido.length && !existe ; i++)
+            {
+                if(codigoProducto == this.pedido.LineasDePedido[i].CodigoProducto)
+                    existe = true
+            }
+
+            return existe
         },
 
         anadirLineaPedidos(){
@@ -226,7 +251,7 @@ template:
     <div class="divSuperior">                
         <div class="d-flex">
         <h4 id="title">Pedido {{this.pedido.Codigo}}</h4>
-            <button type="button" v-on:click="confirmar()" class="btn btn-primary ml-auto guardar">Guardar</button>
+            <button type="button" v-if="this.pedido.Estado != 'Cancelado'" v-on:click="confirmar()" class="btn btn-primary ml-auto guardar">Guardar</button>
         </div>
         <hr />
         <table style="width:100%" class="table-user">
@@ -238,7 +263,7 @@ template:
             <tr>
             <td>{{this.pedido.NombreRazonSocialProveedor}}</td>
             <td>{{this.pedido.CifProveedor}}</td>
-                <td>
+                <td v-if="this.pedido.Estado != 'Cancelado'">
                     <div class="btn-group float-right mr-5" role="group" aria-label="Basic example">
                     <button id="proceso" type="button" :class="isEnabledProceso" v-on:click="cambiarEstado('Preparando')">Preparando</button>
                     <button id="reparto" type="button" :class="isEnabledReparto" v-on:click="cambiarEstado('Reparto')">En Reparto</button>
@@ -270,7 +295,7 @@ template:
            
                 <tr>
                 <td class="table-body-bold">
-                    <div class="dropdown">
+                    <div class="dropdown" v-if="pedido.Estado != 'Cancelado'">
                         <button class="btn btn-secondary w-75 text-left" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ obtenerNombreProductoPorId(item.CodigoProducto) }}
                             <i data-toggle="tooltip" class="material-icons float-right">expand_more</i>
@@ -281,17 +306,20 @@ template:
                         </template>
                         </div>
                     </div>
+                    <div v-else>
+                    {{ obtenerNombreProductoPorId(item.CodigoProducto) }}
+                    </div>
                 </td>
                 <td> {{item.PrecioUnitario}} €</td>
                 <td>
-                    <i class="material-icons align-middle" v-on:click="restarCantidad(item)">remove_circle_outline</i>
+                    <i class="material-icons align-middle" v-if="pedido.Estado != 'Cancelado'" v-on:click="restarCantidad(item)">remove_circle_outline</i>
                     <span class="align-middle">{{item.Cantidad}}</span>
-                    <i data-toggle="tooltip" v-on:click="sumarCantidad(item)" class="material-icons align-middle">add_circle_outline</i>
+                    <i data-toggle="tooltip" v-if="pedido.Estado != 'Cancelado'" v-on:click="sumarCantidad(item)" class="material-icons align-middle">add_circle_outline</i>
 
                 </td>
                 <td>21</td>
                 <td>{{ (item.PrecioUnitario * item.Cantidad).toFixed(2) }}€</td>
-                <td><a href="#"><i data-toggle="tooltip" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo float-left">delete</i></a></td>
+                <td><a href="#"><i data-toggle="tooltip" v-if="pedido.Estado != 'Cancelado'" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo float-left">delete</i></a></td>
             </tr>
               </template>
                 </tbody>
@@ -299,7 +327,7 @@ template:
             </table>
 
     </div>
-    <button class="btn btn-primary btnAnadir" v-on:click="anadirLineaPedidos()">
+    <button class="btn btn-primary btnAnadir" v-if="pedido.Estado != 'Cancelado'" v-on:click="anadirLineaPedidos()">
         <i data-toggle="tooltip" title="Añadir línea de pedido" class="material-icons align-middle">add</i>
     </button>
 

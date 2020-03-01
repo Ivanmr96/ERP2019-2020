@@ -25,8 +25,6 @@ const app = new Vue({
     {
         var url = BASE_URL + API_PEDIDO + "?CifProveedor=" + CifProveedor
 
-        alert(JSON.stringify(lineasDeUnPedido))
-
         //app.$http.post(url, JSON.stringify(lineasDeUnPedido)).then(onResponse, onError);
         Vue.http.post(url, JSON.stringify(lineasDeUnPedido)).then(onResponse, onError);
     }
@@ -35,7 +33,7 @@ const app = new Vue({
     function insertarLineaDePedido(lineaDePedido, onResponse, onError) 
     {
         var url = BASE_URL + API_LINEAPEDIDO
-
+        
         //app.$http.post(url, JSON.stringify(lineaDePedido)).then(onResponse, onError);
         Vue.http.post(url, JSON.stringify(lineaDePedido)).then(onResponse, onError);
     }
@@ -58,7 +56,7 @@ const app = new Vue({
     }
 
     // https://proyectoerp.azurewebsites.net/api/LineasPedido?codigoProducto={codigoProducto&codigoPedido={codigoPedido}
-    function  eliminarLineaPedido(lineaPedido, onResponse, onError)
+    function eliminarLineaPedido(lineaPedido, onResponse, onError)
     {
         //Saldria una pantallita para confirmar pero solo se guardaria cuando le de a guardar
         var url = BASE_URL + API_LINEAPEDIDO + "?codigoProducto=" + lineaPedido.CodigoProducto + "&codigoPedido=" + lineaPedido.CodigoPedido;

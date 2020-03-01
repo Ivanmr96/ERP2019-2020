@@ -100,7 +100,7 @@ Vue.component('listapedidoscomponent',
                 case "Cancelado":
                     cssClass += "cancelado";
                     break;
-                case "En reparto":
+                case "Reparto":
                     cssClass += "enreparto";
                     break;
             }
