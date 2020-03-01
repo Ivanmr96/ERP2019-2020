@@ -17,21 +17,20 @@ Vue.component('realizarpedidocomponent',
         {
             if(confirm("¿Seguro que quiere borrar?"))
             {
-                for( var i = 0 ; i < this.pedido.LineasDePedido.length; i++) 
+                for( var i = 0 ; i < this.pedido.lineasDePedido.length; i++) 
                 {
-                    if(this.pedido.LineasDePedido[i] === lineaPedido)
-                        this.pedido.LineasDePedido.splice(i, 1);
+                    if(this.pedido.lineasDePedido[i] === lineaPedido)
+                        this.pedido.lineasDePedido.splice(i, 1);
                 }
             }
         },
         anadirLineaPedidos()
         {
-            this.pedido.LineasDePedido.push(new clsLineaPedido(0,this.pedido.Codigo, 1, 0, "Euros"))
-            
+            this.pedido.lineasDePedido.push(new clsLineaPedido(0,this.pedido.codigo, 0, 0, null))
         },
         cambiarProveedor: function (proveedor) 
         {
-            this.proveedorMostrado = proveedor.NombreRazonSocial;
+            this.proveedorMostrado = proveedor.nombreRazonSocial;
             this.proveedorSeleccionado = proveedor
             this.obtenerProductosDelProveedorSeleccionado()
         },
@@ -83,7 +82,7 @@ Vue.component('realizarpedidocomponent',
         obtenerNombreProductoPorId: function(codigo)
         {
             var found = false
-            var nombre = "Selecciona producto"
+            var nombre = ""
 
             if(this.productos != undefined)
             {
@@ -99,33 +98,10 @@ Vue.component('realizarpedidocomponent',
             return nombre
         },
 
-        /*
-        obtenerPrecioUnitarioProductoPorId: function(codigo)
-        {
-            var found = false
-            var precioUnitario = 0.0
-
-            if(this.productos != undefined)
-            {
-                for(var i = 0 ; i < this.productos.length && !found; i++)
-                {
-                    if(this.productos[i].Codigo == codigo)
-                    {
-                        found = true
-                        precioUnitario = this.productos[i].precioUnitario
-                    }
-                }    
-            }
-            return precioUnitario
-        },
-        */
         confirmar: function () {
             var opcion = confirm("¿Deseas confirmar este pedido?");
-            if (opcion == true && this.validarPedido()) 
-            {
-                alert(JSON.stringify(this.pedido.LineasDePedido))
-                insertarPedido(this.pedido.LineasDePedido, this.proveedorSeleccionado.Cif, (response) => 
-                {
+            if (opcion == true) {
+                insertarPedido(this.pedido.lineasDePedido, (response) => {
                     store.state.currentComponent = 'listapedidoscomponent';
                 }, (error) => { 
                     store.state.currentComponent = 'listapedidoscomponent';
@@ -133,53 +109,14 @@ Vue.component('realizarpedidocomponent',
             }
         },
 
-        validarPedido: function() 
-        {
-            valido = true;
-
-
-            if(this.proveedorSeleccionado == undefined)
-            {
-                alert("Debes seleccionar un proveedor")
-                valido = false;
-            }
-
-            if(this.pedido.LineasDePedido.length <= 0)
-            {
-                alert("Debes incluir algun producto")
-                valido = false;
-            }
-
-            found = false;
-            for(i = 0 ; i < this.pedido.LineasDePedido.length && !found ; i++)
-            {
-                if(this.pedido.LineasDePedido[i].CodigoProducto == 0)
-                {
-                    found = true;
-                    valido = false;
-                    alert("Debes seleccionar un producto")
-                }
-            }
-
-            return valido;
-        },
-
         cambiarProductoLineaPedido: function (producto, lineaPedido) 
         {
-            lineaPedido.CodigoProducto = producto.Codigo;
-            lineaPedido.PrecioUnitario = producto.Precio;
+            lineaPedido.codigoProducto = producto.Codigo;
+            lineaPedido.precioUnitario = producto.Precio;
         },
-
-        restarCantidad: function(lineaPedido)
-        {
-            if(lineaPedido.Cantidad > 1)
-                lineaPedido.Cantidad--
-        }
     },
 
     computed: {
-
-
         productosDelProveedorSeleccionado: function()
         {
             return this.productos
@@ -248,12 +185,12 @@ Vue.component('realizarpedidocomponent',
                     </thead>
 
                     <tbody class="table-body">
-                        <template v-for="lineaPedido in pedido.LineasDePedido">
+                        <template v-for="lineaPedido in pedido.lineasDePedido">
                             <tr>
                                 <td class="table-body-bold">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary w-75 text-left" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {{ obtenerNombreProductoPorId(lineaPedido.CodigoProducto) }}
+                                            {{ obtenerNombreProductoPorId(lineaPedido.codigoProducto) }}
                                             <i data-toggle="tooltip" class="material-icons float-right">expand_more</i>
                                         </button>
                                         <div class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton">
@@ -263,14 +200,14 @@ Vue.component('realizarpedidocomponent',
                                         </div>
                                     </div>
                                 </td>
-                                <td>{{lineaPedido.PrecioUnitario}} €</td>
+                                <td>{{lineaPedido.precioUnitario}} €</td>
                                 <td>
-                                    <i class="material-icons align-middle" v-on:click="restarCantidad(lineaPedido)">remove_circle_outline</i>                                    
-                                    <span class="align-middle" id="numero">{{lineaPedido.Cantidad}}</span>
-                                    <i data-toggle="tooltip" class="material-icons align-middle" v-on:click="lineaPedido.Cantidad++">add_circle_outline</i>
+                                    <i class="material-icons align-middle" v-on:click="lineaPedido.cantidad--">remove_circle_outline</i>                                    
+                                    <span class="align-middle" id="numero">{{lineaPedido.cantidad}}</span>
+                                    <i data-toggle="tooltip" class="material-icons align-middle" v-on:click="lineaPedido.cantidad++">add_circle_outline</i>
                                 </td>
                                 <td>21</td>
-                                <td>{{(lineaPedido.Cantidad * lineaPedido.PrecioUnitario).toFixed(2)}} €</td>
+                                <td>{{lineaPedido.cantidad * lineaPedido.precioUnitario}} €</td>
                                 <td><a v-on:click="eliminarLineaPedido(lineaPedido)" href="#"><i data-toggle="tooltip" title="Borrar" class="material-icons float-left rojo">delete</i></a></td>
                             </tr>
                         </template>

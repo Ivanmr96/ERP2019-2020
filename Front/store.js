@@ -14,13 +14,10 @@ const API_LINEAPEDIDO = 'LineasPedido/';
 const API_PROVEEDOR = 'Proveedor/'; */
 
 
-
 const store =  new Vuex.Store({
 
     state: {
         
-      
-
         //Esto tiene que ser de tipo clsPedidoConProveedor
         pedidoSeleccionado: {"codigo":1, "estado":"cancelado",
     
@@ -31,7 +28,7 @@ const store =  new Vuex.Store({
         {"codigoProducto":3, "codigoPedido":1, "cantidad":56, "precioUnitario":13.5, "divisa":"Euros"}
             ], 
         
-            "cifProveedor": "B90223548", 
+            "cifProveedor": "B12553426", 
         "nombreRazonSocial": "The Coca Cola Company", 
         "direccion": "Mi casa",
         "telefono": "954-000-000", 

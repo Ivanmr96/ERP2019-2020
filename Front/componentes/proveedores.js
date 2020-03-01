@@ -3,7 +3,7 @@ Vue.component('proveedorescomponent', {
     template:
     ` 
     <div style="margin-left:14%">
-        <p>PROVEEDORES</p>
+    <img src="wip.png" />
     </div>
     `
 })
