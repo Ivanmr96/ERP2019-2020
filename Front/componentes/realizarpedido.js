@@ -302,12 +302,8 @@ Vue.component('realizarpedidocomponent',
 
                 </table>
 
-                
-
             </div>
         </div>
-
-            
 
     </div>
     `

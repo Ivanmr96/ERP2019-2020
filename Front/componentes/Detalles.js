@@ -15,7 +15,8 @@ Vue.component('detallescomponent', {
             //Arrays para saber las acciones que tenemos que tomar con las lineas de pedido.
             lineasEliminar: [],
             lineasInsertar: [],
-            lineasActualizar: []
+            lineasActualizar: [],
+            pedidoCanceladoConfirmado: false
         }
     },
 
@@ -196,6 +197,10 @@ mounted() {
 this.obtenerProductosDelProveedorSeleccionado(this.pedido.CifProveedor);
 
 this.cambiarEstado(this.pedido.Estado);
+
+if(this.pedido.Estado == "Cancelado")
+    this.pedidoCanceladoConfirmado = true
+
 // this.cambiarEstado('recibido');
 this.stageProceso = "btn  btn-primary";
 this.stageReparto = "btn  btn-secondary";
@@ -266,7 +271,7 @@ template:
     <div class="divSuperior">                
         <div class="d-flex">
         <h4 id="title">Pedido {{this.pedido.Codigo}}</h4>
-            <button type="button" v-if="this.pedido.Estado != 'Cancelado'" v-on:click="confirmar()" class="btn btn-primary ml-auto guardar">Guardar</button>
+            <button type="button" v-if="!pedidoCanceladoConfirmado" v-on:click="confirmar()" class="btn btn-primary ml-auto guardar">Guardar</button>
         </div>
         <hr />
         <table style="width:100%" class="table-user">
@@ -283,7 +288,7 @@ template:
             <td>{{this.pedido.CifProveedor}}</td>
             <td><div>{{ (cantidadTotal).toFixed(2)}}€</div></td>
             
-                <td v-if="this.pedido.Estado != 'Cancelado'">
+                <td v-if="!pedidoCanceladoConfirmado">
                     <div class="btn-group float-right mr-5" role="group" aria-label="Basic example">
                     <button id="proceso" type="button" :class="isEnabledProceso" v-on:click="cambiarEstado('Preparando')">Preparando</button>
                     <button id="reparto" type="button" :class="isEnabledReparto" v-on:click="cambiarEstado('Reparto')">En Reparto</button>
@@ -315,7 +320,7 @@ template:
            
                 <tr>
                 <td class="table-body-bold">
-                    <div class="dropdown" v-if="pedido.Estado != 'Cancelado'">
+                    <div class="dropdown" v-if="!pedidoCanceladoConfirmado">
                         <button class="btn btn-secondary w-75 text-left" type="button" id="dropdownMenuProducto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ obtenerNombreProductoPorId(item.CodigoProducto) }}
                             <i data-toggle="tooltip" class="material-icons float-right">expand_more</i>
@@ -332,14 +337,14 @@ template:
                 </td>
                 <td> {{item.PrecioUnitario}} €</td>
                 <td>
-                    <i class="material-icons align-middle" v-if="pedido.Estado != 'Cancelado'" v-on:click="restarCantidad(item)">remove_circle_outline</i>
+                    <i class="material-icons align-middle" v-if="!pedidoCanceladoConfirmado" v-on:click="restarCantidad(item)">remove_circle_outline</i>
                     <span class="align-middle">{{item.Cantidad}}</span>
-                    <i data-toggle="tooltip" v-if="pedido.Estado != 'Cancelado'" v-on:click="sumarCantidad(item)" class="material-icons align-middle">add_circle_outline</i>
+                    <i data-toggle="tooltip" v-if="!pedidoCanceladoConfirmado" v-on:click="sumarCantidad(item)" class="material-icons align-middle">add_circle_outline</i>
 
                 </td>
                 <td>21</td>
                 <td>{{ (item.PrecioUnitario * item.Cantidad).toFixed(2) }}€</td>
-                <td><a href="#"><i data-toggle="tooltip" v-if="pedido.Estado != 'Cancelado'" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo float-left">delete</i></a></td>
+                <td><a href="#"><i data-toggle="tooltip" v-if="!pedidoCanceladoConfirmado" title="Borrar" v-on:click="eliminarLineaPedido(item)" class="material-icons rojo float-left">delete</i></a></td>
             </tr>
               </template>
                 </tbody>
@@ -349,7 +354,7 @@ template:
             
 
     </div>
-    <button class="btn btn-primary btnAnadir" v-if="pedido.Estado != 'Cancelado'" v-on:click="anadirLineaPedidos()">
+    <button class="btn btn-primary btnAnadir" v-if="!pedidoCanceladoConfirmado" v-on:click="anadirLineaPedidos()">
         <i data-toggle="tooltip" title="Añadir línea de pedido" class="material-icons align-middle">add</i>
     </button>
 
