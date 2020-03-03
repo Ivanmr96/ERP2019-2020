@@ -38,6 +38,7 @@ const store =  new Vuex.Store({
         components: 
         {
             realizarpedido: 'realizarpedidocomponent',
+            menuprincipal: 'menuprincipalcomponent',
             logout: 'logoutcomponent',
             login: 'logincomponent',
             pedidos: 'listapedidoscomponent',

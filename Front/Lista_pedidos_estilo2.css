@@ -431,3 +431,95 @@ td {
     background-size: cover;
     background-color: gray;
 }
+
+.panel-body .btn:not(.btn-block) { width:120px;margin-bottom:10px; }
+
+.boton-caja {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 13%;
+    /*background-color: #172B4D; */
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
+}
+
+.colores-logout {
+    background-color: #7764E4;
+    color: white;
+    cursor: pointer;
+}
+
+.colores-logout:hover {
+    background-color: white;
+    color: #7764E4;
+}
+
+.colores-pedidos {
+    background-color: #4AD991;
+    color: white;
+    cursor: pointer;
+}
+
+.colores-pedidos:hover {
+    background-color: white;
+    color: #4AD991;
+}
+
+.colores-productos {
+    background-color: rgb(11, 73, 83);
+    color: white;
+    cursor: pointer;
+}
+
+.colores-productos:hover {
+    background-color: white;
+    color: rgb(11, 73, 83);
+}
+
+.colores-inventario {
+    background-color: #FB6340;
+    color: white;
+    cursor: pointer;
+}
+
+.colores-inventario:hover {
+    background-color: white;
+    color: #FB6340;
+}
+
+.colores-proveedores {
+    background-color: rgb(207, 175, 71);
+    color: white;
+    cursor: pointer;
+}
+
+.colores-proveedores:hover {
+    background-color: white;
+    color: rgb(207, 175, 71);
+}
+
+.colores-ajustes {
+    background-color: rgb(185, 43, 67);
+    color: white;
+    cursor: pointer;
+}
+
+.colores-ajustes:hover {
+    background-color: white;
+    color: rgb(185, 43, 67);
+}
+
+.div-container {
+    margin-top: 16%;
+    font-size: x-large;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mainmenu-icon {
+    font-size: 60px;
+}
+

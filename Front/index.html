@@ -28,6 +28,7 @@
         <script src="componentes/ajustes.js"></script>
         <script src="componentes/Detalles.js"></script>
         <script src="componentes/realizarpedido.js"></script>
+        <script src="componentes/menuprincipal.js"></script>
         <link rel="stylesheet" href="Lista_pedidos_estilo2.css"/>
 
         <!--Mio-->
@@ -58,7 +59,7 @@
 
     <body>
         <div id="app" v-bind:class="{background: $store.state.currentComponent == 'logincomponent'}">
-            <menucomponent  v-if="$store.state.currentComponent != 'logincomponent'"></menucomponent>
+            <menucomponent  v-if="$store.state.currentComponent != 'logincomponent' && $store.state.currentComponent != 'menuprincipalcomponent'"></menucomponent>
             <component :is="$store.state.currentComponent" ></component>
             <!-- <p> {{ $store.state.currentComponent }}</p> -->
         </div>

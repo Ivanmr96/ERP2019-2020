@@ -11,7 +11,7 @@ Vue.component('logincomponent', {
     loguear:function(){
       firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
         //Si se ha podido loguear cambiamos el componente
-        store.state.currentComponent = 'listapedidoscomponent';
+        store.state.currentComponent = 'menuprincipalcomponent';
         },function(error){ //En caso de error mostramos un mensaje.
           alert("Error al iniciar sesion.");
         },
