@@ -123,7 +123,7 @@ Vue.component('realizarpedidocomponent',
             var opcion = confirm("¿Deseas confirmar este pedido?");
             if (opcion == true && this.validarPedido()) 
             {
-                alert(JSON.stringify(this.pedido.LineasDePedido))
+                
                 insertarPedido(this.pedido.LineasDePedido, this.proveedorSeleccionado.Cif, (response) => 
                 {
                     store.state.currentComponent = 'listapedidoscomponent';
@@ -136,7 +136,6 @@ Vue.component('realizarpedidocomponent',
         validarPedido: function() 
         {
             valido = true;
-
 
             if(this.proveedorSeleccionado == undefined)
             {
