@@ -41,7 +41,7 @@ namespace ProyectoERP_API_Entities
             this.codigo = 0;
             this.estado = "";
             this.fechaPedido = DateTime.Now;
-            this.fechaRecepcion = DateTime.Now;
+            this.fechaRecepcion = new DateTime();
             this.cifProveedor = "";
         }
 

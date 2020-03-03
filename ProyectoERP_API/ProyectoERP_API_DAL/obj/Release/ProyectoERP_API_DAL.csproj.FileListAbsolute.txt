@@ -14,3 +14,12 @@ D:\Downloads\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL
 D:\Downloads\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.csproj.CopyComplete
 D:\Downloads\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.dll
 D:\Downloads\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Release\ProyectoERP_API_DAL.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Release\ProyectoERP_API_DAL.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Release\ProyectoERP_API_Entities.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\bin\Release\ProyectoERP_API_Entities.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.csprojAssemblyReference.cache
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.csproj.CoreCompileInputs.cache
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.csproj.CopyComplete
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_DAL\obj\Release\ProyectoERP_API_DAL.pdb
