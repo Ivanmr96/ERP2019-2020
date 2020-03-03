@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="D:\Downloads\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" />
-  <setAcl path="D:\Downloads\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="D:\Downloads\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>

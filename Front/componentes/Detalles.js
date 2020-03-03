@@ -239,7 +239,22 @@ isEnabledReparto:function(){
      clase = "btn  btn-secondary";
     }
     return clase;
- }
+ },
+ cantidadTotal: function(){
+    var sumTotal = 0;
+    if(this.pedido.LineasDePedido != undefined){
+
+        for(i = 0 ; i < this.pedido.LineasDePedido.length ; i++)
+        {
+            sumTotal += this.pedido.LineasDePedido[i].PrecioUnitario * this.pedido.LineasDePedido[i].Cantidad
+        }
+        /*this.pedido.lineasDePedido.for(element => {
+            sumTotal += element.PrecioUnitario * element.cantidad;
+        }
+        */
+    }
+    return sumTotal
+}
 }
 ,
 template:
@@ -256,13 +271,18 @@ template:
         <hr />
         <table style="width:100%" class="table-user">
             <tr>
-                <td>Proveedor</td>
-                <td>CIF</td>
-                <td></td>
+                <td class="font-weight-bold">Proveedor</td>
+                <td class="font-weight-bold">CIF</td>
+                <td class="h6">
+                    <div class="font-weight-bold">Total</div>
+                    
+                </td>
             </tr>
             <tr>
             <td>{{this.pedido.NombreRazonSocialProveedor}}</td>
             <td>{{this.pedido.CifProveedor}}</td>
+            <td><div>{{ (cantidadTotal).toFixed(2)}}€</div></td>
+            
                 <td v-if="this.pedido.Estado != 'Cancelado'">
                     <div class="btn-group float-right mr-5" role="group" aria-label="Basic example">
                     <button id="proceso" type="button" :class="isEnabledProceso" v-on:click="cambiarEstado('Preparando')">Preparando</button>
@@ -325,6 +345,8 @@ template:
                 </tbody>
 
             </table>
+
+            
 
     </div>
     <button class="btn btn-primary btnAnadir" v-if="pedido.Estado != 'Cancelado'" v-on:click="anadirLineaPedidos()">

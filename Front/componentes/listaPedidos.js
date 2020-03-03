@@ -14,7 +14,14 @@ Vue.component('listapedidoscomponent',
         formatearFecha: function (date) 
         {
             d = new Date(date)
-            return moment(d).format('DD/MM/YYYY');
+            cadena = moment(d).format('DD/MM/YYYY');
+            fecha = " ";
+            if (cadena == "01/01/0001") {
+                fecha = "Sin fecha"
+            } else
+                fecha = cadena;
+
+            return fecha;
         },
 
         obtenerUnPedidoPorId: function(idPedido)

@@ -8,3 +8,9 @@ D:\Downloads\ProyectoERP_API\ProyectoERP_API_Entities\bin\Release\ProyectoERP_AP
 D:\Downloads\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.csprojAssemblyReference.cache
 D:\Downloads\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.dll
 D:\Downloads\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Release\ProyectoERP_API_Entities.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\bin\Release\ProyectoERP_API_Entities.pdb
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.csprojAssemblyReference.cache
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.csproj.CoreCompileInputs.cache
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.dll
+D:\GIT\ERP2019-2020\ProyectoERP_API\ProyectoERP_API_Entities\obj\Release\ProyectoERP_API_Entities.pdb

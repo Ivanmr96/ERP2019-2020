@@ -123,7 +123,7 @@ Vue.component('realizarpedidocomponent',
             var opcion = confirm("¿Deseas confirmar este pedido?");
             if (opcion == true && this.validarPedido()) 
             {
-                alert(JSON.stringify(this.pedido.LineasDePedido))
+                
                 insertarPedido(this.pedido.LineasDePedido, this.proveedorSeleccionado.Cif, (response) => 
                 {
                     store.state.currentComponent = 'listapedidoscomponent';
@@ -136,7 +136,6 @@ Vue.component('realizarpedidocomponent',
         validarPedido: function() 
         {
             valido = true;
-
 
             if(this.proveedorSeleccionado == undefined)
             {
@@ -197,6 +196,22 @@ Vue.component('realizarpedidocomponent',
             }
             
             return nombre
+        },
+
+        cantidadTotal: function(){
+            var sumTotal = 0;
+            if(this.pedido.LineasDePedido != undefined){
+
+                for(i = 0 ; i < this.pedido.LineasDePedido.length ; i++)
+                {
+                    sumTotal += this.pedido.LineasDePedido[i].PrecioUnitario * this.pedido.LineasDePedido[i].Cantidad
+                }
+                /*this.pedido.lineasDePedido.for(element => {
+                    sumTotal += element.PrecioUnitario * element.cantidad;
+                }
+                */
+            }
+            return sumTotal
         }
     },
 
@@ -219,7 +234,6 @@ Vue.component('realizarpedidocomponent',
                     <button v-on:click="confirmar" type="button" class="btn btn-primary ml-auto guardar">Guardar</button>
                 </div>
                 <hr />
-                    <h4>
                         <div class="dropdown">
                         
                             <button class="btn btn-secondary text-left" type="button" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
@@ -230,10 +244,15 @@ Vue.component('realizarpedidocomponent',
                                 <template v-for="proveedor in proveedores">
                                     <a class="dropdown-item" href="#" v-on:click="cambiarProveedor(proveedor)">{{proveedor.NombreRazonSocial}}</a>
                                 </template>
+                                
                             </div>
 
+                            <div class="float-right mr-5">
+                    <div class="font-weight-bold">Total</div>
+                    <div>{{ (cantidadTotal).toFixed(2)}}€</div>
+
                         </div>
-                    </h4>
+                </div>
                 <table class="rounded table table-striped align-self-center text-center">
 
                     <thead class="rounded">
@@ -282,6 +301,8 @@ Vue.component('realizarpedidocomponent',
                     </tbody>
 
                 </table>
+
+                
 
             </div>
         </div>
