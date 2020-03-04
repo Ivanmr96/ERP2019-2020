@@ -165,14 +165,37 @@ Vue.component('realizarpedidocomponent',
 
         cambiarProductoLineaPedido: function (producto, lineaPedido) 
         {
+            /*
             lineaPedido.CodigoProducto = producto.Codigo;
-            lineaPedido.PrecioUnitario = producto.Precio;
+            lineaPedido.PrecioUnitario = producto.Precio;*/
+
+            if(!this.productoYaExisteEnElPedido(producto.Codigo))
+            {
+				lineaPedido.CodigoProducto = producto.Codigo;
+				lineaPedido.PrecioUnitario = producto.Precio;
+			}else{
+				alert("¡Ya has seleccionado este producto en el pedido actual!");
+			}
         },
 
         restarCantidad: function(lineaPedido)
         {
             if(lineaPedido.Cantidad > 1)
                 lineaPedido.Cantidad--
+        },
+        
+        productoYaExisteEnElPedido: function(codigoProducto)
+        {
+            existe = false
+
+
+            for(i = 0 ; i < this.pedido.LineasDePedido.length && !existe ; i++)
+            {
+                if(codigoProducto == this.pedido.LineasDePedido[i].CodigoProducto)
+                    existe = true
+            }
+
+            return existe
         }
     },
 
