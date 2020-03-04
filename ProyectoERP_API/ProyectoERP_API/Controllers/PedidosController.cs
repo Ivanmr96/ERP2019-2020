@@ -85,6 +85,56 @@ namespace ProyectoERP_API.Controllers
         }
 
 
+
+        //Get: api/Pedidos/{idPedido}?pedidosConPrecioTotal=true
+        public clsPedidoConPrecioTotal Get(int id,bool pedidosConPrecioTotal)
+        {
+            clsPedido pedido;
+            List<clsLineaPedido> listaLineasDePedido;
+            clsPedidoConPrecioTotal pedidosConPrecio = new clsPedidoConPrecioTotal();
+ 
+            double totalPrecioPedido = 0.0;
+            string nombreRazonSocialProveedor;
+
+            try
+            {
+                pedido = new ClsListadosPedidos_BL().getPedido(id);
+
+                    //Obtengo sus líneas de pedido
+                    listaLineasDePedido = new ClsListadosLineaDePedidos_BL()
+                        .getLineasPedidoDeUnPedido(pedido.Codigo);
+                    totalPrecioPedido = 0.0;
+
+                    for (int j = 0; j < listaLineasDePedido.Count; j++)
+                    {
+                        //Por cada linea de pedido existente en un pedido
+                        //Vamos sumando
+                        totalPrecioPedido += (listaLineasDePedido[j]
+                            .Cantidad * listaLineasDePedido[j].PrecioUnitario);
+                    }
+
+                    nombreRazonSocialProveedor = new ClsListadosProveedores_BL()
+                        .getProveedor(pedido.CifProveedor).NombreRazonSocial;
+
+                pedidosConPrecio = new clsPedidoConPrecioTotal(pedido,
+                        totalPrecioPedido, nombreRazonSocialProveedor);
+            }
+            catch (Exception e)
+            {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (pedidosConPrecio.Codigo == 0 || pedidosConPrecio == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+
+            return pedidosConPrecio;
+        }
+
+
+
+
         //Get: api/Pedidos/15
         public clsPedido Get(int id){
             clsPedido pedido;
