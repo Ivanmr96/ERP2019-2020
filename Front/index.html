@@ -29,9 +29,9 @@
         <script src="componentes/Detalles.js"></script>
         <script src="componentes/realizarpedido.js"></script>
         <script src="componentes/menuprincipal.js"></script>
+        <script src="componentes/register.js"></script>
         <link rel="stylesheet" href="Lista_pedidos_estilo2.css"/>
 
-        <!--Mio-->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
@@ -58,8 +58,8 @@
     </head>
 
     <body>
-        <div id="app" v-bind:class="{background: $store.state.currentComponent == 'logincomponent'}">
-            <menucomponent  v-if="$store.state.currentComponent != 'logincomponent' && $store.state.currentComponent != 'menuprincipalcomponent'"></menucomponent>
+        <div id="app" v-bind:class="{background: $store.state.currentComponent == 'logincomponent' || $store.state.currentComponent == 'registercomponent'}">
+            <menucomponent  v-if="$store.state.currentComponent != 'logincomponent' && $store.state.currentComponent != 'menuprincipalcomponent' && $store.state.currentComponent != 'registercomponent'"></menucomponent>
             <component :is="$store.state.currentComponent" ></component>
             <!-- <p> {{ $store.state.currentComponent }}</p> -->
         </div>

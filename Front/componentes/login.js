@@ -39,7 +39,12 @@ Vue.component('logincomponent', {
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label> 
             </div> -->
+
             <button type="button" v-on:click="loguear()" class="btn btn-primary">Entrar</button></form>
+            </br>
+            <button type="button" v-on:click="$store.state.currentComponent = 'registercomponent'" class="btn btn-primary">Registrar</button></form>
+
+            
         </div>
       </div>
     `

@@ -47,12 +47,11 @@ const store =  new Vuex.Store({
             productos: 'productoscomponent',
             detalles: 'detallescomponent',
             proveedores: 'proveedorescomponent',
-            crearpedido: 'crearpedidocomponent'
+            crearpedido: 'crearpedidocomponent',
+            registro: 'registercomponent'
         },
 
-        currentComponent: 'listapedidoscomponent'
-       
-
+        currentComponent: 'logincomponent'
 
     },
 
