@@ -8,6 +8,11 @@ Vue.component('logincomponent', {
   },
 
   methods:{
+    /**
+     * Método que intenta iniciar sesión con un correo
+     * electrónico y una contraseña haciendo uso
+     * del servicio de Firebase.
+     */
     loguear:function(){
       firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
         //Si se ha podido loguear cambiamos el componente

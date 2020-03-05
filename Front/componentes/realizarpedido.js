@@ -13,6 +13,11 @@ Vue.component('realizarpedidocomponent',
 
     methods: 
     {
+
+        /**
+         * Método que elimina una línea de pedido del pedido
+         * @param {} lineaPedido línea de pedido a eliminar
+         */
         eliminarLineaPedido: function(lineaPedido) 
         {
             if(confirm("¿Seguro que quiere borrar?"))
@@ -24,11 +29,23 @@ Vue.component('realizarpedidocomponent',
                 }
             }
         },
+
+         /**
+         * Método que añade una línea de pedido al pedido
+         */
         anadirLineaPedidos()
         {
             this.pedido.LineasDePedido.push(new clsLineaPedido(0,this.pedido.Codigo, 1, 0, "Euros"))
             
         },
+
+        /**
+         * Método que cambia el proveedor seleccionado del pedido
+         * por el pasado como parámetro, cargando
+         * también los productos del proveedor seleccionado.
+         * @param {*} proveedor nuevo proveedor
+         */
+
         cambiarProveedor: function (proveedor) 
         {
             this.proveedorMostrado = proveedor.NombreRazonSocial;
@@ -36,6 +53,10 @@ Vue.component('realizarpedidocomponent',
             this.obtenerProductosDelProveedorSeleccionado()
         },
 
+        /**
+         * Carga el listado de proveedores
+         * haciendo una petición GET a la API.
+         */
         obtenerListadoProveedores: function()
         {
             obtenerProveedores((response) => 
@@ -45,6 +66,10 @@ Vue.component('realizarpedidocomponent',
             () => alert("Error al cargar el listado de proveedores"))
         },
 
+        /**
+         * Método que obtiene todos los productos del proveedor
+         * seleccionado
+         */
         obtenerProductosDelProveedorSeleccionado: function()
         {
 
@@ -58,6 +83,10 @@ Vue.component('realizarpedidocomponent',
             }
         },
 
+        /**
+         * Método que dado un código de producto, devuelve su nombre.
+         * @param {*} codigo código del producto del que se devolverá su nombre
+         */
         obtenerNombreProductoPorId: function(codigo)
         {
             var found = false
@@ -77,6 +106,11 @@ Vue.component('realizarpedidocomponent',
             return nombre
         },
 
+         /**
+         * Muestra un diálogo de confirmación y en caso
+         * de que el usuario responda afirmativamente, llamará al método
+         * de guardarPedido().
+         */
         confirmar: function () {
             var opcion = confirm("¿Deseas confirmar este pedido?");
             if (opcion == true && this.validarPedido()) 
@@ -91,6 +125,13 @@ Vue.component('realizarpedidocomponent',
             }
         },
 
+        /**
+         * Método que valida si el pedido actual
+         * puede realizarse, verificando si el proveedor
+         * está seleccionado, si hay líneas de pedido y si 
+         * hay productos en las líneas de
+         * pedido
+         */
         validarPedido: function() 
         {
             valido = true;
@@ -121,6 +162,11 @@ Vue.component('realizarpedidocomponent',
             return valido;
         },
 
+         /**
+         * Método que modifica el producto de una línea de pedido
+         * @param {*} producto producto a poner en la línea de pedido
+         * @param {*} lineaPedido línea de pedido a modificar
+         */
         cambiarProductoLineaPedido: function (producto, lineaPedido) 
         {
             if(!this.productoYaExisteEnElPedido(producto.Codigo))
@@ -132,12 +178,21 @@ Vue.component('realizarpedidocomponent',
 			}
         },
 
+         /**
+         * Método que baja en 1 la cantidad de un producto en una línea de pedido
+         * @param {*} lineaPedido línea de pedido donde modifica la cantidad
+         */
         restarCantidad: function(lineaPedido)
         {
             if(lineaPedido.Cantidad > 1)
                 lineaPedido.Cantidad--
         },
         
+        /**
+         * Comprueba que un producto seleccionado no 
+         * estuviera ya en el pedido actual
+         * @param {*} codigoProducto codigo del producto a comprobar 
+         */
         productoYaExisteEnElPedido: function(codigoProducto)
         {
             existe = false
@@ -156,11 +211,18 @@ Vue.component('realizarpedidocomponent',
     computed: {
 
 
+        /**
+         * Devuelve el listado de productos actual
+         * correspondientes al proveedor seleccionado
+         */
         productosDelProveedorSeleccionado: function()
         {
             return this.productos
         },
 
+        /**
+         * Listado de nombres de proveedores
+         */
         nombreProveedorDropdown: function()
         {
             if(this.proveedorSeleccionado != null)
@@ -175,6 +237,10 @@ Vue.component('realizarpedidocomponent',
             return nombre
         },
 
+        /**
+         * Devuelve la suma total
+         * del coste de las líneas de pedido
+         */
         cantidadTotal: function(){
             var sumTotal = 0;
             if(this.pedido.LineasDePedido != undefined){

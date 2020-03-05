@@ -11,6 +11,11 @@ Vue.component('listapedidoscomponent',
 
     methods: {
 
+        /**
+         * Método que dado un objeto date, lo convierte en cadena
+         * con formato DD/MM/YYYY
+         * @param {*} date objeto fecha
+         */
         formatearFecha: function (date) 
         {
             d = new Date(date)
@@ -24,6 +29,12 @@ Vue.component('listapedidoscomponent',
             return fecha;
         },
 
+        /**
+         * Método que llama al método obtenerPedidoPorID, el cual 
+         * hace una petición GET a la API para obtener un pedido dada una ID
+         * y lo muestra visualmente.
+         * @param {*} idPedido id del pedido a recibir
+         */
         obtenerUnPedidoPorId: function(idPedido)
         {
             obtenerPedidoPorID((response) => 
@@ -38,6 +49,12 @@ Vue.component('listapedidoscomponent',
             idPedido)
         },
 
+        /**
+         * Establece el pedido seleccionado
+         * como pedido seleccionado en Store y navega
+         * al componente de editar
+         * @param {*} pedido pedido seleccionado
+         */
         seleccionarPedidoYNavegarAEditar: function(pedido)
         {
            store.state.pedidoSeleccionado = pedido
@@ -65,6 +82,11 @@ Vue.component('listapedidoscomponent',
             
         },
 
+        /**
+         * Método que devuelve la clase correspondiente 
+         * al estilo del estado del pedido pasado como parámetro
+         * @param {*} estado estado del pedido
+         */
         obtenerColorEstadoPedido: function(estado)
         {
             cssClass = "icono-estado-";
@@ -87,6 +109,11 @@ Vue.component('listapedidoscomponent',
             return cssClass;
         },
 
+        /**
+         * Carga los pedidos con una petición GET a la API
+         * y los asigna a la variable de listadoPedidos, mostrándolos
+         * por pantalla.
+         */
         obtenerYMostrarPedidos: function()
         {
             obtenerPedidos((response) => 
@@ -97,6 +124,10 @@ Vue.component('listapedidoscomponent',
             () => alert("Hubo un error inesperado al cargar los pedidos"))
         },
 
+        /**
+         * Ordena el listado de pedidos por la columna indicada
+         * @param {*} col columna por la que se ordenará el listado de pedidos
+         */
         sortTable: function (col) 
         {
             if(this.pedidos.length != undefined)
