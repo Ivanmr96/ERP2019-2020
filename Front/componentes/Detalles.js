@@ -22,6 +22,13 @@ Vue.component('detallescomponent', {
 
     methods:
     {
+
+        /**
+         * Método que llama al método obtenerProductosDeUnProveedor, el cual 
+         * hace una petición GET a la API para obtener un listado de productos
+         * de un proveedor dado.
+         * @param {*} cifProveedor cif del proveedor del cual se obtendrán los productos. 
+         */
         obtenerProductosDelProveedorSeleccionado: function (cifProveedor) {
             // alert(" 3 Entra en el methods obtener productos proveedor seleccionado con cif : " + cifProveedor);
 
@@ -32,11 +39,19 @@ Vue.component('detallescomponent', {
                  () => alert("error"))
          },
 
+         /**
+          * Cambia el estado del pedido seleccionado por el pasado como parámetro
+          * @param {*} estado nuevo estado del pedido
+          */
         cambiarEstado(estado) 
         {
             this.pedido.Estado = estado;
         },
 
+        /**
+         * Método que dado un código de producto, devuelve su nombre.
+         * @param {*} codigo código del producto del que se devolverá su nombre
+         */
         obtenerNombreProductoPorId: function (codigo) {
             var found = false
             var nombre = "Selecciona producto"
@@ -55,6 +70,11 @@ Vue.component('detallescomponent', {
             return nombre
         },
 
+        /**
+         * Muestra un diálogo de confirmación y en caso
+         * de que el usuario responda afirmativamente, llamará al método
+         * de guardarPedido().
+         */
         confirmar: function () {
             var opcion = confirm("¿Desea confirmar este cambio?");
             if (opcion == true) {
@@ -103,6 +123,11 @@ Vue.component('detallescomponent', {
             })
         },
 
+        /**
+         * Método que modifica el producto de una línea de pedido
+         * @param {*} producto producto a poner en la línea de pedido
+         * @param {*} lineaPedido línea de pedido a modificar
+         */
         cambiarProductoLineaPedido: function (producto, lineaPedido) 
         {
             if(!this.productoYaExisteEnElPedido(producto.Codigo))
@@ -125,6 +150,13 @@ Vue.component('detallescomponent', {
                 alert("Este producto ya existe en el pedido, maquina")
         },
 
+        /**
+         * Método que comprueba si un producto existe en el pedido
+         * dada la id del producto. Devuelve un boolean que será
+         * true si el producto ya existe dentro del pedido y false
+         * si no.
+         * @param {*} codigoProducto id del producto a comprobar
+         */
         productoYaExisteEnElPedido: function(codigoProducto)
         {
             existe = false
@@ -139,6 +171,9 @@ Vue.component('detallescomponent', {
             return existe
         },
 
+        /**
+         * Método que añade una línea de pedido al pedido
+         */
         anadirLineaPedidos(){
             //TODO La cantidad inicial es 1 (tiene sentido, no?)
             nuevaLineaPedido = new clsLineaPedido(0,this.pedido.Codigo, 1, 0, "Euros")
@@ -148,6 +183,10 @@ Vue.component('detallescomponent', {
             //this.actualizarPedido();
         },
 
+        /**
+         * Método que elimina una línea de pedido del pedido
+         * @param {} lineaPedido línea de pedido a eliminar
+         */
         eliminarLineaPedido: function(lineaPedido)
         {
             if(confirm("¿Seguro que quiere borrar?")){
@@ -164,6 +203,9 @@ Vue.component('detallescomponent', {
             }
         },
 
+        /**
+         * Método que actualiza el estado del pedido visualmente.
+         */
         actualizarPedido: function()
         {
             estadoActual = this.pedido.Estado
@@ -173,6 +215,10 @@ Vue.component('detallescomponent', {
             this.cambiarEstado(estadoActual)
         },
 
+        /**
+         * Método que baja en 1 la cantidad de un producto en una línea de pedido
+         * @param {*} lineaPedido línea de pedido donde modifica la cantidad
+         */
         restarCantidad: function(lineaPedido)
         {
             if(lineaPedido.Cantidad > 1)
@@ -181,6 +227,10 @@ Vue.component('detallescomponent', {
             this.lineasActualizar.push(lineaPedido);
         },
 
+        /**
+         * Método que aumenta en 1 la cantidad de un producto en una línea de pedido
+         * @param {*} lineaPedido línea de pedido donde modifica la cantidad
+         */
         sumarCantidad: function(lineaPedido)
         {
             lineaPedido.Cantidad++
