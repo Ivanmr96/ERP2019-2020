@@ -2,17 +2,13 @@ Vue.component('detallescomponent', {
     data: function()
     {
         return {
-            //idLineaPedido: id,
             pedido: JSON.parse(JSON.stringify(this.$store.state.pedidoSeleccionado)),
             stageProceso: "btn btn-primary",
             stageReparto: "btn btn-secondary",
             stageCancelado: "btn btn-secondary",
             stageRecibido: "btn btn-secondary",
-            //productos: [{ Codigo: 1, Nombre: "Callate", PrecioUnitario: 2.2 }, { Codigo: 2, Nombre: "A>ASA", PrecioUnitario:4.0 }]
             productos: undefined,
             estadoActual: undefined,
-            //Pablo
-            //Arrays para saber las acciones que tenemos que tomar con las lineas de pedido.
             lineasEliminar: [],
             lineasInsertar: [],
             lineasActualizar: [],
@@ -30,10 +26,8 @@ Vue.component('detallescomponent', {
          * @param {*} cifProveedor cif del proveedor del cual se obtendrán los productos. 
          */
         obtenerProductosDelProveedorSeleccionado: function (cifProveedor) {
-            // alert(" 3 Entra en el methods obtener productos proveedor seleccionado con cif : " + cifProveedor);
 
            obtenerProductosDeUnProveedor(cifProveedor, (response) => {
-              // alert(" response - Entra en el methods obtener productos proveedor seleccionado con cif : " + cifProveedor);
                  this.productos = response.body;
                 },
                  () => alert("error"))
@@ -81,11 +75,6 @@ Vue.component('detallescomponent', {
                 //insertarPedido( (response) => {
                     //Realizamos las operaciones CRUD
                     this.guardarPedido();
-                    
-                /*}, (error) => {
-                    store.state.currentComponent = 'listapedidoscomponent';
-                    alert("Se produjo un error al guardar")
-                })*/
             }
         },
 
@@ -93,8 +82,7 @@ Vue.component('detallescomponent', {
          * Realiza las operacion de eliminar, insertar y actualizar sobre las lineas de pedido.
          */
         guardarPedido: function()
-        { //TODO modularizar
-            //Insertar
+        { 
             for(var i = 0; i < this.lineasInsertar.length; i++)
             {
                 alert(JSON.stringify(this.lineasInsertar[i]))
@@ -132,17 +120,11 @@ Vue.component('detallescomponent', {
         {
             if(!this.productoYaExisteEnElPedido(producto.Codigo))
             {
-                //alert("producto: " + JSON.stringify(producto))
-
-                //Si el que hay que cambiar no es el producto por defecto (con codigo 0)
                 if(lineaPedido.CodigoProducto != 0)
                     this.lineasEliminar.push(JSON.parse(JSON.stringify(lineaPedido)))
 
                 lineaPedido.CodigoProducto = producto.Codigo;
                 lineaPedido.PrecioUnitario = producto.Precio;
-                //lineaPedido.Cantidad = lineaPedido.cantidad;
-
-                //this.lineasInsertar.push(lineaPedido);
 
                 this.actualizarPedido();
             }
@@ -243,7 +225,6 @@ Vue.component('detallescomponent', {
 
 mounted() {
 
-//alert(this.$store.state.pedidoSeleccionado.estado);
 this.obtenerProductosDelProveedorSeleccionado(this.pedido.CifProveedor);
 
 this.cambiarEstado(this.pedido.Estado);
@@ -251,7 +232,6 @@ this.cambiarEstado(this.pedido.Estado);
 if(this.pedido.Estado == "Cancelado"|| this.pedido.Estado == "Recibido")
     this.pedidoCanceladoRecibidoConfirmado = true
 
-// this.cambiarEstado('recibido');
 this.stageProceso = "btn  btn-primary";
 this.stageReparto = "btn  btn-secondary";
 this.stageCancelado = "btn  btn-secondary";
@@ -303,10 +283,6 @@ isEnabledReparto:function(){
         {
             sumTotal += this.pedido.LineasDePedido[i].PrecioUnitario * this.pedido.LineasDePedido[i].Cantidad
         }
-        /*this.pedido.lineasDePedido.for(element => {
-            sumTotal += element.PrecioUnitario * element.cantidad;
-        }
-        */
     }
     return sumTotal
 }

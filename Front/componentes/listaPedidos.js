@@ -33,7 +33,6 @@ Vue.component('listapedidoscomponent',
                     this.pedidos = response.body;
                 }
                 
-                //alert(JSON.stringify(this.pedidosAMostrar))
             }, 
             () => alert("No existe un pedido con el ID dado"),
             idPedido)
@@ -47,7 +46,6 @@ Vue.component('listapedidoscomponent',
             {
                 store.state.pedidoSeleccionado.LineasDePedido = response.body
 
-                //alert(JSON.stringify(store.state.pedidoSeleccionado))
 
                 store.state.currentComponent = store.state.components.detalles
                 
@@ -66,31 +64,6 @@ Vue.component('listapedidoscomponent',
 
             
         },
-
-        /*seleccionarPedidoYNavegarAEditar: function(pedido)
-        {
-            store.state.pedidoSeleccionado = pedido
-
-            obtenerLineasPedido((response) => 
-            {
-                store.state.pedidoSeleccionado.lineasDePedido = response.body
-
-                
-
-                store.state.currentComponent = store.state.components.detalles
-                
-            },
-            (error) => 
-            {
-                if(error.status == 404)
-                    store.state.currentComponent = store.state.components.detalles
-                else if(error.status >= 500 && error.status <= 599)
-                    alert("Hubo un error inesperado")
-            }
-            ,
-            store.state.pedidoSeleccionado.Codigo)
-        },
-        
         */
 
         obtenerColorEstadoPedido: function(estado)
@@ -139,7 +112,6 @@ Vue.component('listapedidoscomponent',
             var estado = document.getElementById("Estado");
             var fechaRec = document.getElementById("FechaRecepcion");
             var precio = document.getElementById("PrecioTotalPedido");
-            //alert(hola);
 
             codigo.src = "flechadefecto.png";
             nombre.src = "flechadefecto.png";
@@ -149,43 +121,32 @@ Vue.component('listapedidoscomponent',
             precio.src = "flechadefecto.png";
             
             this.pedidos.sort(function(a, b) {
-                //alert(hola);
                 if(hola) {
                     imagen.src = "flechaabajo.png";
                     if (a[col] > b[col]) {
-                        //alert(a[col] + ">" + b[col]);
                         res =  1;
                     } 
                     else if (a[col] < b[col]) {
-                        //alert(a[col] + "<" + b[col]);
                         res = -1;
                     }
                 }
                 else {
                     imagen.src = "flechaarriba.png";
                     if (b[col] > a[col]) {
-                        //alert(b[col] + ">" + a[col]);
                         res =  1;
                     } 
                     else if (b[col] < a[col]) {
-                        //alert(b[col] + "<" + a[col]);
                         res = -1;
                     }
                 }
-
-
-                
-                //alert(res);
             return res;
             })
-            //alert(JSON.stringify(this.pedidos));
             }
             
         }
     },
 
     mounted() {
-        //alert("entrando en el mounted")
         this.obtenerYMostrarPedidos()
     },
 

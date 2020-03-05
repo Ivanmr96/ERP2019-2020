@@ -47,16 +47,6 @@ Vue.component('realizarpedidocomponent',
 
         obtenerProductosDelProveedorSeleccionado: function()
         {
-            //this.$store.actions.obtenerProductos((response) => alert(JSON.stringify(response.body) , () => alert("error") ))
-
-            //TODO No es obtenerProductos, es obtener productos de un proveedor :)
-
-
-            /*obtenerProductos((response) => 
-            { 
-                this.productos = response.body; 
-            }, 
-            () => alert("error")) */
 
             if(this.proveedorSeleccionado != undefined)
             {
@@ -66,18 +56,6 @@ Vue.component('realizarpedidocomponent',
                 }, 
                 () => alert("error")) 
             }
-
-            /*
-            fetch("https://proyectoerp.azurewebsites.net/api/Producto/", 
-            {
-                method: "GET"
-            })
-            .then((response) => {
-                return response.text()
-            })
-            .then((data) => {
-                alert(data)
-            }) */
         },
 
         obtenerNombreProductoPorId: function(codigo)
@@ -99,26 +77,6 @@ Vue.component('realizarpedidocomponent',
             return nombre
         },
 
-        /*
-        obtenerPrecioUnitarioProductoPorId: function(codigo)
-        {
-            var found = false
-            var precioUnitario = 0.0
-
-            if(this.productos != undefined)
-            {
-                for(var i = 0 ; i < this.productos.length && !found; i++)
-                {
-                    if(this.productos[i].Codigo == codigo)
-                    {
-                        found = true
-                        precioUnitario = this.productos[i].precioUnitario
-                    }
-                }    
-            }
-            return precioUnitario
-        },
-        */
         confirmar: function () {
             var opcion = confirm("¿Deseas confirmar este pedido?");
             if (opcion == true && this.validarPedido()) 
@@ -165,10 +123,6 @@ Vue.component('realizarpedidocomponent',
 
         cambiarProductoLineaPedido: function (producto, lineaPedido) 
         {
-            /*
-            lineaPedido.CodigoProducto = producto.Codigo;
-            lineaPedido.PrecioUnitario = producto.Precio;*/
-
             if(!this.productoYaExisteEnElPedido(producto.Codigo))
             {
 				lineaPedido.CodigoProducto = producto.Codigo;
@@ -229,10 +183,6 @@ Vue.component('realizarpedidocomponent',
                 {
                     sumTotal += this.pedido.LineasDePedido[i].PrecioUnitario * this.pedido.LineasDePedido[i].Cantidad
                 }
-                /*this.pedido.lineasDePedido.for(element => {
-                    sumTotal += element.PrecioUnitario * element.cantidad;
-                }
-                */
             }
             return sumTotal
         }

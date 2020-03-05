@@ -12,12 +12,4 @@ Vue.component('menucomponent', {
         <a href="#" v-on:click="$store.state.currentComponent = $store.state.components.ajustes" class="btn ajustes btn-navbar btn-ajustes text-left"><i data-toggle="tooltip" title="Ajustes" class="material-icons align-bottom">settings</i> Ajustes</a>
     </div>
     `
-    /*,
-
-    data()
-    {
-        return {
-            currentComponent = this.$store.state.currentComponent
-        }
-    } */
 })
