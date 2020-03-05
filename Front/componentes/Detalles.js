@@ -85,7 +85,7 @@ Vue.component('detallescomponent', {
         { 
             for(var i = 0; i < this.lineasInsertar.length; i++)
             {
-                alert(JSON.stringify(this.lineasInsertar[i]))
+                //alert(JSON.stringify(this.lineasInsertar[i]))
                 insertarLineaDePedido(this.lineasInsertar[i]);
             }
 
