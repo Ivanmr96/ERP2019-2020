@@ -1,12 +1,28 @@
 Vue.component('menuprincipalcomponent', {
 
+    methods:{
+        /**
+         * Permite cerrar la sesion del usuario.
+         */
+        desloguear:function(){
+            firebase.auth().signOut().then(function() {
+                //Cambiamos el componente por el login.
+                store.state.currentComponent = 'logincomponent';
+                
+                alert("Sesion cerrada con exito");
+              }).catch(function(error) {
+                alert("No se ha podido cerrar la sesion.");
+              });
+        }
+      },
+
     template:
     ` 
     <div class="background">
 
             <div class="div-container">
 
-                <div class="boton-caja colores-logout" v-on:click="$store.state.currentComponent = $store.state.components.login">
+                <div class="boton-caja colores-logout" v-on:click="desloguear()">
                     <i data-toggle="tooltip" title="Logout" class="material-icons align-bottom mainmenu-icon">home</i></br>
                     Salir
                 </div>

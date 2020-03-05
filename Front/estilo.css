@@ -1,0 +1,533 @@
+/*.menuLatIzq
+{
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+} */
+.table-user {
+    padding:40px;
+}
+
+.sidebar-title {
+    color: #172B4D;
+}
+
+.ajustes {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+}
+
+.btn-navbar {
+    margin-left: 4%;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    margin-right: 4%;
+    width: 92%;
+    text-align: center;
+}
+
+.btn-navbar:hover {
+    background-color: #F6F9FC;
+}
+
+
+.sidebar {
+    background-color: #FFFFFF;
+    color: #172B4D;
+}
+
+.btn-logout:hover {
+    color: #7764E4;
+}
+
+.btn-logout i {
+    color: #7764E4;
+}
+
+.btn-compras:hover {
+    color: #4AD991;
+}
+
+.btn-compras i {
+    color: #4AD991;
+}
+
+.btn-productos:hover {
+    color: #11CDEF;
+}
+
+.btn-productos i {
+    color: #11CDEF;
+}
+
+.btn-inventario:hover {
+    color: #FB6340;
+}
+
+.btn-inventario i {
+    color: #FB6340;
+}
+
+.btn-proveedores:hover {
+    color: #11CDEF;
+}
+
+.btn-proveedores i {
+    color: #11CDEF;
+}
+
+.btn-ajustes:hover {
+    color: #FB6340;
+}
+
+.btn-ajustes i {
+    color: #FB6340;
+}
+
+.btn-detalles {
+    color: #707070;
+}
+
+.icono-estado-cancelado {
+    color: crimson;
+    font-size: 12px;
+}
+
+.icono-estado-recibido {
+    color: #2DCE98;
+    font-size: 12px;
+}
+
+.icono-estado-enreparto {
+    color: rgb(219, 230, 79);
+    font-size: 12px;
+}
+
+.icono-estado-preparando {
+    color: rgb(79, 68, 233);
+    font-size: 12px;
+}
+
+.header {
+    color: #8898AA;
+    font-size: 12px;
+}
+
+.table-body {
+    color: #172B4D;
+}
+
+.table-body-bold {
+    font-weight: bold;
+}
+
+.divSuperior {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+}
+
+.divSuperior h4 {
+    color: #172B4D;
+    font-weight: lighter;
+    margin-top: 2%;
+    margin-left: 3.7%;
+}
+
+.btn-hacerpedido {
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1.5%;
+    margin-left: 3%;
+    border-radius: 25em;
+}
+
+.buscador {
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    width: 25%;
+}
+
+.btn-buscador {
+    font-size: 20px;
+}
+
+th {
+    /*position: sticky;
+    top: 16.5%;*/
+    background-color: #F1F3F9;
+    z-index: 1;
+}
+
+td {
+    padding-bottom: 30px;
+    padding-left:80px;
+}
+
+.guardar {
+    margin: 30px 50px 0px 0px;
+    width: 100px;
+    height: 40px;
+}
+
+.azul {
+    color: blue;
+}
+
+.rojo {
+    color: #FB6340;
+}
+
+.icono {
+    font-size:18px;
+}
+
+.btnAnadir {
+    position:fixed;
+    z-index:1;
+    bottom:30px;
+    right:50px;
+    width:100px;
+    height:40px;
+}
+
+.loginBox
+{
+    background-color: white;
+    box-shadow: 1em black;
+    position: relative;
+    vertical-align: middle;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 6px 10px 5px 0 rgba(0, 0, 0, 0.24);
+    margin: auto;
+    width: fit-content;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    margin-top: 10%;
+    border-radius: 7px;
+    height: fit-content;
+}
+
+.background
+{
+    background-image: url("Captura.PNG");
+    background-size: cover;
+    background-color:gray;
+}
+
+.tituloLogin
+{
+    color: #172B4D;
+}
+
+/* SPINNER */
+
+.cssload-thecube {
+    width: 37px;
+    height: 37px;
+    margin: 0 auto;
+    margin-top: 25px;
+    position: relative;
+    transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+}
+
+    .cssload-thecube .cssload-cube {
+        position: relative;
+        transform: rotateZ(45deg);
+        -o-transform: rotateZ(45deg);
+        -ms-transform: rotateZ(45deg);
+        -webkit-transform: rotateZ(45deg);
+        -moz-transform: rotateZ(45deg);
+    }
+
+    .cssload-thecube .cssload-cube {
+        float: left;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+    }
+
+        .cssload-thecube .cssload-cube:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #007bff;
+            animation: cssload-fold-thecube 1.8s infinite linear both;
+            -o-animation: cssload-fold-thecube 1.8s infinite linear both;
+            -ms-animation: cssload-fold-thecube 1.8s infinite linear both;
+            -webkit-animation: cssload-fold-thecube 1.8s infinite linear both;
+            -moz-animation: cssload-fold-thecube 1.8s infinite linear both;
+            transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+        }
+
+    .cssload-thecube .cssload-c2 {
+        transform: scale(1.1) rotateZ(90deg);
+        -o-transform: scale(1.1) rotateZ(90deg);
+        -ms-transform: scale(1.1) rotateZ(90deg);
+        -webkit-transform: scale(1.1) rotateZ(90deg);
+        -moz-transform: scale(1.1) rotateZ(90deg);
+    }
+
+    .cssload-thecube .cssload-c3 {
+        transform: scale(1.1) rotateZ(180deg);
+        -o-transform: scale(1.1) rotateZ(180deg);
+        -ms-transform: scale(1.1) rotateZ(180deg);
+        -webkit-transform: scale(1.1) rotateZ(180deg);
+        -moz-transform: scale(1.1) rotateZ(180deg);
+    }
+
+    .cssload-thecube .cssload-c4 {
+        transform: scale(1.1) rotateZ(270deg);
+        -o-transform: scale(1.1) rotateZ(270deg);
+        -ms-transform: scale(1.1) rotateZ(270deg);
+        -webkit-transform: scale(1.1) rotateZ(270deg);
+        -moz-transform: scale(1.1) rotateZ(270deg);
+    }
+
+    .cssload-thecube .cssload-c2:before {
+        animation-delay: 0.225s;
+        -o-animation-delay: 0.225s;
+        -ms-animation-delay: 0.225s;
+        -webkit-animation-delay: 0.225s;
+        -moz-animation-delay: 0.225s;
+    }
+
+    .cssload-thecube .cssload-c3:before {
+        animation-delay: 0.45s;
+        -o-animation-delay: 0.45s;
+        -ms-animation-delay: 0.45s;
+        -webkit-animation-delay: 0.45s;
+        -moz-animation-delay: 0.45s;
+    }
+
+    .cssload-thecube .cssload-c4:before {
+        animation-delay: 0.675s;
+        -o-animation-delay: 0.675s;
+        -ms-animation-delay: 0.675s;
+        -webkit-animation-delay: 0.675s;
+        -moz-animation-delay: 0.675s;
+    }
+
+
+
+@keyframes cssload-fold-thecube {
+    0%, 10% {
+        transform: perspective(70px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%, 75% {
+        transform: perspective(70px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%, 100% {
+        transform: perspective(70px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -o-transform: perspective(70px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%, 75% {
+        -o-transform: perspective(70px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%, 100% {
+        -o-transform: perspective(70px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -ms-transform: perspective(70px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%, 75% {
+        -ms-transform: perspective(70px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%, 100% {
+        -ms-transform: perspective(70px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -webkit-transform: perspective(70px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%, 75% {
+        -webkit-transform: perspective(70px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%, 100% {
+        -webkit-transform: perspective(70px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -moz-transform: perspective(70px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%, 75% {
+        -moz-transform: perspective(70px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%, 100% {
+        -moz-transform: perspective(70px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+/* FIN SPINNER */
+
+
+.background {
+    background-image: url("Captura.PNG");
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-color: gray;
+}
+
+.panel-body .btn:not(.btn-block) { width:120px;margin-bottom:10px; }
+
+.boton-caja {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 13%;
+    /*background-color: #172B4D; */
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
+}
+
+.colores-logout {
+    background-color: #7764E4;
+    color: white;
+    cursor: pointer;
+}
+
+.colores-logout:hover {
+    background-color: white;
+    color: #7764E4;
+}
+
+.colores-pedidos {
+    background-color: #4AD991;
+    color: white;
+    cursor: pointer;
+}
+
+.colores-pedidos:hover {
+    background-color: white;
+    color: #4AD991;
+}
+
+.colores-productos {
+    background-color: rgb(11, 73, 83);
+    color: white;
+    cursor: pointer;
+}
+
+.colores-productos:hover {
+    background-color: white;
+    color: rgb(11, 73, 83);
+}
+
+.colores-inventario {
+    background-color: #FB6340;
+    color: white;
+    cursor: pointer;
+}
+
+.colores-inventario:hover {
+    background-color: white;
+    color: #FB6340;
+}
+
+.colores-proveedores {
+    background-color: rgb(207, 175, 71);
+    color: white;
+    cursor: pointer;
+}
+
+.colores-proveedores:hover {
+    background-color: white;
+    color: rgb(207, 175, 71);
+}
+
+.colores-ajustes {
+    background-color: rgb(185, 43, 67);
+    color: white;
+    cursor: pointer;
+}
+
+.colores-ajustes:hover {
+    background-color: white;
+    color: rgb(185, 43, 67);
+}
+
+.div-container {
+    margin-top: 16%;
+    font-size: x-large;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mainmenu-icon {
+    font-size: 60px;
+}
+
+.logo {
+    margin-top: 2%;
+    height: 100px;
+}
+

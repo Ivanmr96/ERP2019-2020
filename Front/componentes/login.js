@@ -19,12 +19,19 @@ Vue.component('logincomponent', {
     }
   },
 
+  mounted(){
+    email = '';
+    password = '';
+ },
+
     template:
     `
     <div class="loginBody">
       <div class="template justify-content-center loginBox text-center">
           <form>
-          <h3 class="tituloLogin" >ERP COMPADRE</h3>
+          <div class="text-center">
+            <img class="logo" src="logoCompadre.png" />
+          </div>
             <div class="form-group">
               <label for="exampleInputEmail1">E-mail</label>
               <input v-model="this.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduce e-mail">
