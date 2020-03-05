@@ -64,7 +64,6 @@ Vue.component('listapedidoscomponent',
 
             
         },
-        */
 
         obtenerColorEstadoPedido: function(estado)
         {
